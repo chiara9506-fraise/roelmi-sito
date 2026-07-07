@@ -96,7 +96,13 @@
   var hero=document.getElementById('hero'),sticky=document.getElementById('sticky'),content=document.getElementById('heroContent');
   var expander=document.getElementById('heroExpander');
   var prog=0;
-  function cp(){var r=hero.getBoundingClientRect();var tot=hero.offsetHeight-innerHeight;prog=Math.min(1,Math.max(0,(-r.top)/tot));}
+  var isMobile=window.innerWidth<640;
+  addEventListener('resize',function(){isMobile=window.innerWidth<640;},{ passive:true });
+  function cp(){
+    if(isMobile){prog=0;return;}
+    var r=hero.getBoundingClientRect();var tot=hero.offsetHeight-innerHeight;
+    prog=Math.min(1,Math.max(0,(-r.top)/tot));
+  }
   addEventListener('scroll',cp,{passive:true});
 
   function eoc(t){return 1-Math.pow(1-t,3);}
