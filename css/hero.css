@@ -31,4 +31,5 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);
   .hero p{font-size:15px;max-width:none}
   .scroll-down{margin-top:28px;font-size:12px}
   .hero-expander{width:90px;height:90px;left:75%;top:42%}
+  .hero-sticky::after{opacity:1;height:28vh}
 }
