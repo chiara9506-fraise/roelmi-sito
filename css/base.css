@@ -1,0 +1,4 @@
+:root{--primary:#009CC4;--secondary:#565755;--ink:#3a3b39;--muted:#7c7e7b;--accent1:#EFF9FC;--accent2:#7DBD0F;--accent3:#007C8F;--dark:#001D29;--line:rgba(86,87,85,.22);--display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+a{text-decoration:none;color:inherit}

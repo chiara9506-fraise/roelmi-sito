@@ -1,0 +1,80 @@
+/* ===== HEADER ===== */
+/* ===== HEADER ===== */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s ease,box-shadow .35s ease,backdrop-filter .35s ease}
+.site-header.solid{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.hdr-inner{max-width:var(--max);margin:0 auto;height:84px;padding:0 clamp(20px,3.5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;transition:height .35s ease}
+.site-header.solid .hdr-inner{height:68px}
+
+/* logo: due versioni sovrapposte, cross-fade */
+.logo{position:relative;display:block;height:42px;flex:0 0 auto;transition:height .35s ease}
+.site-header.solid .logo{height:38px}
+.logo svg{height:100%;width:auto;display:block}
+.logo .lg-white,.logo .lg-color{transition:opacity .35s ease}
+.logo .lg-color{position:absolute;inset:0;opacity:0}
+.site-header.solid .logo .lg-white{opacity:0}
+.site-header.solid .logo .lg-color{opacity:1}
+
+/* nav */
+.nav{display:flex;align-items:center;gap:clamp(16px,2vw,30px)}
+.nav>ul{display:flex;align-items:center;gap:clamp(14px,1.8vw,28px);list-style:none}
+.nav-item{position:relative}
+.nav-link{display:inline-flex;align-items:center;gap:6px;font:500 13.5px var(--body);letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:10px 0;transition:color .25s;cursor:pointer;background:none;border:0;text-decoration:none}
+.site-header.solid .nav-link{color:var(--secondary)}
+.nav-link:hover{color:var(--primary)}
+.site-header.solid .nav-link:hover{color:var(--primary)}
+.nav-item.has-drop>.nav-link::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .25s;opacity:.8}
+.nav-item.has-drop:hover>.nav-link::after{transform:rotate(225deg) translateY(0)}
+
+/* dropdown */
+.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:230px;background:#fff;border-radius:12px;box-shadow:0 18px 40px rgba(12,26,31,.16);border:1px solid var(--line);padding:10px;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s}
+.nav-item.has-drop:hover .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px)}
+.dropdown a{display:block;padding:11px 14px;border-radius:8px;font:500 14px var(--body);color:var(--secondary);letter-spacing:.01em;transition:background .2s,color .2s}
+.dropdown a:hover{background:var(--accent1);color:var(--primary)}
+
+/* actions: search + account */
+.actions{display:flex;align-items:center;gap:14px}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .25s,background .25s,color .25s;color:#fff}
+.site-header.solid .icon-btn{border-color:var(--line);background:#fff;color:var(--secondary)}
+.icon-btn:hover{border-color:#fff;background:rgba(255,255,255,.2)}
+.site-header.solid .icon-btn:hover{border-color:var(--primary);background:var(--accent1);color:var(--primary)}
+.icon-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+/* search expanding field */
+.search-wrap{display:flex;align-items:center}
+.search-field{width:0;opacity:0;border:0;border-bottom:1px solid transparent;background:transparent;font:inherit;color:inherit;padding:6px 0;transition:width .3s,opacity .3s,border-color .3s;outline:none}
+.search-wrap.open .search-field{width:clamp(120px,16vw,220px);opacity:1;margin-right:10px;border-bottom-color:currentColor}
+.site-header:not(.solid) .search-field{color:#fff}
+.site-header:not(.solid) .search-field::placeholder{color:rgba(255,255,255,.6)}
+
+/* mobile burger */
+.burger{display:none;width:42px;height:42px;border:0;background:none;cursor:pointer;flex-direction:column;gap:5px;align-items:center;justify-content:center}
+.burger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:background .25s,transform .3s,opacity .3s}
+.site-header.solid .burger span{background:var(--secondary)}
+.burger.is-open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* mobile drawer */
+.mob-nav{position:fixed;top:0;right:0;bottom:0;width:75%;max-width:320px;background:#fff;z-index:300;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column}
+.mob-nav.is-open{transform:translateX(0)}
+.mob-overlay{position:fixed;inset:0;background:rgba(0,29,41,.45);z-index:299;opacity:0;pointer-events:none;transition:opacity .35s}
+.mob-overlay.is-open{opacity:1;pointer-events:auto}
+
+.mob-nav-header{display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:68px;border-bottom:1px solid var(--line);flex:0 0 auto}
+.mob-nav-header span{font-family:var(--display);font-weight:600;font-size:15px;color:var(--secondary);letter-spacing:.04em}
+.mob-nav-close{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--secondary)}
+.mob-nav-close svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+.mob-nav ul{list-style:none;padding:0;margin:0;flex:1}
+.mob-nav>ul>li{border-bottom:1px solid var(--line)}
+.mob-nav>ul>li>a{display:block;padding:18px 24px;font:600 13px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);text-decoration:none}
+.mob-nav-group>span{display:block;padding:18px 24px 8px;font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--primary)}
+.mob-nav-group ul{padding:0 0 12px 0}
+.mob-nav-group ul li a{display:block;padding:11px 24px;font:400 15px var(--body);color:var(--secondary);text-decoration:none;border-left:2px solid transparent;transition:color .2s,border-color .2s}
+.mob-nav-group ul li a:hover{color:var(--primary);border-left-color:var(--primary)}
+
+@media(max-width:1080px){
+  .nav>ul{display:none}
+  .burger{display:flex}
+  .search-wrap{display:none}
+}
