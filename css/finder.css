@@ -64,7 +64,7 @@
 .ing-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;text-decoration:none;color:inherit}
 .ing-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,29,41,.10)}
 
-.ing-card-img{aspect-ratio:4/3;background:#fff;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+.ing-card-img{aspect-ratio:4/3;background:#fff;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden;width:100%}
 .ing-card-img img{width:100%;height:100%;object-fit:contain;transition:transform .4s ease}
 .ing-card:hover .ing-card-img img{transform:scale(1.05)}
 

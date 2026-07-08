@@ -27,7 +27,7 @@
         +'<h3>'+d.name.replace(/®/g,'<sup>®</sup>')+'</h3>'
         +'<div class="ing-card-function">'+d.function+'</div>'
         +'<p class="ing-card-desc">'+d.description+'</p>'
-        +'<span class="ing-card-more">Scopri di più <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>'
+        +'<span class="ing-card-more">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>'
         +'</div></a>';
     }).join('');
   }
