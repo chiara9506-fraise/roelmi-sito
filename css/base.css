@@ -2,3 +2,6 @@
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,56px)}
 a{text-decoration:none;color:inherit}
+
+/* Simbolo ® ridotto nei titoli prodotto */
+h1 sup, h2 sup, h3 sup{font-size:.45em;vertical-align:.65em;font-weight:400;letter-spacing:0}

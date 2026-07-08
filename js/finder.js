@@ -24,7 +24,7 @@
         +'<div class="ing-card-img">'+img+'</div>'
         +'<div class="ing-card-body">'
         +'<div class="ing-card-tags">'+tags+'</div>'
-        +'<h3>'+d.name+'</h3>'
+        +'<h3>'+d.name.replace(/®/g,'<sup>®</sup>')+'</h3>'
         +'<div class="ing-card-function">'+d.function+'</div>'
         +'<p class="ing-card-desc">'+d.description+'</p>'
         +'<span class="ing-card-more">Scopri di più <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>'
@@ -83,4 +83,41 @@
     el.addEventListener('change',filter);
   });
   resetBtn.addEventListener('click',reset);
+
+  /* ── Mobile filter sheet ── */
+  var mobSearch=document.getElementById('mobFinderSearch');
+  var mobBtn=document.getElementById('mobFilterBtn');
+  var mobBackdrop=document.getElementById('mobFilterBackdrop');
+  var mobClose=document.getElementById('mobSidebarClose');
+  var mobApply=document.getElementById('mobSidebarApply');
+  var sidebar=document.querySelector('.finder-sidebar');
+  var mobCount=document.getElementById('mobFilterCount');
+
+  function openSheet(){sidebar.classList.add('mob-open');mobBackdrop.classList.add('is-open');document.body.style.overflow='hidden';}
+  function closeSheet(){sidebar.classList.remove('mob-open');mobBackdrop.classList.remove('is-open');document.body.style.overflow='';}
+  function updateCount(){
+    var n=document.querySelectorAll('.finder-sidebar input[type="checkbox"]:checked').length;
+    if(mobCount){mobCount.textContent=n;mobCount.classList.toggle('visible',n>0);}
+    if(mobBtn){mobBtn.classList.toggle('has-active',n>0);}
+  }
+
+  if(mobBtn){mobBtn.addEventListener('click',openSheet);}
+  if(mobBackdrop){mobBackdrop.addEventListener('click',closeSheet);}
+  if(mobClose){mobClose.addEventListener('click',closeSheet);}
+  if(mobApply){mobApply.addEventListener('click',closeSheet);}
+
+  if(mobSearch){
+    mobSearch.addEventListener('input',function(){
+      searchInput.value=mobSearch.value;
+      filter();
+    });
+  }
+
+  document.querySelectorAll('.finder-sidebar input[type="checkbox"]').forEach(function(el){
+    el.addEventListener('change',updateCount);
+  });
+  resetBtn.addEventListener('click',function(){
+    updateCount();
+    if(mobSearch)mobSearch.value='';
+  });
 })();

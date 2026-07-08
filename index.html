@@ -111,7 +111,7 @@
             <a href="#">Pharma</a>
           </div>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#">Ingredient Finder</a></li>
+        <li class="nav-item"><a class="nav-link" href="ingredient-finder.html">Ingredient Finder</a></li>
         <li class="nav-item"><a class="nav-link" href="#">News</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
@@ -133,41 +133,42 @@
     </div>
   </div>
 
-  <!-- Mobile drawer -->
-  <div class="mob-nav" id="mobNav" aria-hidden="true">
-    <div class="mob-nav-header">
-      <span>Menu</span>
-      <button class="mob-nav-close" id="mobNavClose" aria-label="Chiudi menu">
-        <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <ul>
-      <li class="mob-nav-group">
-        <span>Company</span>
-        <ul>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Philosophy</a></li>
-          <li><a href="#">Sustainability</a></li>
-          <li><a href="#">Certifications</a></li>
-        </ul>
-      </li>
-      <li class="mob-nav-group">
-        <span>Our Divisions</span>
-        <ul>
-          <li><a href="#">Personal Care</a></li>
-          <li><a href="#">Nutraceutical &amp; Food</a></li>
-          <li><a href="#">Pharma</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Ingredient Finder</a></li>
-      <li><a href="#">News</a></li>
-      <li><a href="#">Careers</a></li>
-      <li><a href="#">Support</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
-  <div class="mob-overlay" id="mobOverlay"></div>
 </header>
+
+<!-- Mobile drawer (fuori dall'header per evitare che backdrop-filter rompa position:fixed) -->
+<div class="mob-nav" id="mobNav" aria-hidden="true">
+  <div class="mob-nav-header">
+    <span>Menu</span>
+    <button class="mob-nav-close" id="mobNavClose" aria-label="Chiudi menu">
+      <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li class="mob-nav-group">
+      <span>Company</span>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Philosophy</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Certifications</a></li>
+      </ul>
+    </li>
+    <li class="mob-nav-group">
+      <span>Our Divisions</span>
+      <ul>
+        <li><a href="#">Personal Care</a></li>
+        <li><a href="#">Nutraceutical &amp; Food</a></li>
+        <li><a href="#">Pharma</a></li>
+      </ul>
+    </li>
+    <li><a href="ingredient-finder.html">Ingredient Finder</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Careers</a></li>
+    <li><a href="#">Support</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+<div class="mob-overlay" id="mobOverlay"></div>
 
 <section class="hero" id="hero">
   <div class="hero-sticky" id="sticky">
@@ -252,7 +253,7 @@
 
       <div class="ing-caption" id="ingCaption">
         <span class="pill" id="ingPill">Biologically active waters</span>
-        <h3 class="ing-name" id="ingName">CytoFruit<b>&reg;</b></h3>
+        <h3 class="ing-name" id="ingName">CytoFruit<sup>®</sup></h3>
         <p class="ing-desc" id="ingDesc">Fruit-derived active waters that replace demineralized water. Naturally processed, enriched in oligoelements, with protective and cell-vitality benefits for sustainable formulas.</p>
         <div class="ing-tags" id="ingTags"><span>Sustainable</span><span>Cellular protection</span><span>Water-free option</span></div>
         <div class="ing-arrows">
@@ -274,7 +275,7 @@
       </div>
     </div>
 
-    <a class="ing-finder reveal" href="#">
+    <a class="ing-finder reveal" href="ingredient-finder.html">
       <span class="if-ic" aria-hidden="true">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       </span>
@@ -486,7 +487,7 @@
           <li><a href="#">Personal Care</a></li>
           <li><a href="#">Nutraceutical &amp; Food</a></li>
           <li><a href="#">Pharma</a></li>
-          <li><a href="#">Ingredient Finder</a></li>
+          <li><a href="ingredient-finder.html">Ingredient Finder</a></li>
         </ul>
       </nav>
 

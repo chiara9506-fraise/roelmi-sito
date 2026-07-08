@@ -1,4 +1,4 @@
-.hero{position:relative;height:105vh;background:linear-gradient(180deg,#001D29 0%,#04222e 55%,#062a37 100%)}
+.hero{position:relative;height:250vh;background:linear-gradient(180deg,#001D29 0%,#04222e 55%,#062a37 100%)}
 .hero-sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:flex-end}
 .hero-sticky::after{content:"";position:absolute;left:0;right:0;bottom:0;height:32vh;z-index:3;pointer-events:none;background:linear-gradient(180deg,transparent,#fff 100%);opacity:0;transition:opacity .2s}
 .hero-sticky.near-end::after{opacity:1}
