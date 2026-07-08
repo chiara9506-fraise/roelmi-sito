@@ -211,7 +211,7 @@
   .finder-grid .ing-card-tags{padding:0;margin-bottom:10px}
   .finder-grid .ing-card h3{padding:0;margin-bottom:6px;font-size:clamp(17px,4.5vw,22px)}
   .finder-grid .ing-card-function{padding:0;margin-bottom:10px}
-  .finder-grid .ing-card-desc{display:block;margin-bottom:14px}
+  .finder-grid .ing-card-desc{display:block;padding:0;margin-bottom:14px}
   .finder-grid .ing-card-more{padding:0;margin-top:auto}
   .ing-card-img{aspect-ratio:3/2;max-height:200px}
 }
