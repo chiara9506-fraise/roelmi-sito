@@ -5,7 +5,7 @@
   var scene=new THREE.Scene();
   var camera=new THREE.PerspectiveCamera(45,1,0.1,100);camera.position.z=12;
   var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
-  renderer.setClearColor(0x000000,0);
+  renderer.setClearColor(0x001D29,1);
   var mol=new THREE.Group();scene.add(mol);
 
   var CYAN=0x009CC4, LIGHT=0x7cc7dc, WHITE=0xeef7fa, TEAL=0x007C8F;
@@ -144,40 +144,47 @@
       content.style.transform='translateY('+(prog*-40)+'px)';
     }
 
-    // Espansione
-    var zoomT=Math.max(0,(prog-0.30)/0.60);
-    zoomT=Math.min(1,zoomT);
+    // Espansione — attiva solo nell'ultimo 30% (prog 0.70→1.0), nessun dead zone bianco
+    var zoomT=Math.max(0,Math.min(1,(prog-0.70)/0.30));
 
     if(lockedTarget && zoomT>0){
       camera.near=0.001;
       camera.updateProjectionMatrix();
 
-      var expandT=Math.min(1,zoomT*3);
-      var fadeOut=Math.max(0,1-zoomT*8);
+      var expandT=Math.min(1,zoomT*2);
+      var otherFade=Math.max(0,1-zoomT*5);
 
-      lockedTarget.scale.setScalar(1+eoc(expandT)*50);
-      lockedTarget.material.side=THREE.DoubleSide;
+      lockedTarget.scale.setScalar(1+eoc(expandT)*14);
+      lockedTarget.material.side=THREE.FrontSide;
       if(!lockedTarget.material.transparent)lockedTarget.material.transparent=true;
       lockedTarget.material.color.setHex(0xffffff);
       lockedTarget.material.emissive.setHex(0xffffff);
-      lockedTarget.material.emissiveIntensity=eoc(expandT)*0.8;
-      lockedTarget.material.opacity=fadeOut;
+      lockedTarget.material.emissiveIntensity=2.0;
+      lockedTarget.material.opacity=Math.max(0,1-Math.max(0,(zoomT-0.50)/0.50));
 
-      renderer.setClearColor(0xffffff, Math.min(1,eoc(zoomT)*5));
+      // Sfondo: transizione da scuro (#001D29) a bianco quando gli atomi scompaiono
+      // La palla è già bianca — svanisce invisibilmente sul fondo bianco, zero dead zone
+      var bgT=Math.max(0,Math.min(1,(zoomT-0.20)/0.80));
+      var bgR=Math.round(0x00+(0xff-0x00)*bgT);
+      var bgG=Math.round(0x1d+(0xff-0x1d)*bgT);
+      var bgB=Math.round(0x29+(0xff-0x29)*bgT);
+      renderer.setClearColor((bgR<<16)|(bgG<<8)|bgB,1);
+      canvas.style.opacity='';
 
       meshes.forEach(function(m){
         if(m!==lockedTarget){
           if(!m.material.transparent)m.material.transparent=true;
-          m.material.opacity=Math.max(0,1-zoomT*8);
+          m.material.opacity=Math.max(0,otherFade);
         }
       });
-      bondMat.opacity=Math.max(0,0.42*(1-zoomT*8));
-      ptMat.opacity=Math.max(0,0.65*(1-zoomT*8));
+      bondMat.opacity=Math.max(0,0.42*otherFade);
+      ptMat.opacity=Math.max(0,0.65*otherFade);
 
     } else if(lockedTarget && zoomT===0){
       camera.near=0.1;
       camera.updateProjectionMatrix();
-      renderer.setClearColor(0x000000,0);
+      renderer.setClearColor(0x001D29,1);
+      canvas.style.opacity='';
       lockedTarget.scale.setScalar(1);
       lockedTarget.material.transparent=false;
       lockedTarget.material.opacity=1;
@@ -192,7 +199,7 @@
     }
 
     if(expander) expander.style.display='none';
-    sticky.classList.toggle('near-end',prog>0.60);
+    sticky.classList.toggle('near-end',false);
   }
 
     function start(){try{resize();cp();anim();}catch(e){console.warn(e);canvas.style.display='none';}}
@@ -205,7 +212,7 @@
 // reveal del contenuto
 var io=new IntersectionObserver(function(es){
   es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-},{threshold:.2});
+},{threshold:0});
 document.querySelectorAll('.r-up,.r-img').forEach(function(el){io.observe(el)});
 
 
