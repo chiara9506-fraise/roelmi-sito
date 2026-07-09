@@ -88,6 +88,7 @@
     renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(rc.width,rc.height,false);
     camera.aspect=rc.width/rc.height;camera.updateProjectionMatrix();
     mol.position.x=rc.width<760?0:3.4;
+    mol.position.y=rc.width<760?1.8:0;
   }
   addEventListener('resize',resize);
   var mx=0,my=0,tmx=0,tmy=0;
