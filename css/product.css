@@ -2,12 +2,12 @@
 
 /* ── Hero ── */
 .prod-hero{background:var(--dark);padding:clamp(60px,8vw,100px) 0;overflow:hidden;position:relative}
-.prod-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
-.prod-hero-line{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:10px}
-.prod-hero h1{font-family:var(--display);font-weight:600;font-size:clamp(42px,6vw,80px);letter-spacing:-.03em;color:#fff;line-height:1.0;margin-bottom:10px}
-.prod-hero-sub{font:500 16px var(--body);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:24px}
-.prod-hero-desc{color:rgba(255,255,255,.75);font-size:clamp(15px,1.2vw,17px);line-height:1.7;max-width:48ch;margin-bottom:28px}
-.prod-hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.prod-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;margin-top:clamp(36px,5vw,64px)}
+.prod-hero-line{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:16px}
+.prod-hero h1{font-family:var(--display);font-weight:600;font-size:clamp(42px,6vw,80px);letter-spacing:-.03em;color:#fff;line-height:1.0;margin-bottom:16px}
+.prod-hero-sub{font:500 16px var(--body);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:32px}
+.prod-hero-desc{color:rgba(255,255,255,.75);font-size:clamp(15px,1.2vw,17px);line-height:1.7;max-width:48ch;margin-bottom:36px}
+.prod-hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
 .prod-hero-tag{font:600 10px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7)}
 .prod-hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#fff;font:600 13px var(--body);letter-spacing:.06em;padding:13px 26px;border-radius:8px;transition:background .2s}
 .prod-hero-cta:hover{background:var(--accent3)}
@@ -76,7 +76,7 @@
 .prod-related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.4vw,30px);max-width:740px}
 
 /* ── Breadcrumb ── */
-.prod-breadcrumb{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.prod-breadcrumb{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .prod-breadcrumb nav{display:flex;align-items:center;gap:8px;font:400 12px var(--body);color:rgba(255,255,255,.45)}
 .prod-breadcrumb a{color:rgba(255,255,255,.45);transition:color .18s}
 .prod-breadcrumb a:hover{color:#fff}

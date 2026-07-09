@@ -101,6 +101,7 @@
   function cp(){
     if(isMobile){prog=0;return;}
     var r=hero.getBoundingClientRect();var tot=hero.offsetHeight-innerHeight;
+    if(tot<=0){prog=0;return;}
     prog=Math.min(1,Math.max(0,(-r.top)/tot));
   }
   addEventListener('scroll',cp,{passive:true});
@@ -145,7 +146,7 @@
     }
 
     // Espansione — attiva solo nell'ultimo 30% (prog 0.70→1.0), nessun dead zone bianco
-    var zoomT=Math.max(0,Math.min(1,(prog-0.70)/0.30));
+    var zoomT=Math.max(0,Math.min(1,(prog-0.40)/0.60));
 
     if(lockedTarget && zoomT>0){
       camera.near=0.001;
@@ -200,6 +201,14 @@
 
     if(expander) expander.style.display='none';
     sticky.classList.toggle('near-end',false);
+
+    // Quando la palla è quasi completamente esplosa (95%), fai sparire la sticky
+    // così WHO WE ARE appare senza spazio bianco morto
+    if(!isMobile){
+      var done=zoomT>=0.95;
+      sticky.style.opacity=done?'0':'1';
+      sticky.style.pointerEvents=done?'none':'';
+    }
   }
 
     function start(){try{resize();cp();anim();}catch(e){console.warn(e);canvas.style.display='none';}}
