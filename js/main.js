@@ -299,14 +299,17 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   var imgs=document.querySelectorAll('#ingFloat img');
   var cap=document.getElementById('ingCaption');
   var pill=document.getElementById('ingPill'),nm=document.getElementById('ingName'),desc=document.getElementById('ingDesc'),tags=document.getElementById('ingTags'),num=document.getElementById('ingNum');
+  var numMob=document.getElementById('ingNumMob');
   document.getElementById('ingTot').textContent=String(total).padStart(2,'0');
+  var totMob=document.getElementById('ingTotMob');if(totMob)totMob.textContent=String(total).padStart(2,'0');
   function render(){
     cap.classList.add('swap');
     setTimeout(function(){
       var d=data[i];
       pill.textContent=d.pill;nm.innerHTML=d.name;desc.innerHTML=d.desc;
       tags.innerHTML=d.tags.map(function(t){return '<span>'+t+'</span>'}).join('');
-      num.textContent=String(i+1).padStart(2,'0');
+      var n=String(i+1).padStart(2,'0');
+      num.textContent=n;if(numMob)numMob.textContent=n;
       imgs.forEach(function(im){im.classList.toggle('active',+im.dataset.i===i)});
       cap.classList.remove('swap');
     },210);
@@ -314,6 +317,13 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   function step(d){i=(i+d+total)%total;render();}
   document.getElementById('ingNext').addEventListener('click',function(){step(1)});
   document.getElementById('ingPrev').addEventListener('click',function(){step(-1)});
+  var pMob=document.getElementById('ingPrevMob'),nMob=document.getElementById('ingNextMob');
+  if(pMob)pMob.addEventListener('click',function(){step(-1)});
+  if(nMob)nMob.addEventListener('click',function(){step(1)});
+  var touchX=null;
+  var stageEl=document.getElementById('ingStage');
+  stageEl.addEventListener('touchstart',function(e){touchX=e.touches[0].clientX;},{passive:true});
+  stageEl.addEventListener('touchend',function(e){if(touchX===null)return;var dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>40)step(dx<0?1:-1);touchX=null;},{passive:true});
   var stage=document.getElementById('ingStage'),fl=document.getElementById('ingParallax');
   var rx=0,ry=0,tx=0,ty=0,raf=null;
   function loop(){tx+=(rx-tx)*.08;ty+=(ry-ty)*.08;fl.style.transform='translate('+tx+'px,'+ty+'px) rotateX('+(-ty*0.08)+'deg) rotateY('+(tx*0.08)+'deg)';if(Math.abs(rx-tx)>.1||Math.abs(ry-ty)>.1){raf=requestAnimationFrame(loop);}else{raf=null;}}
