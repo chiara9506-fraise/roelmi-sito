@@ -115,13 +115,13 @@
     requestAnimationFrame(anim);
     t+=.005;
 
-    var slowF=prog<0.10?1:Math.max(0,1-(prog-0.10)/0.25);
+    var slowF=prog<0.05?1:Math.max(0,1-(prog-0.05)/0.15);
     rotY+=0.005*0.55*slowF;
     tmx+=(mx-tmx)*.05;tmy+=(my-tmy)*.05;
     mol.rotation.y=rotY+tmx*.5*slowF;
     mol.rotation.x=Math.sin(t*.4)*.12*slowF+tmy*.3*slowF;
     points.rotation.y=-rotY*(3/5.5)*slowF;
-    var scaleP=Math.min(prog,0.44);mol.scale.setScalar(1+scaleP*scaleP*1.2);
+    var scaleP=Math.min(prog,0.20);mol.scale.setScalar(1+scaleP*scaleP*1.2);
     camera.position.z=12-prog*1.5;
 
     renderer.render(scene,camera);
@@ -140,13 +140,13 @@
 
     // Fade testo
     if(content){
-      var cf=Math.max(0,1-prog/0.35);
+      var cf=Math.max(0,1-prog/0.20);
       content.style.opacity=cf;
       content.style.transform='translateY('+(prog*-40)+'px)';
     }
 
-    // Espansione — attiva solo nell'ultimo 30% (prog 0.70→1.0), nessun dead zone bianco
-    var zoomT=Math.max(0,Math.min(1,(prog-0.40)/0.60));
+    // Espansione — parte al 20% dello scroll, copre l'80% = esplosione più lenta
+    var zoomT=Math.max(0,Math.min(1,(prog-0.20)/0.80));
 
     if(lockedTarget && zoomT>0){
       camera.near=0.001;
@@ -230,7 +230,8 @@ document.querySelectorAll('.r-up,.r-img').forEach(function(el){io.observe(el)});
 var header=document.getElementById('siteHeader');
 var heroEl=document.getElementById('hero');
 function onScroll(){
-  var heroBottom = heroEl ? (heroEl.offsetTop + heroEl.offsetHeight - 90) : 40;
+  // Diventa solid quando la sticky svanisce (zoomT>=0.95 = 96% dello scroll della hero)
+  var heroBottom = heroEl ? Math.round(0.96 * (heroEl.offsetHeight - innerHeight)) : 40;
   header.classList.toggle('solid', window.scrollY > heroBottom);
 }
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
