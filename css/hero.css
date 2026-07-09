@@ -10,10 +10,9 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);
 .hero-sticky::after{
   content:'';
   position:absolute;left:0;right:0;bottom:0;
-  height:8vh;
-  z-index:3;
-  pointer-events:none;
+  height:14vh;z-index:3;pointer-events:none;
   background:linear-gradient(180deg,transparent,#fff 100%);
+  opacity:var(--hero-fade,0);
 }
 
 .hero-expander{
@@ -38,5 +37,4 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);
   .hero p{font-size:15px;max-width:none}
   .scroll-down{margin-top:28px;font-size:12px}
   .hero-expander{width:90px;height:90px;left:75%;top:42%}
-  .hero-sticky::after{content:"";position:absolute;left:0;right:0;bottom:0;height:28vh;z-index:3;pointer-events:none;background:linear-gradient(180deg,transparent,#fff 100%);opacity:1}
 }
