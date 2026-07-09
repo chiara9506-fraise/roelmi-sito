@@ -1,5 +1,6 @@
 /* ===== Who We Are ===== */
-.who{position:relative;background:#fff;padding:clamp(32px,4vw,56px) 0 clamp(12px,1.5vw,20px);margin-top:-80vh;z-index:5}
+.who{position:relative;background:#fff;padding:clamp(32px,4vw,56px) 0 clamp(12px,1.5vw,20px)}
+@media(min-width:641px){.who{margin-top:-80vh;z-index:5}}
 .who-inner{position:relative}
 
 .who-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(40px,5vw,72px);align-items:center}
@@ -29,9 +30,6 @@
 .r-img.in{opacity:1;transform:none}
 .delay1{transition-delay:.12s}.delay2{transition-delay:.24s}
 
-@media(max-width:640px){
-  .who{margin-top:0;z-index:auto}
-}
 @media(max-width:820px){
   .who-grid{grid-template-columns:1fr;gap:28px}
   .who-figure{aspect-ratio:4/3;border-radius:14px}
