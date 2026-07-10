@@ -21,7 +21,9 @@
 /* Custom marker */
 .pm-leaf-wrap{background:none;border:none}
 .pm-dot{display:block;width:13px;height:13px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.25);transition:transform .25s,box-shadow .25s;cursor:pointer}
+.pm-dot--branch{background:var(--primary);box-shadow:0 0 0 4px rgba(0,156,196,.28)}
 .pm-leaf-wrap:hover .pm-dot{transform:scale(1.4);box-shadow:0 0 0 7px rgba(255,255,255,.2)}
+.pm-leaf-wrap:hover .pm-dot--branch{box-shadow:0 0 0 7px rgba(0,156,196,.25)}
 
 /* Cluster */
 .pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:700 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
