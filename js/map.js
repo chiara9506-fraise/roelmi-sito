@@ -19,7 +19,7 @@
   }).addTo(map);
 
   var sites=[
-    {type:'site',name:'Gerenzano',lat:45.65,lng:8.99,sub:'ROELMI BIOTECH',desc:'Polo dedicato alla ricerca e sviluppo di soluzioni biotech, ingredienti fermentativi e probiotici avanzati.',href:'#'},
+    {type:'biotech',name:'ROELMI BIOTECH',lat:45.6438,lng:8.9958,sub:'Ricerca & Sviluppo Biotech — Italia',desc:'Polo dedicato alla ricerca e sviluppo di soluzioni biotech, ingredienti fermentativi e probiotici avanzati. Via Roberto Lepetit 34, 21040 Gerenzano (VA), Italia.',href:'#'},
     {type:'site',name:'Lainate',lat:45.57,lng:8.75,sub:'Polo produttivo — Varese, Italia',desc:'Stabilimento produttivo dedicato allo sviluppo e produzione di ingredienti attivi per il personal care.',href:'#'},
     {type:'site',name:'Solaro',lat:45.62,lng:9.07,sub:'Polo produttivo — Milano, Italia',desc:'Centro di produzione specializzato nella trasformazione di materie prime attive per il mercato nutraceutico e food.',href:'#'},
     {type:'site',name:'Napoli',lat:40.84,lng:14.27,sub:'Polo produttivo — Campania, Italia',desc:'Sede produttiva nel sud Italia, specializzata nella lavorazione di ingredienti di origine naturale e bioattivi marini.',href:'#'},
