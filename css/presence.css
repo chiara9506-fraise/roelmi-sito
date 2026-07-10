@@ -3,7 +3,7 @@
 .presence-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
 .presence-title{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:var(--secondary);line-height:1.1;margin-bottom:22px}
 .presence-legend{display:flex;gap:24px;flex-wrap:wrap}
-.leg-item{display:flex;align-items:center;gap:8px;font:500 13px var(--body);color:var(--secondary)}
+.leg-item{display:flex;align-items:center;gap:8px;font:500 13px var(--body);color:var(--secondary);text-transform:uppercase;letter-spacing:.06em}
 .leg-mark{width:14px;height:21px;display:inline-block;flex:0 0 auto;line-height:0}
 .leg-mark svg{width:100%;height:100%;display:block;overflow:visible}
 .leg-mark--branch{color:var(--primary)}
