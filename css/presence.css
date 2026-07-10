@@ -9,6 +9,7 @@
 .leg-mark--branch{color:var(--primary)}
 .leg-mark--biotech{color:#8375B4}
 .leg-mark--lab{color:#9AA0A3}
+.leg-mark--production{color:#7DBD0F}
 .leg-mark--site{color:#fff}
 .leg-mark--site svg path{stroke:var(--secondary);stroke-width:2.5;paint-order:stroke fill}
 
@@ -30,6 +31,7 @@
 .pm-mark--branch{color:#009CC4}
 .pm-mark--biotech{color:#8375B4}
 .pm-mark--lab{color:#9AA0A3}
+.pm-mark--production{color:#7DBD0F}
 .pm-leaf-wrap:hover .pm-mark{transform:scale(1.28)}
 
 /* Cluster */
