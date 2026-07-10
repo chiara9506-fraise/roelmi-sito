@@ -18,8 +18,8 @@
 #globalMap{width:100%;height:480px;border-radius:20px;overflow:hidden;z-index:1}
 
 /* Leaflet overrides */
-.leaflet-container{background:#001D29!important;font-family:var(--body)}
-.leaflet-tile-pane{filter:sepia(1) saturate(3) hue-rotate(175deg) brightness(1.1)}
+.leaflet-container{background:#0f4a5f!important;font-family:var(--body)}
+.leaflet-tile-pane{filter:sepia(1) saturate(2.2) hue-rotate(175deg) brightness(1.55)}
 .leaflet-control-attribution{background:rgba(0,29,41,.75)!important;color:rgba(255,255,255,.38)!important;font-size:10px!important;border-radius:4px 0 0 0!important}
 .leaflet-control-attribution a{color:rgba(255,255,255,.55)!important}
 
