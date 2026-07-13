@@ -58,7 +58,7 @@
 .finder-count b{color:var(--secondary);font-weight:600}
 
 /* Grid */
-.finder-grid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:clamp(20px,2.4vw,30px);row-gap:0}
+.finder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,30px)}
 
 /* Card — base (usata anche fuori dal finder) */
 .ing-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;text-decoration:none;color:inherit}
@@ -82,14 +82,6 @@
 .ing-card-more svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
 .ing-card:hover .ing-card-more svg{transform:translateX(4px)}
 
-/* Subgrid — solo dentro .finder-grid */
-.finder-grid .ing-card{display:grid;grid-row:span 6;grid-template-rows:subgrid;margin-bottom:clamp(20px,2.4vw,30px)}
-.finder-grid .ing-card-body{display:contents}
-.finder-grid .ing-card-tags{padding:clamp(16px,1.8vw,22px) clamp(16px,1.8vw,22px) 0;margin-bottom:0;align-content:start}
-.finder-grid .ing-card h3{padding:10px clamp(16px,1.8vw,22px) 0;margin-bottom:0;align-self:start}
-.finder-grid .ing-card-function{padding:6px clamp(16px,1.8vw,22px) 0;margin-bottom:0;align-self:start}
-.finder-grid .ing-card-desc{padding:10px clamp(16px,1.8vw,22px) 0;margin-bottom:0;align-self:start}
-.finder-grid .ing-card-more{padding:10px clamp(16px,1.8vw,22px) clamp(16px,1.8vw,22px);margin-top:0;align-self:end}
 
 /* Empty state */
 .finder-empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
@@ -201,17 +193,7 @@
   }
 
   /* ── Griglia 1 colonna, card full-width ── */
-  .finder-grid{grid-template-columns:1fr;column-gap:0}
-  .finder-grid .ing-card{
-    display:flex;flex-direction:column;
-    grid-row:unset;grid-template-rows:none;
-    margin-bottom:16px;
-  }
-  .finder-grid .ing-card-body{display:flex;flex-direction:column;padding:16px;flex:1}
-  .finder-grid .ing-card-tags{padding:0;margin-bottom:10px;align-self:stretch}
-  .finder-grid .ing-card h3{padding:0;margin-bottom:6px;font-size:clamp(17px,4.5vw,22px);align-self:stretch}
-  .finder-grid .ing-card-function{padding:0;margin-bottom:10px;align-self:stretch}
-  .finder-grid .ing-card-desc{display:block;padding:0;margin-bottom:14px;align-self:stretch}
-  .finder-grid .ing-card-more{padding:0;margin-top:auto;align-self:stretch}
+  .finder-grid{grid-template-columns:1fr;gap:16px}
+  .finder-grid .ing-card h3{font-size:clamp(17px,4.5vw,22px)}
   .ing-card-img{aspect-ratio:3/2;max-height:200px}
 }
