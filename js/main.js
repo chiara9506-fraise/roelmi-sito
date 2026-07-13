@@ -146,27 +146,32 @@
       content.style.transform='translateY('+(prog*-40)+'px)';
     }
 
-    // Espansione — parte al 45% (subito dopo il lock dell'atomo), distesa fino all'85%
-    var zoomT=Math.max(0,Math.min(1,(prog-0.45)/0.40));
+    // Espansione — parte al 45%, la palla cresce (senza mai svanire) fino a
+    // inglobare la camera; nel frattempo sbianca gradualmente e diventa lo sfondo
+    var zoomT=Math.max(0,Math.min(1,(prog-0.45)/0.45));
 
     if(lockedTarget && zoomT>0){
       camera.near=0.001;
       camera.updateProjectionMatrix();
 
-      var expandT=Math.min(1,zoomT*2);
-      var otherFade=Math.max(0,1-zoomT*5);
+      var growT=zoomT*zoomT*(3-2*zoomT); // smoothstep: parte dolce, poi avvolge
+      var otherFade=Math.max(0,1-zoomT*3);
 
-      lockedTarget.scale.setScalar(1+eoc(expandT)*14);
-      lockedTarget.material.side=THREE.FrontSide;
-      if(!lockedTarget.material.transparent)lockedTarget.material.transparent=true;
-      lockedTarget.material.color.setHex(0xffffff);
-      lockedTarget.material.emissive.setHex(0xffffff);
-      lockedTarget.material.emissiveIntensity=2.0;
-      lockedTarget.material.opacity=Math.max(0,1-Math.max(0,(zoomT-0.50)/0.50));
+      lockedTarget.scale.setScalar(1+growT*26);
+      lockedTarget.material.side=THREE.DoubleSide; // visibile anche da dentro
+      lockedTarget.material.transparent=false;
+      lockedTarget.material.opacity=1;
 
-      // Sfondo: transizione da scuro (#001D29) a bianco quando gli atomi scompaiono
-      // La palla è già bianca — svanisce invisibilmente sul fondo bianco, zero dead zone
-      var bgT=Math.max(0,Math.min(1,(zoomT-0.20)/0.80));
+      // Colore: dal colore originale dell'atomo a bianco, gradualmente
+      var whiteT=Math.max(0,Math.min(1,(zoomT-0.25)/0.65));
+      var col=new THREE.Color(lockedTarget._origColor||0x009CC4);
+      col.lerp(new THREE.Color(0xffffff),whiteT);
+      lockedTarget.material.color.copy(col);
+      lockedTarget.material.emissive.copy(col);
+      lockedTarget.material.emissiveIntensity=0.25+zoomT*1.0;
+
+      // Sfondo: da scuro (#001D29) a bianco in sincrono con lo sbiancamento della palla
+      var bgT=whiteT;
       var bgR=Math.round(0x00+(0xff-0x00)*bgT);
       var bgG=Math.round(0x1d+(0xff-0x1d)*bgT);
       var bgB=Math.round(0x29+(0xff-0x29)*bgT);
@@ -206,9 +211,9 @@
     // Gradiente fondo: invisibile a scroll=0, compare subito dopo
     sticky.style.setProperty('--hero-fade', Math.min(1, prog * 15).toFixed(2));
 
-    // Quando la palla è quasi completamente esplosa (95%), fai sparire la sticky
+    // Quando lo schermo è ormai tutto bianco (palla sbiancata), fai sparire la sticky
     if(!isMobile){
-      var done=zoomT>=0.95;
+      var done=zoomT>=0.98;
       sticky.style.opacity=done?'0':'1';
       sticky.style.pointerEvents=done?'none':'';
     }
@@ -233,8 +238,8 @@ document.querySelectorAll('.r-up,.r-img').forEach(function(el){io.observe(el)});
 var header=document.getElementById('siteHeader');
 var heroEl=document.getElementById('hero');
 function onScroll(){
-  // Diventa solid quando la sticky svanisce (zoomT>=0.95 con formula 0.45/0.40 = prog 0.83)
-  var heroBottom = heroEl ? Math.round(0.83 * (heroEl.offsetHeight - innerHeight)) : 40;
+  // Diventa solid quando la sticky svanisce (zoomT>=0.98 con formula 0.45/0.45 = prog 0.89)
+  var heroBottom = heroEl ? Math.round(0.89 * (heroEl.offsetHeight - innerHeight)) : 40;
   header.classList.toggle('solid', window.scrollY > heroBottom);
 }
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
