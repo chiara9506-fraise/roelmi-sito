@@ -44,8 +44,17 @@
     });
   }
 
+  var typeImg={
+    site:'images/INDUSTRIA.jpg',
+    branch:'images/filiale.jpg',
+    biotech:'images/biotech.jpg',
+    lab:'images/lab.jpg',
+    production:'images/production.jpg'
+  };
+
   function buildPopup(site){
-    return '<div class="pm-lp-img"></div>'
+    var img=typeImg[site.type]||typeImg.site;
+    return '<div class="pm-lp-img" style="background-image:url(\''+img+'\')"></div>'
       +'<div class="pm-popup-body">'
       +'<div class="pm-popup-sub">'+site.sub+'</div>'
       +'<h3 class="pm-popup-name">'+site.name+'</h3>'
