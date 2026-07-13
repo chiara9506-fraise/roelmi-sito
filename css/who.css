@@ -36,7 +36,8 @@
   .who-text{padding:4px 0}
 }
 @media(max-width:480px){
-  .who-pill{flex-direction:column;align-self:stretch;align-items:flex-start;border-radius:16px;padding:14px 16px;gap:10px}
+  .who-pill{flex-direction:column;align-self:stretch;align-items:stretch;border-radius:16px;padding:14px 16px;gap:10px}
+  .who-pill .pill-ghost{width:100%;justify-content:center}
   .who-pill .pill-filled{width:100%;justify-content:center;border-radius:10px}
 }
 @media(prefers-reduced-motion:reduce){.r-up,.r-img{opacity:1;transform:none}}
