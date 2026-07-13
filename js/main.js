@@ -146,8 +146,8 @@
       content.style.transform='translateY('+(prog*-40)+'px)';
     }
 
-    // Espansione — parte al 70% (molecola già ingrandita), veloce negli ultimi 30%
-    var zoomT=Math.max(0,Math.min(1,(prog-0.70)/0.30));
+    // Espansione — parte al 45% (subito dopo il lock dell'atomo), distesa fino all'85%
+    var zoomT=Math.max(0,Math.min(1,(prog-0.45)/0.40));
 
     if(lockedTarget && zoomT>0){
       camera.near=0.001;
@@ -233,8 +233,8 @@ document.querySelectorAll('.r-up,.r-img').forEach(function(el){io.observe(el)});
 var header=document.getElementById('siteHeader');
 var heroEl=document.getElementById('hero');
 function onScroll(){
-  // Diventa solid quando la sticky svanisce (zoomT>=0.95 con formula 0.70/0.30 = prog 0.985)
-  var heroBottom = heroEl ? Math.round(0.985 * (heroEl.offsetHeight - innerHeight)) : 40;
+  // Diventa solid quando la sticky svanisce (zoomT>=0.95 con formula 0.45/0.40 = prog 0.83)
+  var heroBottom = heroEl ? Math.round(0.83 * (heroEl.offsetHeight - innerHeight)) : 40;
   header.classList.toggle('solid', window.scrollY > heroBottom);
 }
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
