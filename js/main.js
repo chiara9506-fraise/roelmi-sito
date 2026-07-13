@@ -116,7 +116,7 @@
     requestAnimationFrame(anim);
     t+=.005;
 
-    var slowF=prog<0.10?1:Math.max(0,1-(prog-0.10)/0.25);
+    var slowF=prog<0.08?1:Math.max(0,1-(prog-0.08)/0.22);
     rotY+=0.005*0.55*slowF;
     tmx+=(mx-tmx)*.05;tmy+=(my-tmy)*.05;
     mol.rotation.y=rotY+tmx*.5*slowF;
@@ -146,9 +146,9 @@
       content.style.transform='translateY('+(prog*-40)+'px)';
     }
 
-    // Espansione — parte al 45%, la palla cresce (senza mai svanire) fino a
+    // Espansione — parte al 35%, la palla cresce (senza mai svanire) fino a
     // inglobare la camera; nel frattempo sbianca gradualmente e diventa lo sfondo
-    var zoomT=Math.max(0,Math.min(1,(prog-0.45)/0.45));
+    var zoomT=Math.max(0,Math.min(1,(prog-0.35)/0.55));
 
     if(lockedTarget && zoomT>0){
       camera.near=0.001;
