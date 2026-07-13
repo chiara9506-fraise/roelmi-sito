@@ -10,8 +10,7 @@
 .leg-mark--biotech{color:#8375B4}
 .leg-mark--lab{color:#9AA0A3}
 .leg-mark--production{color:#7DBD0F}
-.leg-mark--site{color:#fff}
-.leg-mark--site svg path{stroke:var(--secondary);stroke-width:2.5;paint-order:stroke fill}
+.leg-mark--site{color:#007C8F}
 
 /* Map */
 .presence-map-wrap{position:relative;margin-top:clamp(28px,4vw,48px)}
@@ -27,7 +26,7 @@
 .pm-leaf-wrap{background:none;border:none}
 .pm-mark{display:block;width:22px;height:33px;cursor:pointer;transition:transform .25s;transform-origin:50% 100%;filter:drop-shadow(0 3px 5px rgba(0,0,0,.4))}
 .pm-mark svg{display:block;width:100%;height:100%}
-.pm-mark--site{color:#fff}
+.pm-mark--site{color:#007C8F}
 .pm-mark--branch{color:#001D29}
 .pm-mark--biotech{color:#8375B4}
 .pm-mark--lab{color:#9AA0A3}
