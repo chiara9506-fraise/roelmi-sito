@@ -83,6 +83,17 @@
 .ing-card:hover .ing-card-more svg{transform:translateX(4px)}
 
 
+/* Zone di testo ad altezza riservata — tutte le card allineate,
+   anche quelle sole in una fila incompleta */
+@media(min-width:641px){
+  .finder-grid .ing-card-tags{min-height:22px}
+  .finder-grid .ing-card h3{min-height:2.3em}
+  .finder-grid .ing-card-desc{
+    min-height:8em;
+    display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;
+  }
+}
+
 /* Empty state */
 .finder-empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
 .finder-empty svg{width:48px;height:48px;stroke:var(--line);fill:none;stroke-width:1.5;margin-bottom:16px}
