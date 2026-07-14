@@ -121,19 +121,3 @@
     if(mobSearch)mobSearch.value='';
   });
 })();
-
-/* ── Arco a fondo pagina: si disegna in funzione dello scroll ── */
-(function(){
-  var arc=document.getElementById('finderArc');
-  if(!arc)return;
-  var box=arc.closest('.finder-arc-footer');
-  function draw(){
-    var r=box.getBoundingClientRect(),vh=window.innerHeight;
-    var p=(vh-r.top)/(r.height+vh*0.25); // 0 quando entra dal basso, 1 poco dopo
-    p=Math.max(0,Math.min(1,p));
-    arc.style.strokeDashoffset=String(1-p);
-  }
-  addEventListener('scroll',draw,{passive:true});
-  addEventListener('resize',draw);
-  draw();
-})();
