@@ -94,20 +94,13 @@
   }
 }
 
-/* Decorazioni draw-on-scroll: linea divisoria + cupola (stile Cosmax, azzurro brand) */
-.finder-layout{position:relative}
-.finder-divider{
-  position:absolute;top:0;height:100%;width:2px;
-  left:calc(260px + clamp(16px,2vw,28px));
-  overflow:visible;pointer-events:none;
-}
-.finder-dome{display:block;width:100%;height:auto;margin-top:clamp(36px,5vw,64px);pointer-events:none}
-.finder-divider line,
-.finder-dome path{
+/* Arco decorativo a fondo pagina — si disegna scrollando */
+.finder-arc-footer{overflow:hidden;padding:clamp(10px,2vw,24px) 0 clamp(30px,4vw,50px)}
+.finder-arc-footer svg{display:block;width:min(1200px,94%);margin:0 auto;height:auto}
+.finder-arc-footer path{
   stroke:var(--primary);stroke-width:1.5;vector-effect:non-scaling-stroke;
   stroke-dasharray:1;stroke-dashoffset:1;
 }
-@media(max-width:900px){.finder-divider,.finder-dome{display:none}}
 
 /* Empty state */
 .finder-empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
