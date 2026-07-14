@@ -31,7 +31,14 @@
   stroke:var(--primary);stroke-width:1.5;vector-effect:non-scaling-stroke;
   stroke-dasharray:1;stroke-dashoffset:1;
 }
-@media(max-width:1100px){.prod-desc-arc{display:none}}
+/* Linea verticale tra testo e arco — si disegna dall'alto */
+.prod-desc-line{
+  position:absolute;top:0;height:100%;width:1.5px;
+  right:calc(clamp(10px,4vw,60px) + clamp(220px,28vw,400px) + clamp(24px,3vw,48px));
+  background:var(--primary);pointer-events:none;
+  transform:scaleY(0);transform-origin:top;
+}
+@media(max-width:1100px){.prod-desc-arc,.prod-desc-line{display:none}}
 .prod-desc-eyebrow{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--primary);margin-bottom:16px}
 .prod-desc h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,32px);color:var(--secondary);letter-spacing:-.02em;margin-bottom:20px;line-height:1.2}
 .prod-desc p{font:400 16px/1.75 var(--body);color:var(--muted)}
