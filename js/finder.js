@@ -132,7 +132,7 @@
     var r=layout.getBoundingClientRect(),vh=window.innerHeight;
     var p=(vh*0.9-r.top)/(r.height*0.9); // linea: dall'alto verso il basso col progresso della sezione
     p=Math.max(0,Math.min(1,p));
-    if(ln)ln.style.strokeDashoffset=String(1-p);
+    if(ln)ln.style.transform='scaleY('+p+')';
     var pd=Math.max(0,Math.min(1,(p-0.1)/0.8)); // cupola: parte poco dopo la linea
     if(dome)dome.style.strokeDashoffset=String(1-pd);
   }
