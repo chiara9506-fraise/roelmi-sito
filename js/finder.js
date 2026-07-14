@@ -122,16 +122,19 @@
   });
 })();
 
-/* ── Arco a fondo pagina: si disegna in funzione dello scroll ── */
+/* ── Decorazioni: linea divisoria + cupola che si disegnano allo scroll ── */
 (function(){
-  var arc=document.getElementById('finderArc');
-  if(!arc)return;
-  var box=arc.closest('.finder-arc-footer');
+  var ln=document.getElementById('finderDivLine');
+  var dome=document.getElementById('finderDome');
+  if(!ln&&!dome)return;
+  var layout=document.querySelector('.finder-layout');
   function draw(){
-    var r=box.getBoundingClientRect(),vh=window.innerHeight;
-    var p=(vh-r.top)/(r.height+vh*0.25); // 0 quando entra dal basso, 1 poco dopo
+    var r=layout.getBoundingClientRect(),vh=window.innerHeight;
+    var p=(vh*0.9-r.top)/(r.height*0.9); // linea: dall'alto verso il basso col progresso della sezione
     p=Math.max(0,Math.min(1,p));
-    arc.style.strokeDashoffset=String(1-p);
+    if(ln)ln.style.strokeDashoffset=String(1-p);
+    var pd=Math.max(0,Math.min(1,(p-0.1)/0.8)); // cupola: parte poco dopo la linea
+    if(dome)dome.style.strokeDashoffset=String(1-pd);
   }
   addEventListener('scroll',draw,{passive:true});
   addEventListener('resize',draw);
