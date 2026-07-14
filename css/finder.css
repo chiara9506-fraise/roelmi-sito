@@ -94,6 +94,14 @@
   }
 }
 
+/* Arco decorativo a fondo pagina — si disegna scrollando */
+.finder-arc-footer{overflow:hidden;padding:clamp(10px,2vw,24px) 0 clamp(30px,4vw,50px)}
+.finder-arc-footer svg{display:block;width:min(1200px,94%);margin:0 auto;height:auto}
+.finder-arc-footer path{
+  stroke:var(--primary);stroke-width:1.5;vector-effect:non-scaling-stroke;
+  stroke-dasharray:1;stroke-dashoffset:1;
+}
+
 /* Empty state */
 .finder-empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
 .finder-empty svg{width:48px;height:48px;stroke:var(--line);fill:none;stroke-width:1.5;margin-bottom:16px}
