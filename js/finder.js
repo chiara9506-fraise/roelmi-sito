@@ -121,16 +121,3 @@
     if(mobSearch)mobSearch.value='';
   });
 })();
-
-/* ── Hero: arco + linea che si disegnano allo scroll ── */
-(function(){
-  var els=document.querySelectorAll('.finder-hero-arc [pathLength]');
-  if(!els.length)return;
-  function draw(){
-    var p=Math.min(1,0.3+window.scrollY/420); // 30% al load, completo dopo ~300px di scroll
-    els.forEach(function(el){el.style.strokeDashoffset=String(1-p);});
-  }
-  addEventListener('scroll',draw,{passive:true});
-  // doppio rAF: lascia applicare lo stato iniziale (offset 1) così il primo draw è animato
-  requestAnimationFrame(function(){requestAnimationFrame(draw);});
-})();
