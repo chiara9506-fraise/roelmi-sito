@@ -5,6 +5,16 @@
 .finder-hero-bg{position:absolute;inset:0;background:url('../images/HEROINGREDIENTS.jpg') center/cover no-repeat;opacity:.45}
 .finder-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,29,41,.82) 0%,rgba(0,124,143,.55) 100%)}
 .finder-hero .wrap{position:relative;z-index:1}
+
+/* Arco + linea decorativi che si disegnano allo scroll (stile Cosmax, colori brand) */
+.finder-hero-arc{position:absolute;right:0;top:0;height:100%;width:auto;max-width:60%;pointer-events:none;opacity:.85}
+.finder-hero-arc path,
+.finder-hero-arc line{
+  stroke:var(--primary);stroke-width:1.5;vector-effect:non-scaling-stroke;
+  stroke-dasharray:1;stroke-dashoffset:1;
+  transition:stroke-dashoffset .7s cubic-bezier(.3,.6,.3,1);
+}
+@media(max-width:640px){.finder-hero-arc{display:none}}
 .finder-hero-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
 .finder-hero h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:#fff;line-height:1.1;margin-bottom:14px}
 .finder-hero p{color:rgba(255,255,255,.65);font-size:clamp(15px,1.2vw,17px);max-width:52ch}
