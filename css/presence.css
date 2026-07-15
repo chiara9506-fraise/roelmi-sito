@@ -3,7 +3,21 @@
 .presence-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
 .presence-title{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:var(--secondary);line-height:1.1;margin-bottom:22px}
 .presence-legend{display:flex;gap:24px;flex-wrap:wrap}
-.leg-item{display:flex;align-items:center;gap:8px;font:500 13px var(--body);color:var(--secondary);text-transform:uppercase;letter-spacing:.06em}
+.leg-item{
+  display:flex;align-items:center;gap:8px;
+  font:500 13px var(--body);color:var(--secondary);
+  text-transform:uppercase;letter-spacing:.06em;
+  padding:5px 12px;margin:-5px -12px;border-radius:999px;
+}
+.leg-item:hover{background:rgba(0,156,196,.08)}
+@keyframes legJump{
+  0%{transform:none}
+  35%{transform:translateY(-5px) scale(1.12)}
+  70%{transform:translateY(1px)}
+  100%{transform:none}
+}
+.leg-item:hover .leg-mark{animation:legJump .45s cubic-bezier(.3,.7,.3,1)}
+@media(prefers-reduced-motion:reduce){.leg-item:hover .leg-mark{animation:none}}
 .leg-mark{width:14px;height:21px;display:inline-block;flex:0 0 auto;line-height:0}
 .leg-mark svg{width:100%;height:100%;display:block;overflow:visible}
 .leg-mark--branch{color:#001D29}
@@ -89,8 +103,9 @@
 .pm-hl-biotech .pm-mark--biotech,
 .pm-hl-lab .pm-mark--lab,
 .pm-hl-production .pm-mark--production{transform:scale(1.22)}
-.leg-item{transition:color .2s}
+.leg-item{transition:color .2s,background .2s}
 .leg-item:hover,.leg-item.is-hl{color:var(--primary)}
+.leg-item.is-hl{background:rgba(0,156,196,.08)}
 
 /* Leaflet popup styling */
 .pm-map-popup .leaflet-popup-content-wrapper{background:#fff;border-radius:16px;box-shadow:0 16px 48px rgba(0,29,41,.18);padding:0;overflow:hidden;border:none}
