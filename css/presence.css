@@ -24,7 +24,24 @@
 
 /* Custom marker */
 .pm-leaf-wrap{background:none;border:none}
-.pm-mark{display:block;width:22px;height:33px;cursor:pointer;transition:transform .25s,opacity .25s;transform-origin:50% 100%;filter:drop-shadow(0 3px 5px rgba(0,0,0,.4))}
+.pm-mark{display:block;position:relative;width:22px;height:33px;cursor:pointer;transition:transform .25s,opacity .25s;transform-origin:50% 100%;filter:drop-shadow(0 3px 5px rgba(0,0,0,.4))}
+
+/* Alone radar in hover — colore della categoria via currentColor */
+.pm-mark::after{
+  content:'';position:absolute;left:50%;bottom:-5px;
+  width:12px;height:12px;border-radius:50%;
+  transform:translateX(-50%) scale(.5);
+  border:1.5px solid currentColor;
+  opacity:0;pointer-events:none;
+}
+.pm-leaf-wrap:hover .pm-mark::after{animation:pmPulse 1.1s ease-out infinite}
+@keyframes pmPulse{
+  0%{opacity:.75;transform:translateX(-50%) scale(.5)}
+  100%{opacity:0;transform:translateX(-50%) scale(3.2)}
+}
+@media(prefers-reduced-motion:reduce){
+  .pm-leaf-wrap:hover .pm-mark::after{animation:none}
+}
 .pm-mark svg{display:block;width:100%;height:100%}
 .pm-mark--site{color:#007C8F}
 .pm-mark--branch{color:#001D29}
