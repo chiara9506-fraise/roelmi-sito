@@ -24,7 +24,7 @@
 
 /* Custom marker */
 .pm-leaf-wrap{background:none;border:none}
-.pm-mark{display:block;width:22px;height:33px;cursor:pointer;transition:transform .25s;transform-origin:50% 100%;filter:drop-shadow(0 3px 5px rgba(0,0,0,.4))}
+.pm-mark{display:block;width:22px;height:33px;cursor:pointer;transition:transform .25s,opacity .25s;transform-origin:50% 100%;filter:drop-shadow(0 3px 5px rgba(0,0,0,.4))}
 .pm-mark svg{display:block;width:100%;height:100%}
 .pm-mark--site{color:#007C8F}
 .pm-mark--branch{color:#001D29}
@@ -50,6 +50,30 @@
 /* Cluster */
 .pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:700 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
 .pm-cluster-icon:hover{transform:scale(1.1);box-shadow:0 0 0 6px rgba(0,156,196,.25)}
+
+/* Tooltip hover sui marker */
+.pm-tooltip{
+  background:#fff;border:none;border-radius:8px;
+  box-shadow:0 6px 20px rgba(0,29,41,.18);
+  padding:7px 12px;
+}
+.pm-tooltip b{display:block;font:600 13px var(--display);color:var(--secondary);line-height:1.25}
+.pm-tooltip span{font:600 9.5px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--primary)}
+.leaflet-tooltip-top.pm-tooltip::before{border-top-color:#fff}
+
+/* Hover incrociato legenda <-> mappa */
+.pm-hl-site .pm-mark:not(.pm-mark--site),
+.pm-hl-branch .pm-mark:not(.pm-mark--branch),
+.pm-hl-biotech .pm-mark:not(.pm-mark--biotech),
+.pm-hl-lab .pm-mark:not(.pm-mark--lab),
+.pm-hl-production .pm-mark:not(.pm-mark--production){opacity:.22}
+.pm-hl-site .pm-mark--site,
+.pm-hl-branch .pm-mark--branch,
+.pm-hl-biotech .pm-mark--biotech,
+.pm-hl-lab .pm-mark--lab,
+.pm-hl-production .pm-mark--production{transform:scale(1.22)}
+.leg-item{transition:color .2s}
+.leg-item:hover,.leg-item.is-hl{color:var(--primary)}
 
 /* Leaflet popup styling */
 .pm-map-popup .leaflet-popup-content-wrapper{background:#fff;border-radius:16px;box-shadow:0 16px 48px rgba(0,29,41,.18);padding:0;overflow:hidden;border:none}

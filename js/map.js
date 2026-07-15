@@ -78,8 +78,20 @@
     spiderfyDistanceMultiplier:2.5
   });
 
+  var typeLabels={
+    site:'Polo produttivo',
+    branch:'Filiale',
+    biotech:'ROELMI BIOTECH',
+    lab:'Lab',
+    production:'Produzione'
+  };
+
   sites.forEach(function(site){
     var m=L.marker([site.lat,site.lng],{icon:makeIcon(site.type)});
+    m.bindTooltip(
+      '<b>'+site.name+'</b><span>'+(typeLabels[site.type]||'')+'</span>',
+      {direction:'top',offset:[0,-34],className:'pm-tooltip',opacity:1}
+    );
     m.bindPopup(buildPopup(site),{
       className:'pm-map-popup',
       maxWidth:260,
@@ -111,5 +123,31 @@
     io.observe(wrap);
   }else if(wrap){
     wrap.classList.add('pm-anim-go');
+  }
+
+  // Hover incrociato legenda <-> marker
+  var TYPES=['site','branch','biotech','lab','production'];
+  var legItems={};
+  document.querySelectorAll('.presence-legend .leg-item').forEach(function(item){
+    TYPES.forEach(function(t){
+      if(item.querySelector('.leg-mark--'+t)){
+        legItems[t]=item;
+        item.addEventListener('mouseenter',function(){if(wrap)wrap.classList.add('pm-hl-'+t);});
+        item.addEventListener('mouseleave',function(){if(wrap)wrap.classList.remove('pm-hl-'+t);});
+      }
+    });
+  });
+  if(wrap){
+    wrap.addEventListener('mouseover',function(e){
+      var mk=e.target.closest('.pm-mark');
+      if(!mk)return;
+      TYPES.forEach(function(t){
+        if(mk.classList.contains('pm-mark--'+t)&&legItems[t])legItems[t].classList.add('is-hl');
+      });
+    });
+    wrap.addEventListener('mouseout',function(e){
+      if(!e.target.closest('.pm-mark'))return;
+      Object.keys(legItems).forEach(function(t){legItems[t].classList.remove('is-hl');});
+    });
   }
 })();
