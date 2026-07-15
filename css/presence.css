@@ -33,6 +33,20 @@
 .pm-mark--production{color:#7DBD0F}
 .pm-leaf-wrap:hover .pm-mark{transform:scale(1.28)}
 
+/* Ingresso animato dei marker: cadono in sequenza quando la mappa entra in viewport */
+.presence-map-wrap:not(.pm-anim-go) .pm-mark,
+.presence-map-wrap:not(.pm-anim-go) .pm-cluster-icon{opacity:0}
+@keyframes pmDrop{
+  0%{opacity:0;transform:translateY(-20px)}
+  65%{opacity:1;transform:translateY(3px)}
+  100%{opacity:1;transform:none}
+}
+.pm-anim-go .pm-mark,
+.pm-anim-go .pm-cluster-icon{animation:pmDrop .55s cubic-bezier(.25,.7,.3,1) backwards}
+@media(prefers-reduced-motion:reduce){
+  .pm-anim-go .pm-mark,.pm-anim-go .pm-cluster-icon{animation:none}
+}
+
 /* Cluster */
 .pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:700 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
 .pm-cluster-icon:hover{transform:scale(1.1);box-shadow:0 0 0 6px rgba(0,156,196,.25)}

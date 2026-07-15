@@ -94,4 +94,22 @@
   });
 
   map.addLayer(clusterGroup);
+
+  // Ingresso animato: i marker cadono in sequenza quando la mappa entra in viewport
+  var wrap=document.querySelector('.presence-map-wrap');
+  if(wrap&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        io.disconnect();
+        wrap.querySelectorAll('.pm-mark,.pm-cluster-icon').forEach(function(el,i){
+          el.style.animationDelay=(i*0.13)+'s';
+        });
+        wrap.classList.add('pm-anim-go');
+      });
+    },{threshold:0.3});
+    io.observe(wrap);
+  }else if(wrap){
+    wrap.classList.add('pm-anim-go');
+  }
 })();
