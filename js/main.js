@@ -261,10 +261,10 @@ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 // search toggle
 var sw=document.getElementById('searchWrap'),sb=document.getElementById('searchBtn'),sf=document.getElementById('searchField');
 sb.addEventListener('click',function(e){
-  if(sw.classList.contains('open')&&sf.value.trim()===''){sw.classList.remove('open');}
-  else{sw.classList.add('open');sf.focus();}
+  if(sw.classList.contains('open')&&sf.value.trim()===''){sw.classList.remove('open');sf.tabIndex=-1;}
+  else{sw.classList.add('open');sf.tabIndex=0;sf.focus();}
 });
-document.addEventListener('click',function(e){if(!sw.contains(e.target)&&sf.value.trim()===''){sw.classList.remove('open');}});
+document.addEventListener('click',function(e){if(!sw.contains(e.target)&&sf.value.trim()===''){sw.classList.remove('open');sf.tabIndex=-1;}});
 
 /* ───────────────────────────────── */
 
