@@ -11,10 +11,10 @@
 .sust-sub{font:400 18px var(--body);line-height:1.55;color:rgba(255,255,255,.88);margin-top:18px;max-width:48ch}
 /* stat cards in vetro, in alto a destra */
 .sust-stats{position:absolute;z-index:3;top:clamp(22px,3vw,40px);right:clamp(22px,3vw,40px);display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;max-width:70%}
-.stat{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(255,255,255,.12);
+.stat{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(0,29,41,.68);
   border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:16px 20px;min-width:118px}
 .stat .num{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.4vw,30px);color:#fff;line-height:1}
-.stat .lbl{font:600 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-top:8px}
+.stat .lbl{font:600 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.92);margin-top:8px}
 /* pulsante in basso a destra */
 .sust-cta-wrap{position:absolute;z-index:3;right:clamp(28px,4vw,56px);bottom:clamp(28px,4vw,56px)}
 .sust-cta{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--primary);
