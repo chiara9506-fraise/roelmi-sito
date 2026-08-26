@@ -20,7 +20,7 @@
                d.technology.map(function(t){return '<span class="ing-card-tag tech">'+t+'</span>';}).join('');
       var img=d.image?'<img src="'+d.image+'" alt="'+d.name+'">'
         :'<svg viewBox="0 0 80 80" style="width:64px;opacity:.2"><rect width="80" height="80" rx="8" fill="#009CC4"/></svg>';
-      return '<a class="ing-card" href="'+d.link+'">'
+      return '<a class="ing-card" href="'+d.link+'" aria-label="'+d.name+'">'
         +'<div class="ing-card-img">'+img+'</div>'
         +'<div class="ing-card-body">'
         +'<div class="ing-card-tags">'+tags+'</div>'
