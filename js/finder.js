@@ -63,10 +63,12 @@
 
   document.querySelectorAll('.filter-group-toggle').forEach(function(btn){
     var body=btn.nextElementSibling;
+    body.inert=body.classList.contains('is-collapsed');
     btn.addEventListener('click',function(){
       var open=btn.getAttribute('aria-expanded')==='true';
       btn.setAttribute('aria-expanded',open?'false':'true');
       body.classList.toggle('is-collapsed',open);
+      body.inert=open;
     });
   });
 
