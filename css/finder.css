@@ -19,8 +19,8 @@
 .finder-search:focus-within{border-color:var(--primary)}
 .finder-search input{flex:1;border:none;outline:none;padding:11px 14px;font:400 14px var(--body);color:var(--ink);background:#fff}
 .finder-search input::placeholder{color:var(--muted)}
-.finder-search button{background:var(--primary);border:none;color:#fff;padding:0 16px;cursor:pointer;font:600 12px var(--body);letter-spacing:.08em;transition:background .2s}
-.finder-search button:hover{background:var(--accent3)}
+.finder-search button{background:var(--accent3);border:none;color:#fff;padding:0 16px;cursor:pointer;font:600 12px var(--body);letter-spacing:.08em;transition:background .2s}
+.finder-search button:hover{background:var(--dark)}
 
 .filter-group{border-bottom:1px solid var(--line)}
 .filter-group:last-child{border-bottom:none}
@@ -71,12 +71,12 @@
 .ing-card-body{padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;flex:1}
 .ing-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .ing-card-tag{font:600 10px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:999px;border:1px solid var(--line)}
-.ing-card-tag.market{color:var(--primary);border-color:var(--primary);background:rgba(0,156,196,.06)}
-.ing-card-tag.tech{color:var(--accent2);border-color:var(--accent2);background:rgba(125,189,15,.06)}
+.ing-card-tag.market{color:var(--accent3);border-color:var(--accent3);background:rgba(0,156,196,.06)}
+.ing-card-tag.tech{color:#4f7a0a;border-color:#4f7a0a;background:rgba(125,189,15,.06)}
 
 .ing-card h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.5vw,21px);color:var(--primary);letter-spacing:-.01em;line-height:1.15;margin-bottom:6px}
 .ing-card-function{font:500 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.ing-card-desc{font:400 14px/1.6 var(--body);color:var(--muted);flex:1;margin-bottom:16px}
+.ing-card-desc{font:400 14px/1.6 var(--body);color:#6b6d6a;flex:1;margin-bottom:16px}
 
 .ing-card-more{display:inline-flex;align-items:center;gap:7px;font:600 13px var(--body);color:var(--primary);transition:gap .2s,color .2s;text-decoration:none;margin-top:auto}
 .ing-card-more svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
