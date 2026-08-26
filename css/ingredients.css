@@ -42,7 +42,7 @@
 
 /* Pausa: ancorata alla colonna del prodotto, stessa riga delle frecce via grid */
 #ingPauseBtn{
-  grid-column:2;grid-row:1;align-self:end;justify-self:start;
+  grid-column:2;grid-row:1;align-self:end;justify-self:end;
   position:relative;z-index:4;
   width:52px;height:52px;border-radius:50%;border:1px solid var(--line);
   background:rgba(255,255,255,.7);backdrop-filter:blur(4px);cursor:pointer;
