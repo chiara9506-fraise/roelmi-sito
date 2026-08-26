@@ -95,8 +95,18 @@
   var sidebar=document.querySelector('.finder-sidebar');
   var mobCount=document.getElementById('mobFilterCount');
 
-  function openSheet(){sidebar.classList.add('mob-open');mobBackdrop.classList.add('is-open');document.body.style.overflow='hidden';}
-  function closeSheet(){sidebar.classList.remove('mob-open');mobBackdrop.classList.remove('is-open');document.body.style.overflow='';}
+  function sheetFocusables(){return sidebar.querySelectorAll('a[href],button:not([disabled]),input:not([disabled])');}
+  function openSheet(){
+    sidebar.classList.add('mob-open');mobBackdrop.classList.add('is-open');document.body.style.overflow='hidden';
+    sidebar.setAttribute('role','dialog');sidebar.setAttribute('aria-modal','true');sidebar.setAttribute('aria-labelledby','mobSidebarTitle');
+    if(mobBtn)mobBtn.setAttribute('aria-expanded','true');
+    var f=sheetFocusables();if(f.length)f[0].focus();
+  }
+  function closeSheet(){
+    sidebar.classList.remove('mob-open');mobBackdrop.classList.remove('is-open');document.body.style.overflow='';
+    sidebar.removeAttribute('role');sidebar.removeAttribute('aria-modal');sidebar.removeAttribute('aria-labelledby');
+    if(mobBtn){mobBtn.setAttribute('aria-expanded','false');mobBtn.focus();}
+  }
   function updateCount(){
     var n=document.querySelectorAll('.finder-sidebar input[type="checkbox"]:checked').length;
     if(mobCount){mobCount.textContent=n;mobCount.classList.toggle('visible',n>0);}
@@ -107,6 +117,16 @@
   if(mobBackdrop){mobBackdrop.addEventListener('click',closeSheet);}
   if(mobClose){mobClose.addEventListener('click',closeSheet);}
   if(mobApply){mobApply.addEventListener('click',closeSheet);}
+
+  sidebar.addEventListener('keydown',function(e){
+    if(!sidebar.classList.contains('mob-open'))return;
+    if(e.key==='Escape'){closeSheet();return;}
+    if(e.key!=='Tab')return;
+    var f=sheetFocusables();if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  });
 
   if(mobSearch){
     mobSearch.addEventListener('input',function(){
