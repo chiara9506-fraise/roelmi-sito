@@ -39,6 +39,9 @@
 .ing-arrows button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.7);backdrop-filter:blur(4px);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .25s,background .25s,transform .2s,color .25s;color:var(--secondary)}
 .ing-arrows button:hover{border-color:var(--primary);background:var(--primary);color:#fff;transform:translateY(-2px)}
 .ing-arrows svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+#ingPauseBtn{margin-left:auto}
+#ingPauseBtn svg{fill:currentColor;stroke:none}
+.ing-parallax.is-paused .ing-float{animation-play-state:paused}
 .ing-counter{position:relative;z-index:3;font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.1em;color:var(--muted)}
 .ing-counter b{color:var(--secondary);font-weight:600}
 
