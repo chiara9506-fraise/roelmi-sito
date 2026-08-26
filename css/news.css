@@ -21,7 +21,12 @@
 .news-thumb .ph.p3{background:linear-gradient(135deg,#d7e7c4 0%,var(--accent2) 100%)}
 .news-thumb .ph::after{content:"foto da inserire";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   color:rgba(255,255,255,.85);font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase}
+.news-nav{display:none}
 @media(max-width:900px){
+  .news-nav{display:flex;gap:12px;justify-content:center;margin-top:18px}
+  .news-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--secondary);transition:border-color .2s,background .2s,color .2s}
+  .news-nav button:hover{border-color:var(--primary);background:var(--primary);color:#fff}
+  .news-nav svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
   .news-grid{
     display:flex;
     overflow-x:auto;

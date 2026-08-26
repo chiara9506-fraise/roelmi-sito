@@ -442,6 +442,21 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
 })();
 
+/* Alternativa a click/tap allo swipe orizzontale del carosello news (mobile) */
+(function(){
+  var grid=document.getElementById('newsGrid');
+  var prev=document.getElementById('newsPrev'),next=document.getElementById('newsNext');
+  if(!grid||!prev||!next)return;
+  function step(dir){
+    var card=grid.querySelector('.news-card');
+    var gap=parseFloat(getComputedStyle(grid).columnGap||getComputedStyle(grid).gap)||20;
+    var dist=(card?card.getBoundingClientRect().width:280)+gap;
+    grid.scrollBy({left:dir*dist,behavior:'smooth'});
+  }
+  prev.addEventListener('click',function(){step(-1)});
+  next.addEventListener('click',function(){step(1)});
+})();
+
 /* ───────────────────────────────── */
 
 (function(){
