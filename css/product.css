@@ -100,7 +100,7 @@
 .prod-breadcrumb nav{display:flex;align-items:center;gap:8px;font:400 12px var(--body);color:rgba(255,255,255,.45)}
 .prod-breadcrumb a{color:rgba(255,255,255,.45);transition:color .18s}
 .prod-breadcrumb a:hover{color:#fff}
-.prod-breadcrumb span{color:rgba(255,255,255,.7)}
+.prod-breadcrumb span{color:rgba(255,255,255,.7);font-weight:600}
 
 /* Responsive */
 @media(max-width:900px){
