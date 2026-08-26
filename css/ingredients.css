@@ -35,13 +35,22 @@
 .ing-tags span{font:500 11.5px var(--body);color:var(--secondary);background:rgba(0,156,196,.08);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
 
 /* arrows bottom-right */
-.ing-arrows{position:relative;z-index:4;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:30px;width:100%}
-.ing-arrows-group{display:flex;gap:12px}
+.ing-arrows{position:relative;z-index:4;display:flex;flex-direction:row;gap:12px;margin-top:auto;padding-top:30px}
 .ing-arrows button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.7);backdrop-filter:blur(4px);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .25s,background .25s,transform .2s,color .25s;color:var(--secondary)}
 .ing-arrows button:hover{border-color:var(--primary);background:var(--primary);color:#fff;transform:translateY(-2px)}
 .ing-arrows svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
-#ingPauseBtn{margin-left:auto}
-#ingPauseBtn svg{fill:currentColor;stroke:none}
+
+/* Pausa: ancorata alla colonna del prodotto, stessa riga delle frecce via grid */
+#ingPauseBtn{
+  grid-column:2;grid-row:1;align-self:end;justify-self:start;
+  position:relative;z-index:4;
+  width:52px;height:52px;border-radius:50%;border:1px solid var(--line);
+  background:rgba(255,255,255,.7);backdrop-filter:blur(4px);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .25s,background .25s,transform .2s,color .25s;color:var(--secondary)
+}
+#ingPauseBtn:hover{border-color:var(--primary);background:var(--primary);color:#fff;transform:translateY(-2px)}
+#ingPauseBtn svg{width:18px;height:18px;fill:currentColor;stroke:none}
 .ing-parallax.is-paused .ing-float{animation-play-state:paused}
 .ing-counter{position:relative;z-index:3;font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.1em;color:var(--muted)}
 .ing-counter b{color:var(--secondary);font-weight:600}
@@ -70,6 +79,7 @@
   .ing-figure{width:min(56vw,280px);margin:0 auto;order:-1}
   .ing-caption{max-width:none}
   .ing-arrows{margin-top:8px;padding-top:0}
+  #ingPauseBtn{grid-column:1;justify-self:end;margin-top:8px}
   .ing-finder{flex-direction:column;align-items:flex-start;gap:14px}
   .ing-finder .if-cta{align-self:stretch;justify-content:center}
 }
