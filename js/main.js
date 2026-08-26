@@ -254,11 +254,13 @@ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   function focusables(){return nav.querySelectorAll('a[href],button:not([disabled])');}
   function open(){
     burger.classList.add('is-open');nav.classList.add('is-open');overlay.classList.add('is-open');
+    burger.setAttribute('aria-expanded','true');
     nav.setAttribute('aria-hidden','false');nav.inert=false;document.body.style.overflow='hidden';
     var f=focusables();if(f.length)f[0].focus();
   }
   function close(){
     burger.classList.remove('is-open');nav.classList.remove('is-open');overlay.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false');
     nav.setAttribute('aria-hidden','true');nav.inert=true;document.body.style.overflow='';
     burger.focus();
   }
