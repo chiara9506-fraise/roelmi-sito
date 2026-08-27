@@ -8,15 +8,17 @@
   font:500 13px var(--body);color:var(--secondary);
   text-transform:uppercase;letter-spacing:.06em;
   padding:5px 12px;margin:-5px -12px;border-radius:999px;
+  background:none;border:none;cursor:pointer;
 }
-.leg-item:hover{background:rgba(0,156,196,.08)}
+.leg-item:hover,.leg-item:focus-visible{background:rgba(0,156,196,.08)}
+.leg-item:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 @keyframes legJump{
   0%{transform:none}
   35%{transform:translateY(-5px) scale(1.12)}
   70%{transform:translateY(1px)}
   100%{transform:none}
 }
-.leg-item:hover .leg-mark{animation:legJump .45s cubic-bezier(.3,.7,.3,1)}
+.leg-item:hover .leg-mark,.leg-item:focus-visible .leg-mark{animation:legJump .45s cubic-bezier(.3,.7,.3,1)}
 @media(prefers-reduced-motion:reduce){.leg-item:hover .leg-mark{animation:none}}
 .leg-mark{width:14px;height:21px;display:inline-block;flex:0 0 auto;line-height:0}
 .leg-mark svg{width:100%;height:100%;display:block;overflow:visible}
@@ -105,7 +107,7 @@
 .pm-hl-lab .pm-mark--lab,
 .pm-hl-production .pm-mark--production{transform:scale(1.22)}
 .leg-item{transition:color .2s,background .2s}
-.leg-item:hover,.leg-item.is-hl{color:var(--primary)}
+.leg-item:hover,.leg-item:focus-visible,.leg-item.is-hl{color:var(--primary)}
 .leg-item.is-hl{background:rgba(0,156,196,.08)}
 
 /* Leaflet popup styling */

@@ -146,6 +146,8 @@
         legItems[t]=item;
         item.addEventListener('mouseenter',function(){if(wrap)wrap.classList.add('pm-hl-'+t);});
         item.addEventListener('mouseleave',function(){if(wrap)wrap.classList.remove('pm-hl-'+t);});
+        item.addEventListener('focus',function(){if(wrap)wrap.classList.add('pm-hl-'+t);});
+        item.addEventListener('blur',function(){if(wrap)wrap.classList.remove('pm-hl-'+t);});
       }
     });
   });
