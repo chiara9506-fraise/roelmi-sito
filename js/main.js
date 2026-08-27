@@ -30,7 +30,9 @@
     // Vicino alla fine si blocca sull'ultimo frame (reversibile risalendo) invece
     // di continuare a inseguire lo scroll: quello che dissolve resta un fermo immagine.
     if(video.duration){
-      var t=(!staticHero && prog>=0.95)?video.duration:prog*video.duration;
+      // Il video completa la sua corsa a prog 0.85; l'ultimo tratto serve alla dissolvenza
+      var vp=staticHero?0:Math.min(1,prog/0.85);
+      var t=vp*video.duration;
       if(Math.abs(video.currentTime-t)>0.01)video.currentTime=t;
     }
 
@@ -46,7 +48,11 @@
     if(!staticHero){
       var fade=Math.max(0,Math.min(1,(prog-0.85)/0.15));
       sticky.style.setProperty('--hero-fade',fade.toFixed(2));
-      sticky.style.pointerEvents=fade>=1?'none':'';
+      // A bianco pieno la hero si ritira: "Who We Are" (gia' in posizione sotto,
+      // anch'essa bianca) resta scoperta senza 100vh di vuoto da scrollare
+      var out=fade>=1;
+      sticky.style.opacity=out?'0':'1';
+      sticky.style.pointerEvents=out?'none':'';
     }
   }
   function onScroll(){cp();if(!raf)raf=requestAnimationFrame(render);}
