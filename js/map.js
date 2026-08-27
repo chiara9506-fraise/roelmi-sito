@@ -67,8 +67,9 @@
   var clusterGroup=L.markerClusterGroup({
     maxClusterRadius:40,
     iconCreateFunction:function(c){
+      var n=c.getChildCount();
       return L.divIcon({
-        html:'<div class="pm-cluster-icon"><b>'+c.getChildCount()+'</b></div>',
+        html:'<div class="pm-cluster-icon" tabindex="0" role="button" aria-label="'+n+' locations, expand cluster"><b>'+n+'</b></div>',
         className:'',
         iconSize:[34,34],
         iconAnchor:[17,17]
@@ -106,6 +107,17 @@
   });
 
   map.addLayer(clusterGroup);
+
+  // Cluster "number" icons: bridge Enter/Space to the same click Leaflet
+  // already handles internally (zoom in / spiderfy), so they're keyboard-operable
+  mapEl.addEventListener('keydown',function(e){
+    if(e.key!=='Enter'&&e.key!==' ')return;
+    var el=e.target.closest('.pm-cluster-icon');
+    if(!el)return;
+    e.preventDefault();
+    var marker=el.closest('.leaflet-marker-icon')||el;
+    marker.click();
+  });
 
   // Ingresso animato: i marker cadono in sequenza quando la mappa entra in viewport
   var wrap=document.querySelector('.presence-map-wrap');

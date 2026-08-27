@@ -80,7 +80,8 @@
 
 /* Cluster */
 .pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:700 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
-.pm-cluster-icon:hover{transform:scale(1.1);box-shadow:0 0 0 6px rgba(0,156,196,.25)}
+.pm-cluster-icon:hover,.pm-cluster-icon:focus-visible{transform:scale(1.1);box-shadow:0 0 0 6px rgba(0,156,196,.25)}
+.pm-cluster-icon:focus-visible{outline:2px solid #fff;outline-offset:2px}
 
 /* Tooltip hover sui marker */
 .pm-tooltip{
