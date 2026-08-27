@@ -44,11 +44,13 @@
     // Gradiente fondo: invisibile a scroll=0, compare subito dopo
     sticky.style.setProperty('--hero-fade',Math.min(1,prog*15).toFixed(2));
 
-    // Quando il video ha (quasi) finito, fai sparire la sticky
+    // Quando il video ha (quasi) finito, fai sparire la sticky — opacità
+    // calcolata direttamente dalla posizione di scroll (non da una transition
+    // temporizzata), cosi' resta sincronizzata anche scrollando velocemente
     if(!staticHero){
-      var done=prog>=0.95;
-      sticky.style.opacity=done?'0':'1';
-      sticky.style.pointerEvents=done?'none':'';
+      var stickyOp=1-Math.max(0,Math.min(1,(prog-0.95)/0.05));
+      sticky.style.opacity=stickyOp.toFixed(2);
+      sticky.style.pointerEvents=stickyOp<=0?'none':'';
     }
   }
   function onScroll(){cp();if(!raf)raf=requestAnimationFrame(render);}
