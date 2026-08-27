@@ -2,12 +2,17 @@
   var video=document.getElementById('heroVideo');
   if(!video)return;
 
+  // Se il video non carica, nascondilo: resta lo sfondo scuro + testo (fallback)
+  video.addEventListener('error',function(){video.style.display='none';});
+
   var hero=document.getElementById('hero'),sticky=document.getElementById('sticky'),content=document.getElementById('heroContent');
-  var prog=0;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isMobile=window.innerWidth<640;
-  addEventListener('resize',function(){isMobile=window.innerWidth<640;},{passive:true});
+  var staticHero=isMobile||reduce;
+  var prog=0;
+  addEventListener('resize',function(){isMobile=window.innerWidth<640;staticHero=isMobile||reduce;},{passive:true});
   function cp(){
-    if(isMobile){prog=0;return;}
+    if(staticHero){prog=0;return;}
     var r=hero.getBoundingClientRect();var tot=hero.offsetHeight-innerHeight;
     if(tot<=0){prog=0;return;}
     prog=Math.min(1,Math.max(0,(-r.top)/tot));
@@ -20,24 +25,27 @@
   function render(){
     raf=null;
 
-    // Video agganciato allo scroll: currentTime segue prog (0 -> 1 = intero video)
+    // Video agganciato allo scroll: currentTime segue prog (0 -> 1 = intero video).
+    // Reduced motion / mobile: nessuna animazione, resta fermo sul primo frame.
+    // Vicino alla fine si blocca sull'ultimo frame (reversibile risalendo) invece
+    // di continuare a inseguire lo scroll: quello che dissolve resta un fermo immagine.
     if(video.duration){
-      var t=prog*video.duration;
+      var t=(!staticHero && prog>=0.95)?video.duration:prog*video.duration;
       if(Math.abs(video.currentTime-t)>0.01)video.currentTime=t;
     }
 
-    // Fade testo
+    // Fade testo (statico, sempre visibile, se reduced motion)
     if(content){
-      var cf=Math.max(0,1-prog/0.35);
+      var cf=staticHero?1:Math.max(0,1-prog/0.35);
       content.style.opacity=cf;
-      content.style.transform='translateY('+(prog*-40)+'px)';
+      content.style.transform=staticHero?'none':'translateY('+(prog*-40)+'px)';
     }
 
     // Gradiente fondo: invisibile a scroll=0, compare subito dopo
     sticky.style.setProperty('--hero-fade',Math.min(1,prog*15).toFixed(2));
 
     // Quando il video ha (quasi) finito, fai sparire la sticky
-    if(!isMobile){
+    if(!staticHero){
       var done=prog>=0.95;
       sticky.style.opacity=done?'0':'1';
       sticky.style.pointerEvents=done?'none':'';
