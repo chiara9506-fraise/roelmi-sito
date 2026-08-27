@@ -108,6 +108,15 @@
 
   map.addLayer(clusterGroup);
 
+  // Quando un popup si apre, sposta il focus al suo interno (close button)
+  // invece di lasciarlo dov'era, cosi' Tab raggiunge subito i controlli del popup
+  map.on('popupopen',function(e){
+    var el=e.popup.getElement();
+    if(!el)return;
+    var focusable=el.querySelector('.leaflet-popup-close-button,a,button');
+    if(focusable)focusable.focus();
+  });
+
   // Cluster "number" icons: bridge Enter/Space to the same click Leaflet
   // already handles internally (zoom in / spiderfy), so they're keyboard-operable
   mapEl.addEventListener('keydown',function(e){
