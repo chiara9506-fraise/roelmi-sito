@@ -9,11 +9,12 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);
 .hero p{margin-top:26px;max-width:52ch;color:rgba(255,255,255,.8);font-size:clamp(15px,1.4vw,18px)}
 .scroll-down{display:inline-flex;gap:10px;margin-top:46px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 
+/* Dissolvenza al bianco: copre tutto lo schermo, guidata dallo scroll (--hero-fade) */
 .hero-sticky::after{
   content:'';
-  position:absolute;left:0;right:0;bottom:0;
-  height:14vh;z-index:3;pointer-events:none;
-  background:linear-gradient(180deg,transparent,#fff 100%);
+  position:absolute;inset:0;
+  z-index:3;pointer-events:none;
+  background:#fff;
   opacity:var(--hero-fade,0);
 }
 
@@ -24,11 +25,12 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);
   .hero .wrap{padding-bottom:clamp(120px,22vh,180px)}
   .hero p{font-size:15px;max-width:none}
   .scroll-down{margin-top:28px;font-size:12px}
-  .hero-sticky::after{opacity:1}
+  /* Statico: niente scrubbing, solo il raccordo verso la sezione bianca */
+  .hero-sticky::after{inset:auto 0 0 0;height:14vh;background:linear-gradient(180deg,transparent,#fff 100%);opacity:1}
 }
 
 /* Reduced motion: nessuno scroll-pin, video fermo su un frame statico */
 @media(prefers-reduced-motion:reduce){
   .hero{height:100vh}
-  .hero-sticky::after{opacity:1}
+  .hero-sticky::after{inset:auto 0 0 0;height:14vh;background:linear-gradient(180deg,transparent,#fff 100%);opacity:1}
 }
