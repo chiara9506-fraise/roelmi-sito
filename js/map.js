@@ -59,7 +59,7 @@
       +'<div class="pm-popup-sub">'+site.sub+'</div>'
       +'<h3 class="pm-popup-name">'+site.name+'</h3>'
       +'<p class="pm-popup-desc">'+site.desc+'</p>'
-      +'<a class="pm-popup-link" href="'+(site.href||'#')+'">Scopri di più '
+      +'<a class="pm-popup-link" href="'+(site.href||'#')+'" aria-label="Scopri di più su '+site.name+'">Scopri di più '
       +'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>'
       +'</div>';
   }
