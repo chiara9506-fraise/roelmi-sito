@@ -32,6 +32,7 @@
 
 .nav-item.has-drop:hover .dropdown,
 .nav-item.has-drop:focus-within .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px)}
+.nav-item.has-drop.dd-dismissed .dropdown{opacity:0!important;visibility:hidden!important;pointer-events:none}
 .dropdown a{display:block;padding:11px 14px;border-radius:8px;font:500 14px var(--body);color:var(--secondary);letter-spacing:.01em;transition:background .2s,color .2s}
 .dropdown a:hover{background:var(--accent1);color:var(--primary)}
 

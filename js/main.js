@@ -288,6 +288,20 @@ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   });
 })();
 
+// Dropdown nav: Escape dismisses without needing to move mouse/focus away
+document.querySelectorAll('.nav-item.has-drop').forEach(function(item){
+  var trigger=item.querySelector('.nav-link');
+  item.addEventListener('keydown',function(e){
+    if(e.key!=='Escape')return;
+    item.classList.add('dd-dismissed');
+    if(trigger)trigger.focus();
+  });
+  item.addEventListener('mouseleave',function(){item.classList.remove('dd-dismissed');});
+  item.addEventListener('focusout',function(e){
+    if(!item.contains(e.relatedTarget))item.classList.remove('dd-dismissed');
+  });
+});
+
 // search toggle
 var sw=document.getElementById('searchWrap'),sb=document.getElementById('searchBtn'),sf=document.getElementById('searchField');
 sb.addEventListener('click',function(e){
