@@ -15,7 +15,7 @@
   if(!video||!hero)return;
 
   // Una sola sorgente, scelta prima del caricamento
-  video.src=(window.innerWidth<MOBILE_BP?'images/hero-mobile.mp4':'images/hero.mp4');
+  video.src=(window.innerWidth<MOBILE_BP?'video/hero-mobile.mp4':'video/hero.mp4');
 
   // "SCROLL DOWN" si ritira al primo scroll (anche se si ricarica gia' scrollati)
   var scrollDown=hero.querySelector('.scroll-down');
