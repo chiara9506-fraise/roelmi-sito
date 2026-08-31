@@ -5,8 +5,8 @@
   var LERP=0.12;          // inseguimento morbido del target (0 = fermo, 1 = istantaneo)
   var READY_TIMEOUT=5000; // oltre questa soglia si resta sul poster
   var MOBILE_BP=768;
-  var TEXT_FADE_START=0.45,TEXT_FADE_END=0.70; // il testo si ritira mentre il fondo e' ancora scuro
-  var WHITE_FADE_START=0.80;                  // ultimo tratto: raccordo al bianco della sezione sotto
+  var TEXT_FADE_START=0.72,TEXT_FADE_END=0.90; // il video e' chiaro ovunque: il testo navy resta leggibile a lungo
+  var WHITE_FADE_START=0.88;                  // ultimo tratto: raccordo al bianco della sezione sotto
 
   var video=document.getElementById('heroVideo');
   var hero=document.getElementById('hero');
@@ -113,10 +113,13 @@ document.querySelectorAll('.r-up,.r-img').forEach(function(el){io.observe(el)});
 
 var header=document.getElementById('siteHeader');
 var heroEl=document.getElementById('hero');
+var heroIsLight=!!document.querySelector(".hero-light");
 function onScroll(){
-  // Diventa solid quando la sticky svanisce (video hero: prog>=0.95)
+  // Su hero chiara l.header resta sempre in versione scura, altrimenti
+  // logo e voci bianche sparirebbero sul fondo bianco del video
+  if(heroIsLight){header.classList.add("solid");return;}
   var heroBottom = heroEl ? Math.round(0.95 * (heroEl.offsetHeight - innerHeight)) : 40;
-  header.classList.toggle('solid', window.scrollY > heroBottom);
+  header.classList.toggle("solid", window.scrollY > heroBottom);
 }
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 

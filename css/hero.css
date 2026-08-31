@@ -1,16 +1,27 @@
 /* L'altezza della sezione e' il budget di scroll che alimenta lo scrub del video.
    Va tenuta uguale a HERO_SCROLL_VH in js/main.js. */
 .hero{position:relative;height:300vh;background:#fff}
-.hero-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:flex-end;background:#001D29;z-index:10}
+/* Il video definitivo e' su fondo BIANCO: fondo chiaro e testo scuro, non il contrario */
+.hero-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:flex-end;background:#fff;z-index:10}
 .hero-canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+/* Velo bianco sotto il testo: garantisce il fondo chiaro anche quando la goccia passa di li' */
 .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(0,0,0,0) 25%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.62) 100%)}
+  background:linear-gradient(180deg,rgba(255,255,255,0) 45%,rgba(255,255,255,.75) 80%,#fff 100%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(56px,8vh,96px)}
-.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:22px}
-h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);line-height:1.02;letter-spacing:-.025em;max-width:15ch;color:#fff}
-.hero p{margin-top:26px;max-width:52ch;color:rgba(255,255,255,.8);font-size:clamp(15px,1.4vw,18px)}
-.scroll-down{display:inline-flex;gap:10px;margin-top:46px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);transition:opacity .35s ease}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:22px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);line-height:1.02;letter-spacing:-.025em;max-width:15ch;color:var(--dark)}
+.hero p{margin-top:26px;max-width:52ch;color:var(--secondary);font-size:clamp(15px,1.4vw,18px)}
+.scroll-down{display:inline-flex;gap:10px;margin-top:46px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6b6d6a;transition:opacity .35s ease}
 .scroll-down.is-hidden{opacity:0;pointer-events:none}
+
+/* Raccordo finale verso la sezione bianca sotto */
+.hero-sticky::after{
+  content:'';
+  position:absolute;inset:0;
+  z-index:3;pointer-events:none;
+  background:#fff;
+  opacity:var(--hero-fade,0);
+}
 
 @media(max-width:640px){
   .hero .eyebrow{display:none}
@@ -25,14 +36,3 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);
   .hero{height:100vh}
   .scroll-down{transition:none}
 }
-
-/* Raccordo finale: il video sfuma nel bianco per saldarsi alla sezione sotto.
-   Opacita' guidata dallo scroll (--hero-fade), non da una transition temporizzata. */
-.hero-sticky::after{
-  content:'';
-  position:absolute;inset:0;
-  z-index:3;pointer-events:none;
-  background:#fff;
-  opacity:var(--hero-fade,0);
-}
-.hero .wrap{transition:none}
