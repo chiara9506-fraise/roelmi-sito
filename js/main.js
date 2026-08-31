@@ -7,6 +7,8 @@
   var MOBILE_BP=768;
   var TEXT_FADE_START=0.72,TEXT_FADE_END=0.90; // il video e' chiaro ovunque: il testo navy resta leggibile a lungo
   var WHITE_FADE_START=0.88;                  // ultimo tratto: raccordo al bianco della sezione sotto
+  // Fondo del video, campionato a inizio e fine: le bande ai lati devono seguirlo
+  var BG_FROM=[228,221,221],BG_TO=[244,244,244];
 
   var video=document.getElementById('heroVideo');
   var hero=document.getElementById('hero');
@@ -67,8 +69,12 @@
       if(Math.abs(video.currentTime-t)>0.02)seek(t);
       p=current;
     }
-    // Il testo esce di scena prima che il video schiarisca, altrimenti bianco su bianco
+    // Il testo si ritira verso la fine, per lasciare pulito il raccordo con la sezione sotto
     if(content)content.style.opacity=(1-clamp((p-TEXT_FADE_START)/(TEXT_FADE_END-TEXT_FADE_START))).toFixed(3);
+    // Le bande ai lati del video (object-fit:contain) prendono il colore del suo fondo,
+    // che schiarisce nel corso della clip: cosi. non si vede dove finisce il fotogramma
+    var bg="rgb("+BG_FROM.map(function(c,i){return Math.round(c+(BG_TO[i]-c)*p)}).join(",")+")";
+    if(sticky.style.backgroundColor!==bg)sticky.style.backgroundColor=bg;
     // Gli ultimi fotogrammi sfumano nel bianco e si saldano con la sezione sotto
     sticky.style.setProperty("--hero-fade",clamp((p-WHITE_FADE_START)/(1-WHITE_FADE_START)).toFixed(3));
   }
