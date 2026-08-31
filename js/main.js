@@ -8,7 +8,7 @@
   var TEXT_FADE_START=0.72,TEXT_FADE_END=0.90; // il video e' chiaro ovunque: il testo navy resta leggibile a lungo
   var WHITE_FADE_START=0.88;                  // ultimo tratto: raccordo al bianco della sezione sotto
   // Fondo del video, campionato a inizio e fine: le bande ai lati devono seguirlo
-  var BG_FROM=[228,221,221],BG_TO=[244,244,244];
+  var BG_FROM=[148,173,189],BG_TO=[199,208,216];
 
   var video=document.getElementById('heroVideo');
   var hero=document.getElementById('hero');
