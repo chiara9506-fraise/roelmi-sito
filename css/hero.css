@@ -25,3 +25,14 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);
   .hero{height:100vh}
   .scroll-down{transition:none}
 }
+
+/* Raccordo finale: il video sfuma nel bianco per saldarsi alla sezione sotto.
+   Opacita' guidata dallo scroll (--hero-fade), non da una transition temporizzata. */
+.hero-sticky::after{
+  content:'';
+  position:absolute;inset:0;
+  z-index:3;pointer-events:none;
+  background:#fff;
+  opacity:var(--hero-fade,0);
+}
+.hero .wrap{transition:none}

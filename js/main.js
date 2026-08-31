@@ -5,9 +5,13 @@
   var LERP=0.12;          // inseguimento morbido del target (0 = fermo, 1 = istantaneo)
   var READY_TIMEOUT=5000; // oltre questa soglia si resta sul poster
   var MOBILE_BP=768;
+  var TEXT_FADE_START=0.45,TEXT_FADE_END=0.70; // il testo si ritira mentre il fondo e' ancora scuro
+  var WHITE_FADE_START=0.80;                  // ultimo tratto: raccordo al bianco della sezione sotto
 
   var video=document.getElementById('heroVideo');
   var hero=document.getElementById('hero');
+  var sticky=document.getElementById('sticky');
+  var content=document.getElementById('heroContent');
   if(!video||!hero)return;
 
   // Una sola sorgente, scelta prima del caricamento
@@ -52,12 +56,21 @@
   });
   video.addEventListener('error',function(){ready=false;});
 
+  function clamp(v){return v<0?0:(v>1?1:v);}
+
   function loop(){
     requestAnimationFrame(loop);
-    if(!ready)return;
-    current+=(target-current)*LERP;
-    var t=current*duration;
-    if(Math.abs(video.currentTime-t)>0.02)seek(t);
+    var p=target;
+    if(ready){
+      current+=(target-current)*LERP;
+      var t=current*duration;
+      if(Math.abs(video.currentTime-t)>0.02)seek(t);
+      p=current;
+    }
+    // Il testo esce di scena prima che il video schiarisca, altrimenti bianco su bianco
+    if(content)content.style.opacity=(1-clamp((p-TEXT_FADE_START)/(TEXT_FADE_END-TEXT_FADE_START))).toFixed(3);
+    // Gli ultimi fotogrammi sfumano nel bianco e si saldano con la sezione sotto
+    sticky.style.setProperty("--hero-fade",clamp((p-WHITE_FADE_START)/(1-WHITE_FADE_START)).toFixed(3));
   }
 
   video.addEventListener('loadedmetadata',function(){
