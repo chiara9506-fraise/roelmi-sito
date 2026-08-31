@@ -11,16 +11,16 @@
 .who-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(16px,3vw,40px) 0}
 
 .who-title{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;color:var(--secondary);line-height:1.05;margin-bottom:clamp(20px,3vw,36px)}
-.who-title .eyebrow{display:block;font-family:var(--body);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:18px}
+.who-title .eyebrow{display:block;font-family:var(--body);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:18px}
 
 .who-text p{font-size:17px;line-height:1.65;color:var(--secondary);max-width:42ch;margin:0}
 .who-pill{align-self:flex-start;display:inline-flex;align-items:center;background:var(--accent1);border-radius:999px;padding:5px 5px 5px 24px;gap:6px;margin-top:34px}
 .who-pill .pill-ghost{display:inline-flex;align-items:center;gap:6px;font:600 14px var(--body);color:var(--secondary);white-space:nowrap;padding:10px 6px;transition:color .25s;text-decoration:none}
-.who-pill .pill-ghost:hover{color:var(--primary)}
+.who-pill .pill-ghost:hover{color:var(--primary-ink)}
 .who-pill .pill-ghost svg{transition:transform .25s}
 .who-pill .pill-ghost:hover svg{transform:translateX(4px)}
-.who-pill .pill-filled{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;font:600 14px var(--body);padding:13px 24px;border-radius:999px;transition:background .25s,transform .2s;text-decoration:none;white-space:nowrap}
-.who-pill .pill-filled:hover{background:var(--accent3);transform:translateY(-1px)}
+.who-pill .pill-filled{display:inline-flex;align-items:center;gap:10px;background:var(--primary-ink);color:#fff;font:600 14px var(--body);padding:13px 24px;border-radius:999px;transition:background .25s,transform .2s;text-decoration:none;white-space:nowrap}
+.who-pill .pill-filled:hover{background:var(--primary-ink);transform:translateY(-1px)}
 .who-pill .pill-filled svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;transition:transform .25s}
 .who-pill .pill-filled:hover svg{transform:translateX(4px)}
 

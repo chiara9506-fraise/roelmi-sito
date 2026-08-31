@@ -43,7 +43,7 @@
   font:600 10px var(--body);
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--accent3);
+  color:var(--primary-ink);
   margin-bottom:8px;
 }
 .site-popup h4{
@@ -62,7 +62,7 @@
 }
 .site-popup-link{
   font:600 13px var(--body);
-  color:var(--primary);
+  color:var(--primary-ink);
   text-decoration:none;
   display:inline-flex;
   align-items:center;

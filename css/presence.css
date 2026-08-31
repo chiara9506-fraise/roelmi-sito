@@ -1,6 +1,6 @@
 /* ===== GLOBAL PRESENCE ===== */
 .presence{background:#fff;padding:clamp(32px,4vw,56px) 0}
-.presence-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
+.presence-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:14px}
 .presence-title{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:var(--secondary);line-height:1.1;margin-bottom:22px}
 .presence-legend{display:flex;gap:24px;flex-wrap:wrap}
 .leg-item{
@@ -26,7 +26,7 @@
 .leg-mark--biotech{color:#4d2e99}
 .leg-mark--lab{color:#515253}
 .leg-mark--production{color:#295a0e}
-.leg-mark--site{color:#007C8F}
+.leg-mark--site{color:#006073}
 
 /* Map */
 .presence-map-wrap{position:relative;margin-top:clamp(28px,4vw,48px)}
@@ -59,7 +59,7 @@
   .pm-leaf-wrap:hover .pm-mark::after{animation:none}
 }
 .pm-mark svg{display:block;width:100%;height:100%}
-.pm-mark--site{color:#007C8F}
+.pm-mark--site{color:#006073}
 .pm-mark--branch{color:#001D29}
 .pm-mark--biotech{color:#4d2e99}
 .pm-mark--lab{color:#515253}
@@ -81,7 +81,7 @@
 }
 
 /* Cluster */
-.pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:700 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary-ink);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:700 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
 .pm-cluster-icon:hover,.pm-cluster-icon:focus-visible{transform:scale(1.1);box-shadow:0 0 0 6px rgba(0,156,196,.25)}
 .pm-cluster-icon:focus-visible{outline:2px solid #fff;outline-offset:2px}
 
@@ -92,7 +92,7 @@
   padding:7px 12px;
 }
 .pm-tooltip b{display:block;font:600 13px var(--display);color:var(--secondary);line-height:1.25}
-.pm-tooltip span{font:600 9.5px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--primary)}
+.pm-tooltip span{font:600 9.5px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--primary-ink)}
 .leaflet-tooltip-top.pm-tooltip::before{border-top-color:#fff}
 
 /* Hover incrociato legenda <-> mappa */
@@ -107,7 +107,7 @@
 .pm-hl-lab .pm-mark--lab,
 .pm-hl-production .pm-mark--production{transform:scale(1.22)}
 .leg-item{transition:color .2s,background .2s}
-.leg-item:hover,.leg-item:focus-visible,.leg-item.is-hl{color:var(--primary)}
+.leg-item:hover,.leg-item:focus-visible,.leg-item.is-hl{color:var(--primary-ink)}
 .leg-item.is-hl{background:rgba(0,156,196,.08)}
 
 /* Leaflet popup styling */
@@ -117,11 +117,11 @@
 .pm-map-popup .leaflet-popup-close-button{top:9px;right:9px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--secondary);font-size:18px;line-height:26px;text-align:center;box-shadow:0 1px 5px rgba(0,0,0,.15);padding:0;font-weight:400}
 .pm-lp-img{height:140px;display:block;background:url('../images/INDUSTRIA.jpg') center/cover no-repeat}
 .pm-popup-body{padding:16px 18px 20px}
-.pm-popup-sub{font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--primary);margin-bottom:6px}
+.pm-popup-sub{font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:6px}
 .pm-popup-name{font-family:var(--display);font-weight:600;font-size:19px;color:var(--secondary);margin:0 0 8px;line-height:1.2}
 .pm-popup-desc{font:400 13.5px var(--body);color:var(--muted);line-height:1.55;margin:0 0 14px}
-.pm-popup-link{display:inline-flex;align-items:center;gap:7px;font:600 13px var(--body);color:var(--primary);text-decoration:none;transition:color .2s}
-.pm-popup-link:hover{color:var(--accent3)}
+.pm-popup-link{display:inline-flex;align-items:center;gap:7px;font:600 13px var(--body);color:var(--primary-ink);text-decoration:none;transition:color .2s}
+.pm-popup-link:hover{color:var(--primary-ink)}
 .pm-popup-link svg{stroke:currentColor;fill:none;transition:transform .22s}
 .pm-popup-link:hover svg{transform:translateX(3px)}
 
