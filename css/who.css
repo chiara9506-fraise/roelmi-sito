@@ -1,8 +1,6 @@
 /* ===== Who We Are ===== */
 .who{position:relative;background:#fff;padding:clamp(32px,4vw,56px) 0 clamp(12px,1.5vw,20px)}
-/* -100vh = altezza della sticky: WHO inizia esattamente dove finisce lo scrubbing del video */
-@media(min-width:641px){.who{margin-top:-100vh;z-index:5}}
-@media(prefers-reduced-motion:reduce){.who{margin-top:0}}
+@media(min-width:641px){.who{z-index:5}}
 .who-inner{position:relative}
 
 .who-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(40px,5vw,72px);align-items:center}

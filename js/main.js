@@ -1,64 +1,90 @@
 (function(){
+  /* Quanto scroll serve per percorrere l'intero video, in vh.
+     Taratura dell'effetto: va tenuto uguale all'altezza di .hero in css/hero.css. */
+  var HERO_SCROLL_VH=300;
+  var LERP=0.12;          // inseguimento morbido del target (0 = fermo, 1 = istantaneo)
+  var READY_TIMEOUT=5000; // oltre questa soglia si resta sul poster
+  var MOBILE_BP=768;
+
   var video=document.getElementById('heroVideo');
-  if(!video)return;
+  var hero=document.getElementById('hero');
+  if(!video||!hero)return;
 
-  // Se il video non carica, nascondilo: resta lo sfondo scuro + testo (fallback)
-  video.addEventListener('error',function(){video.style.display='none';});
+  // Una sola sorgente, scelta prima del caricamento
+  video.src=(window.innerWidth<MOBILE_BP?'images/hero-mobile.mp4':'images/hero.mp4');
 
-  var hero=document.getElementById('hero'),sticky=document.getElementById('sticky'),content=document.getElementById('heroContent');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var isMobile=window.innerWidth<640;
-  var staticHero=isMobile||reduce;
-  var prog=0;
-  addEventListener('resize',function(){isMobile=window.innerWidth<640;staticHero=isMobile||reduce;},{passive:true});
-  function cp(){
-    if(staticHero){prog=0;return;}
-    var r=hero.getBoundingClientRect();var tot=hero.offsetHeight-innerHeight;
-    if(tot<=0){prog=0;return;}
-    prog=Math.min(1,Math.max(0,(-r.top)/tot));
+  // "SCROLL DOWN" si ritira al primo scroll (anche se si ricarica gia' scrollati)
+  var scrollDown=hero.querySelector('.scroll-down');
+  if(scrollDown){
+    var hideHint=function(){scrollDown.classList.add('is-hidden');};
+    if(window.pageYOffset>0)hideHint();
+    else addEventListener('scroll',hideHint,{passive:true,once:true});
   }
 
-  // Safari/iOS non permette di scrubbare currentTime finche' il video non e' stato "avviato" una volta
-  video.play().then(function(){video.pause();}).catch(function(){});
+  // Reduced motion: nessuno scrubbing. Non toccando currentTime il video
+  // resta sul poster, e .hero e' alta 100vh via CSS.
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 
-  var raf=null;
-  function render(){
-    raf=null;
+  var heroTop=0,range=1,duration=0,ready=false;
+  var target=0,current=0;
+  var seeking=false,pending=null;
 
-    // Video agganciato allo scroll: currentTime segue prog (0 -> 1 = intero video).
-    // Reduced motion / mobile: nessuna animazione, resta fermo sul primo frame.
-    // Vicino alla fine si blocca sull'ultimo frame (reversibile risalendo) invece
-    // di continuare a inseguire lo scroll: quello che dissolve resta un fermo immagine.
-    if(video.duration){
-      // Il video completa la sua corsa a prog 0.85; l'ultimo tratto serve alla dissolvenza
-      var vp=staticHero?0:Math.min(1,prog/0.85);
-      var t=vp*video.duration;
-      if(Math.abs(video.currentTime-t)>0.01)video.currentTime=t;
-    }
-
-    // Fade testo (statico, sempre visibile, se reduced motion)
-    if(content){
-      var cf=staticHero?1:Math.max(0,1-prog/0.35);
-      content.style.opacity=cf;
-      content.style.transform=staticHero?'none':'translateY('+(prog*-40)+'px)';
-    }
-
-    // Dissolvenza al bianco solo nell'ultimo tratto: per tutto lo scrubbing
-    // (0 -> 0.85) il video resta pulito e immobile, senza nulla che si muova sopra
-    if(!staticHero){
-      var fade=Math.max(0,Math.min(1,(prog-0.85)/0.15));
-      sticky.style.setProperty('--hero-fade',fade.toFixed(2));
-      // A bianco pieno la hero si ritira: "Who We Are" (gia' in posizione sotto,
-      // anch'essa bianca) resta scoperta senza 100vh di vuoto da scrollare
-      var out=fade>=1;
-      sticky.style.opacity=out?'0':'1';
-      sticky.style.pointerEvents=out?'none':'';
-    }
+  // Misure di layout: solo qui, mai dentro il listener di scroll
+  function measure(){
+    heroTop=hero.getBoundingClientRect().top+window.pageYOffset;
+    range=Math.max(1,hero.offsetHeight-window.innerHeight);
   }
-  function onScroll(){cp();if(!raf)raf=requestAnimationFrame(render);}
-  addEventListener('scroll',onScroll,{passive:true});
-  addEventListener('resize',onScroll);
-  cp();render();
+
+  function updateTarget(){
+    var p=(window.pageYOffset-heroTop)/range;
+    target=p<0?0:(p>1?1:p);
+  }
+
+  // Un solo seek in volo: su iOS accodarne altri li fa fallire in silenzio
+  function seek(t){
+    if(seeking){pending=t;return;}
+    seeking=true;
+    try{video.currentTime=t;}catch(e){seeking=false;}
+  }
+  video.addEventListener('seeked',function(){
+    seeking=false;
+    if(pending!==null){var t=pending;pending=null;seek(t);}
+  });
+  video.addEventListener('error',function(){ready=false;});
+
+  function loop(){
+    requestAnimationFrame(loop);
+    if(!ready)return;
+    current+=(target-current)*LERP;
+    var t=current*duration;
+    if(Math.abs(video.currentTime-t)>0.02)seek(t);
+  }
+
+  video.addEventListener('loadedmetadata',function(){
+    duration=video.duration||0;
+    if(!duration)return;
+    measure();
+    updateTarget();
+    current=target;              // ricarica a meta' pagina: si parte dal fotogramma giusto
+    ready=true;
+    seek(current*duration);
+  });
+
+  setTimeout(function(){
+    if(!ready&&window.console&&console.warn)console.warn('Hero video non pronto: resta il poster.');
+  },READY_TIMEOUT);
+
+  addEventListener('scroll',updateTarget,{passive:true});
+
+  var rt=null;
+  function remeasure(){measure();updateTarget();}
+  addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(remeasure,150);},{passive:true});
+  addEventListener('orientationchange',function(){setTimeout(remeasure,300);},{passive:true});
+
+  measure();
+  updateTarget();
+  current=target;
+  requestAnimationFrame(loop);
 })();
 
 /* ───────────────────────────────── */
