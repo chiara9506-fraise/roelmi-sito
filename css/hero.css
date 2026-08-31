@@ -3,10 +3,10 @@
 .hero{position:relative;height:300vh;background:#fff}
 /* Il video definitivo e' su fondo BIANCO: fondo chiaro e testo scuro, non il contrario */
 .hero-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:flex-end;background:#fff;z-index:10}
-/* contain, non cover: il fotogramma va mostrato intero o la goccia viene tagliata.
-   Le bande laterali sono bianche come il fondo del video, quindi non si vedono. */
-.hero-canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;z-index:0}
-/* Velo bianco sotto il testo: garantisce il fondo chiaro anche quando la goccia passa di li' */
+/* cover: il soggetto sta al centro con margine, quindi il ritaglio ai bordi non lo tocca,
+   e si evitano bande visibili (il fondo del video non e' bianco puro: #e5e4e4). */
+.hero-canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+/* Velo bianco sotto il testo: garantisce il fondo chiaro sotto titolo e sottotitolo */
 .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,rgba(255,255,255,0) 45%,rgba(255,255,255,.75) 80%,#fff 100%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(56px,8vh,96px)}
