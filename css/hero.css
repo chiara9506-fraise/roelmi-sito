@@ -1,19 +1,18 @@
 /* L'altezza della sezione e' il budget di scroll che alimenta lo scrub del video.
    Va tenuta uguale a HERO_SCROLL_VH in js/main.js. */
-.hero{position:relative;height:300vh;background:#fff;--hero-gap:10vh} /* --hero-gap: aria tra header e video */
-/* Il video e' su fondo chiaro (ora azzurrino): fondo chiaro e testo scuro, non il contrario */
-.hero-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:flex-end;background:#fff;z-index:10}
-/* cover: il video riempie tutta la larghezza. Su viewport panoramiche questo costa
-   un ritaglio verticale: object-position lo sposta in alto per non perdere la punta. */
-.hero-canvas{position:absolute;top:var(--hero-gap);left:0;right:0;bottom:0;width:100%;height:calc(100% - var(--hero-gap));object-fit:cover;object-position:center 30%;z-index:0}
-/* Velo bianco sotto il testo: garantisce il fondo chiaro sotto titolo e sottotitolo */
+.hero{position:relative;height:300vh;background:#fff}
+/* Il video parte SCURO e finisce bianco: testo chiaro, che si ritira prima che schiarisca */
+.hero-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:flex-end;background:#0d3d47;z-index:10}
+/* Il video e' 2.36:1, quasi identico alla viewport: cover lo copre quasi senza ritagli */
+.hero-canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+/* Velo scuro sotto il testo: tiene il contrasto anche dove l'alone attorno alla goccia schiarisce */
 .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.85) 70%,#fff 100%)}
+  background:linear-gradient(180deg,rgba(4,21,33,0) 40%,rgba(4,21,33,.45) 75%,rgba(4,21,33,.6) 100%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(56px,8vh,96px)}
-.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#006073;margin-bottom:22px}
-h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);line-height:1.02;letter-spacing:-.025em;max-width:15ch;color:var(--dark)}
-.hero p{margin-top:26px;max-width:52ch;color:var(--secondary);font-size:clamp(15px,1.4vw,18px)}
-.scroll-down{display:inline-flex;gap:10px;margin-top:46px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6b6d6a;transition:opacity .35s ease}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7cc7dc;margin-bottom:22px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);line-height:1.02;letter-spacing:-.025em;max-width:15ch;color:#fff}
+.hero p{margin-top:26px;max-width:52ch;color:rgba(255,255,255,.88);font-size:clamp(15px,1.4vw,18px)}
+.scroll-down{display:inline-flex;gap:10px;margin-top:46px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);transition:opacity .35s ease}
 .scroll-down.is-hidden{opacity:0;pointer-events:none}
 
 /* Raccordo finale verso la sezione bianca sotto */

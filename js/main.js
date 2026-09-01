@@ -5,10 +5,10 @@
   var LERP=0.12;          // inseguimento morbido del target (0 = fermo, 1 = istantaneo)
   var READY_TIMEOUT=5000; // oltre questa soglia si resta sul poster
   var MOBILE_BP=768;
-  var TEXT_FADE_START=0.72,TEXT_FADE_END=0.90; // il video e' chiaro ovunque: il testo navy resta leggibile a lungo
-  var WHITE_FADE_START=0.88;                  // ultimo tratto: raccordo al bianco della sezione sotto
+  var TEXT_FADE_START=0.35,TEXT_FADE_END=0.55; // il video schiarisce: il testo bianco esce prima
+  var WHITE_FADE_START=0.90;                  // il video finisce gia. bianco: serve solo un raccordo finale
   // Fondo del video, campionato a inizio e fine: le bande ai lati devono seguirlo
-  var BG_FROM=[148,173,189],BG_TO=[199,208,216];
+  var BG_FROM=[13,61,71],BG_TO=[245,245,245];
 
   var video=document.getElementById('heroVideo');
   var hero=document.getElementById('hero');
