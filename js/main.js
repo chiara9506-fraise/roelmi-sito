@@ -73,6 +73,10 @@
     if(sticky.style.backgroundColor!==bg)sticky.style.backgroundColor=bg;
     // Gli ultimi fotogrammi sfumano nel bianco e si saldano con la sezione sotto
     sticky.style.setProperty("--hero-fade",clamp((p-WHITE_FADE_START)/(1-WHITE_FADE_START)).toFixed(3));
+    // A dissolvenza completa la hero esce di scena: WHO e. gia. in posizione sotto
+    var out=p>=1;
+    sticky.style.opacity=out?"0":"1";
+    sticky.style.pointerEvents=out?"none":"";
   }
 
   video.addEventListener('loadedmetadata',function(){

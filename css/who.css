@@ -1,6 +1,8 @@
 /* ===== Who We Are ===== */
 .who{position:relative;background:#fff;padding:clamp(32px,4vw,56px) 0 clamp(12px,1.5vw,20px)}
-@media(min-width:641px){.who{z-index:5}}
+/* -100vh = altezza della sticky: senza, servono 100vh di scroll a vuoto
+   perche. il pannello agganciato sgomberi prima che WHO diventi visibile */
+@media(min-width:641px){.who{margin-top:-100vh;z-index:5}}
 .who-inner{position:relative}
 
 .who-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(40px,5vw,72px);align-items:center}
