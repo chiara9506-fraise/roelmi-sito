@@ -19,13 +19,8 @@
   // Una sola sorgente, scelta prima del caricamento
   video.src=(window.innerWidth<MOBILE_BP?'video/hero-mobile.mp4':'video/hero.mp4');
 
-  // "SCROLL DOWN" si ritira al primo scroll (anche se si ricarica gia' scrollati)
-  var scrollDown=hero.querySelector('.scroll-down');
-  if(scrollDown){
-    var hideHint=function(){scrollDown.classList.add('is-hidden');};
-    if(window.pageYOffset>0)hideHint();
-    else addEventListener('scroll',hideHint,{passive:true,once:true});
-  }
+  // "SCROLL DOWN" si ritira appena si scrolla e torna se si risale (vedi loop)
+  var scrollDown=hero.querySelector(".scroll-down");
 
   // Reduced motion: nessuno scrubbing. Non toccando currentTime il video
   // resta sul poster, e .hero e' alta 100vh via CSS.
@@ -69,6 +64,7 @@
       if(Math.abs(video.currentTime-t)>0.02)seek(t);
       p=current;
     }
+    if(scrollDown)scrollDown.classList.toggle("is-hidden",p>0.02);
     // Il testo si ritira verso la fine, per lasciare pulito il raccordo con la sezione sotto
     if(content)content.style.opacity=(1-clamp((p-TEXT_FADE_START)/(TEXT_FADE_END-TEXT_FADE_START))).toFixed(3);
     // Le bande ai lati del video (object-fit:contain) prendono il colore del suo fondo,
