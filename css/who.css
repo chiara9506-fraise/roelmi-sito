@@ -43,3 +43,7 @@
   .who-pill .pill-filled{width:100%;justify-content:center;border-radius:10px}
 }
 @media(prefers-reduced-motion:reduce){.r-up,.r-img{opacity:1;transform:none}}
+
+/* Scrub fermo (dal controllo o da prefers-reduced-motion): la hero torna a 100vh,
+   quindi il margine negativo la sovrapporrebbe invece di eliminare lo scroll a vuoto */
+.hero.is-static + .who{margin-top:0}
