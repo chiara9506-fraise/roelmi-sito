@@ -23,9 +23,10 @@
   // "SCROLL DOWN" si ritira appena si scrolla e torna se si risale (vedi loop)
   var scrollDown=hero.querySelector(".scroll-down");
 
-  // Reduced motion: nessuno scrubbing. Non toccando currentTime il video
-  // resta sul poster, e .hero e' alta 100vh via CSS.
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  // Lo scrub si puo' disattivare: dalla preferenza di sistema o dal controllo in pagina
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function pref(k,v){try{return v===undefined?localStorage.getItem(k):localStorage.setItem(k,v)}catch(e){return null}}
+  var motionOff=reduce||pref('heroMotion')==='off';
 
   var heroTop=0,range=1,duration=0,ready=false;
   var target=0,current=0;
@@ -58,6 +59,7 @@
 
   function loop(){
     requestAnimationFrame(loop);
+    if(motionOff)return;
     var p=target;
     if(ready){
       current+=(target-current)*LERP;
@@ -106,6 +108,35 @@
   measure();
   updateTarget();
   current=target;
+
+  // Controllo in pagina: riporta la hero allo stato iniziale e ferma lo scrub
+  var motionBtn=document.getElementById('heroMotionBtn');
+  function applyMotion(){
+    hero.classList.toggle('is-static',motionOff);
+    if(motionBtn){
+      motionBtn.setAttribute('aria-pressed',motionOff?'true':'false');
+      motionBtn.querySelector('.ic-stop').hidden=motionOff;
+      motionBtn.querySelector('.ic-play').hidden=!motionOff;
+      motionBtn.querySelector('.hero-motion-label').textContent=motionOff?'Play animation':'Stop animation';
+    }
+    if(motionOff){
+      // stato di partenza: primo fotogramma, testo pieno, nessuna dissolvenza
+      target=current=0;
+      if(content){content.style.opacity='';content.style.transform='';}
+      if(scrollDown)scrollDown.classList.remove('is-hidden');
+      sticky.style.opacity='';sticky.style.pointerEvents='';sticky.style.backgroundColor='';
+      sticky.style.setProperty('--hero-fade','0');
+      if(duration)seek(0);
+    }else{
+      measure();updateTarget();current=target;
+    }
+  }
+  if(motionBtn)motionBtn.addEventListener('click',function(){
+    motionOff=!motionOff;
+    pref('heroMotion',motionOff?'off':'on');
+    applyMotion();
+  });
+  applyMotion();
   requestAnimationFrame(loop);
 })();
 

@@ -37,3 +37,27 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);
   .hero{height:100vh}
   .scroll-down{transition:none}
 }
+
+/* Controllo per fermare l'animazione: sta in un angolo, fuori dal blocco di testo.
+   Non e' un "pausa" (il video non va da solo) ma disattiva lo scrub. */
+.hero-motion{
+  position:absolute;right:clamp(20px,4vw,56px);bottom:clamp(20px,3vh,36px);z-index:4;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 14px;border-radius:999px;cursor:pointer;
+  border:1px solid rgba(255,255,255,.45);background:rgba(4,21,33,.55);
+  backdrop-filter:blur(6px);
+  font:600 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:#fff;
+  transition:background .2s,border-color .2s;
+}
+.hero-motion:hover{background:rgba(4,21,33,.75);border-color:#fff}
+.hero-motion:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.hero-motion svg{width:13px;height:13px;fill:currentColor;flex:0 0 auto}
+/* A scrub fermo la hero e' alta 100vh e il fondo resta chiaro: serve il testo scuro */
+.hero.is-static .hero-motion{border-color:rgba(4,21,33,.35);background:rgba(255,255,255,.85);color:var(--dark)}
+@media(max-width:640px){
+  .hero-motion{right:clamp(20px,4vw,56px);bottom:16px;padding:8px 12px;font-size:10px}
+  .hero-motion-label{display:none}
+}
+
+/* Scrub disattivato dall'utente: stessa resa di prefers-reduced-motion */
+.hero.is-static{height:100vh}
