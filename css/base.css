@@ -2,7 +2,7 @@
    --primary    #009CC4  su fondi SCURI (5.43 su navy) e decorazioni senza testo
    --primary-ink #0080A1 su fondi CHIARI (4.56 su bianco): testo, bottoni, stati
    Non invertirli: ognuno fallisce il contrasto sul fondo dell'altro. */
-:root{--primary:#009CC4;--secondary:#565755;--ink:#3a3b39;--muted:#7c7e7b;--accent1:#EFF9FC;--accent2:#7DBD0F;--primary-ink:#0080A1;--surface:#f7f9fa;--dark:#001D29;--line:rgba(86,87,85,.22);--display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
+:root{--primary:#009CC4;--secondary:#565755;--ink:#3a3b39;--muted:#747673;--accent1:#EFF9FC;--accent2:#7DBD0F;--primary-ink:#0080A1;--surface:#f7f9fa;--dark:#001D29;--line:rgba(86,87,85,.22);--display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,56px)}
 a{text-decoration:none;color:inherit}
