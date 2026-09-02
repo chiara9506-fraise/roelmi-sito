@@ -20,18 +20,18 @@
   }).addTo(map);
 
   var sites=[
-    {type:'biotech',name:'ROELMI BIOTECH',lat:45.6438,lng:8.9958,sub:'Ricerca & Sviluppo Biotech — Italia',desc:'Polo dedicato alla ricerca e sviluppo di soluzioni biotech, ingredienti fermentativi e probiotici avanzati. Via Roberto Lepetit 34, 21040 Gerenzano (VA), Italia.',href:'#'},
-    {type:'site',name:'Lainate',lat:45.57,lng:8.75,sub:'Polo produttivo — Varese, Italia',desc:'Stabilimento produttivo dedicato allo sviluppo e produzione di ingredienti attivi per il personal care.',href:'#'},
-    {type:'lab',name:'Solaro',lat:45.62,lng:9.07,sub:'Laboratorio — Milano, Italia',desc:'Laboratorio specializzato nell\'analisi e nella lavorazione di materie prime attive per il mercato nutraceutico e food.',href:'#'},
-    {type:'site',name:'Napoli',lat:40.84,lng:14.27,sub:'Polo produttivo — Campania, Italia',desc:'Sede produttiva nel sud Italia, specializzata nella lavorazione di ingredienti di origine naturale e bioattivi marini.',href:'#'},
-    {type:'site',name:'RK Colors',lat:34.05,lng:-118.24,sub:'Polo produttivo — USA',desc:'Stabilimento americano dedicato allo sviluppo e produzione di pigmenti funzionalizzati e ingredienti per il make-up attivo.',href:'#'},
-    {type:'lab',name:'Origgio',lat:45.5985,lng:8.9655,sub:'Laboratorio — Origgio (VA), Italia',desc:'ROELMI HPC — Via Celeste Milani 224, 21040 Origgio (VA), Italia.',href:'#'},
-    {type:'branch',name:'Paris',lat:48.8720,lng:2.3235,sub:'Filiale — Francia',desc:'ROELMI HPC France SARL — 32, rue de l\'Arcade, 75008 Paris, Francia.',href:'#'},
-    {type:'branch',name:'Saddle Brook',lat:40.9060,lng:-74.0960,sub:'Filiale — USA',desc:'ROELMI HPC USA, LLC — 250 Pehle Avenue, Suite 200, Saddle Brook, New Jersey 07663, USA.',href:'#'},
-    {type:'branch',name:'Hangzhou',lat:30.2460,lng:120.1750,sub:'Filiale — Cina (Asia-Pacific)',desc:'Hangzhou ROELMI HPC Biotech Co., Ltd — Room 505, Building 4, No. 199 Shimin Street, Shangcheng District, Hangzhou, Zhejiang, Cina.',href:'#'},
-    {type:'branch',name:'Seongnam-si',lat:37.3830,lng:127.1190,sub:'Filiale — Corea del Sud',desc:'ROELMI HPC Korea Ltd. — 918 & 919, 9F, 36 Hwangsaeul-ro 200beon-gil, Bundang-gu, Seongnam-si, Gyeonggi-do, Corea del Sud (13595).',href:'#'},
-    {type:'production',name:'Vortex SRL SB',lat:45.0500,lng:7.9000,sub:'Produzione — Piemonte, Italia',desc:'Vortex SRL SB — Sito produttivo in Piemonte, Italia.',href:'#'},
-    {type:'production',name:'Isuschem srl',lat:41.0680,lng:14.3480,sub:'Produzione — Caserta, Italia',desc:'Isuschem srl — Via Thomas Alva Edison, 81100 Caserta (CE), Italia.',href:'#'}
+    {type:'biotech',name:'ROELMI BIOTECH',lat:45.6438,lng:8.9958,sub:'Biotech R&D — Italy',desc:'Hub dedicated to the research and development of biotech solutions, fermentation-derived ingredients and advanced probiotics. Via Roberto Lepetit 34, 21040 Gerenzano (VA), Italy.',href:'#'},
+    {type:'site',name:'Lainate',lat:45.57,lng:8.75,sub:'Production site — Varese, Italy',desc:'Production plant dedicated to the development and manufacture of active ingredients for personal care.',href:'#'},
+    {type:'lab',name:'Solaro',lat:45.62,lng:9.07,sub:'Laboratory — Milan, Italy',desc:'Laboratory dedicated to the analysis and processing of active raw materials for the nutraceutical and food markets.',href:'#'},
+    {type:'site',name:'Naples',lat:40.84,lng:14.27,sub:'Production site — Campania, Italy',desc:'Production site in southern Italy, dedicated to processing naturally derived ingredients and marine bioactives.',href:'#'},
+    {type:'site',name:'RK Colors',lat:34.05,lng:-118.24,sub:'Production site — USA',desc:'US plant dedicated to the development and manufacture of functionalised pigments and active make-up ingredients.',href:'#'},
+    {type:'lab',name:'Origgio',lat:45.5985,lng:8.9655,sub:'Laboratory — Origgio (VA), Italy',desc:'ROELMI HPC — Via Celeste Milani 224, 21040 Origgio (VA), Italy.',href:'#'},
+    {type:'branch',name:'Paris',lat:48.8720,lng:2.3235,sub:'Branch office — France',desc:'ROELMI HPC France SARL — 32, rue de l\'Arcade, 75008 Paris, France.',href:'#'},
+    {type:'branch',name:'Saddle Brook',lat:40.9060,lng:-74.0960,sub:'Branch office — USA',desc:'ROELMI HPC USA, LLC — 250 Pehle Avenue, Suite 200, Saddle Brook, New Jersey 07663, USA.',href:'#'},
+    {type:'branch',name:'Hangzhou',lat:30.2460,lng:120.1750,sub:'Branch office — China (Asia-Pacific)',desc:'Hangzhou ROELMI HPC Biotech Co., Ltd — Room 505, Building 4, No. 199 Shimin Street, Shangcheng District, Hangzhou, Zhejiang, China.',href:'#'},
+    {type:'branch',name:'Seongnam-si',lat:37.3830,lng:127.1190,sub:'Branch office — South Korea',desc:'ROELMI HPC Korea Ltd. — 918 & 919, 9F, 36 Hwangsaeul-ro 200beon-gil, Bundang-gu, Seongnam-si, Gyeonggi-do, South Korea (13595).',href:'#'},
+    {type:'production',name:'Vortex SRL SB',lat:45.0500,lng:7.9000,sub:'Manufacturing — Piedmont, Italy',desc:'Vortex SRL SB — Manufacturing site in Piedmont, Italy.',href:'#'},
+    {type:'production',name:'Isuschem srl',lat:41.0680,lng:14.3480,sub:'Manufacturing — Caserta, Italy',desc:'Isuschem srl — Via Thomas Alva Edison, 81100 Caserta (CE), Italy.',href:'#'}
   ];
 
   var markSvg='<svg viewBox="0 0 36 54" xmlns="http://www.w3.org/2000/svg"><path d="M0.783 39.064C0.604 39.192 0.437 39.326 0.271 39.462C1.516 46.663 7.005 52.404 14.073 54.018C17.088 50.618 17.516 45.489 14.811 41.594C11.643 37.032 5.383 35.892 0.816 39.043C7.738 34.260 17.231 35.981 22.035 42.894C24.220 46.043 25.054 49.721 24.669 53.252C26.399 52.577 27.999 51.650 29.427 50.512C28.940 48.127 27.974 45.802 26.499 43.681C20.857 35.561 9.872 33.355 1.568 38.521C12.380 31.535 26.339 32.932 35.553 41.298C36.000 39.726 36.243 38.067 36.243 36.354C36.243 34.389 35.920 32.503 35.339 30.730C32.009 18.408 18.119 0.018 18.119 0.018C18.119 0.018 4.230 18.408 0.900 30.730C0.325 32.503 0 34.389 0 36.354C0 37.405 0.096 38.439 0.266 39.443C0.437 39.313 0.606 39.187 0.783 39.064Z" fill="currentColor" fill-rule="evenodd"/></svg>';
@@ -81,11 +81,11 @@
   });
 
   var typeLabels={
-    site:'Polo produttivo',
-    branch:'Filiale',
+    site:'Production site',
+    branch:'Branch office',
     biotech:'ROELMI BIOTECH',
     lab:'Lab',
-    production:'Produzione'
+    production:'Manufacturing'
   };
 
   sites.forEach(function(site){
