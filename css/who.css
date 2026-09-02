@@ -1,8 +1,5 @@
 /* ===== Who We Are ===== */
 .who{position:relative;background:#fff;padding:clamp(32px,4vw,56px) 0 clamp(12px,1.5vw,20px)}
-/* -100vh = altezza della sticky: senza, servono 100vh di scroll a vuoto
-   perche. il pannello agganciato sgomberi prima che WHO diventi visibile */
-@media(min-width:641px){.who{margin-top:-100vh;z-index:5}}
 .who-inner{position:relative}
 
 .who-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(40px,5vw,72px);align-items:center}
@@ -43,7 +40,3 @@
   .who-pill .pill-filled{width:100%;justify-content:center;border-radius:10px}
 }
 @media(prefers-reduced-motion:reduce){.r-up,.r-img{opacity:1;transform:none}}
-
-/* Scrub fermo (dal controllo o da prefers-reduced-motion): la hero torna a 100vh,
-   quindi il margine negativo la sovrapporrebbe invece di eliminare lo scroll a vuoto */
-.hero.is-static + .who{margin-top:0}

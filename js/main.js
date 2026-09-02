@@ -6,8 +6,6 @@
   var READY_TIMEOUT=5000; // oltre questa soglia si resta sul poster
   var MOBILE_BP=768;
   var TEXT_FADE_START=0.35,TEXT_FADE_END=0.55; // il video schiarisce: il testo bianco esce prima
-  var WHITE_FADE_START=0.86;                  // il video finisce gia. chiaro: raccordo finale
-  var HERO_EXIT_START=0.90;                   // da qui la hero sfuma e scopre la sezione sotto
   // Fondo del video, campionato a inizio e fine: le bande ai lati devono seguirlo
   var BG_FROM=[13,61,71],BG_TO=[245,245,245];
 
@@ -74,14 +72,8 @@
     // che schiarisce nel corso della clip: cosi. non si vede dove finisce il fotogramma
     var bg="rgb("+BG_FROM.map(function(c,i){return Math.round(c+(BG_TO[i]-c)*p)}).join(",")+")";
     if(sticky.style.backgroundColor!==bg)sticky.style.backgroundColor=bg;
-    // Gli ultimi fotogrammi sfumano nel bianco e si saldano con la sezione sotto
-    sticky.style.setProperty("--hero-fade",clamp((p-WHITE_FADE_START)/(1-WHITE_FADE_START)).toFixed(3));
-    // La hero si ritira in dissolvenza sugli ultimi 10% di scroll, scoprendo WHO
-    // che e. gia. in posizione sotto. Si usa target (limitato esatto a 1) e non
-    // current: l.interpolazione si avvicina a 1 senza mai raggiungerlo.
-    var out=clamp((target-HERO_EXIT_START)/(1-HERO_EXIT_START));
-    sticky.style.opacity=(1-out).toFixed(3);
-    sticky.style.pointerEvents=out>=1?"none":"";
+    // Finito lo scrub la hero resta sull.ultimo fotogramma e scorre via da sola:
+    // e. il normale rilascio dello sticky, nessuna dissolvenza.
   }
 
   video.addEventListener('loadedmetadata',function(){
@@ -124,8 +116,7 @@
       target=current=0;
       if(content){content.style.opacity='';content.style.transform='';}
       if(scrollDown)scrollDown.classList.remove('is-hidden');
-      sticky.style.opacity='';sticky.style.pointerEvents='';sticky.style.backgroundColor='';
-      sticky.style.setProperty('--hero-fade','0');
+      sticky.style.backgroundColor='';
       if(duration)seek(0);
     }else{
       measure();updateTarget();current=target;
