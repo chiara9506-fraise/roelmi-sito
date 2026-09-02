@@ -9,7 +9,7 @@
 .prod-hero-desc{color:rgba(255,255,255,.75);font-size:clamp(15px,1.2vw,17px);line-height:1.7;max-width:48ch;margin-bottom:36px}
 .prod-hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
 .prod-hero-tag{font:600 10px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7)}
-.prod-hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--primary-ink);color:#fff;font:600 13px var(--body);letter-spacing:.06em;padding:13px 26px;border-radius:8px;transition:background .2s}
+.prod-hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--primary-ink);color:#fff;font:600 13px var(--body);letter-spacing:.06em;padding:13px 26px;border-radius:999px;transition:background .2s}
 .prod-hero-cta:hover{background:var(--dark)}
 .prod-hero-cta svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
 .prod-hero-img{display:flex;align-items:center;justify-content:center}
@@ -84,9 +84,9 @@
 .prod-cta-card h2{font-family:var(--display);font-weight:600;font-size:clamp(24px,3vw,40px);color:#fff;letter-spacing:-.02em;margin-bottom:14px}
 .prod-cta-card p{color:rgba(255,255,255,.6);font-size:15px;margin-bottom:32px}
 .prod-cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.prod-cta-btns .btn-primary{background:var(--primary-ink);color:#fff;font:600 13px var(--body);letter-spacing:.06em;padding:13px 28px;border-radius:8px;transition:background .2s}
+.prod-cta-btns .btn-primary{background:var(--primary-ink);color:#fff;font:600 13px var(--body);letter-spacing:.06em;padding:13px 28px;border-radius:999px;transition:background .2s}
 .prod-cta-btns .btn-primary:hover{background:var(--primary-ink)}
-.prod-cta-btns .btn-ghost{border:1.5px solid rgba(255,255,255,.3);color:#fff;font:600 13px var(--body);letter-spacing:.06em;padding:13px 28px;border-radius:8px;transition:border-color .2s,color .2s}
+.prod-cta-btns .btn-ghost{border:1.5px solid rgba(255,255,255,.3);color:#fff;font:600 13px var(--body);letter-spacing:.06em;padding:13px 28px;border-radius:999px;transition:border-color .2s,color .2s}
 .prod-cta-btns .btn-ghost:hover{border-color:#fff}
 
 /* ── Related products ── */

@@ -137,7 +137,7 @@
 
   .mob-filter-btn{
     flex:0 0 auto;display:flex;align-items:center;gap:6px;
-    padding:10px 14px;border-radius:10px;
+    padding:10px 14px;border-radius:999px;
     border:1.5px solid var(--line);background:#fff;
     font:600 12px var(--body);color:var(--secondary);
     cursor:pointer;white-space:nowrap;
@@ -196,7 +196,7 @@
   .mob-sidebar-apply{
     display:block;
     width:calc(100% - 40px);margin:8px 20px 24px;
-    background:var(--primary-ink);color:#fff;border:0;border-radius:10px;
+    background:var(--primary-ink);color:#fff;border:0;border-radius:999px;
     padding:14px;font:600 14px var(--body);cursor:pointer;
     letter-spacing:.04em;text-align:center;
     position:sticky;bottom:16px;
