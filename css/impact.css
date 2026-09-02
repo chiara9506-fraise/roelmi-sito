@@ -4,12 +4,26 @@
 .impact-title{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:var(--secondary);line-height:1.1;margin-bottom:clamp(36px,5vw,60px)}
 
 .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,24px);margin-bottom:clamp(28px,3.5vw,44px)}
-.impact-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3vw,40px) clamp(16px,2vw,28px);box-shadow:0 4px 20px rgba(0,29,41,.05)}
+.impact-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3vw,40px) clamp(16px,2vw,28px);box-shadow:0 4px 20px rgba(0,29,41,.05);cursor:default;transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
 .impact-num{font-family:var(--display);font-weight:700;font-size:clamp(38px,5vw,64px);color:var(--primary-ink);line-height:1;margin-bottom:12px}
 .impact-lbl{font:400 14px var(--body);color:var(--muted);letter-spacing:.01em}
+
+/* Hover come le card "Key benefits" della pagina prodotto: la card vira
+   sull'azzurro, numero ed etichetta passano al bianco. */
+.impact-num,.impact-lbl{transition:color .28s ease}
+.impact-card:hover{background:var(--primary-ink);border-color:var(--primary-ink);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,156,196,.22)}
+.impact-card:hover .impact-num{color:#fff}
+/* Bianco PIENO, non all'80% come nella pagina prodotto: a quell'opacita'
+   l'etichetta starebbe a 3.49:1 sull'azzurro, sotto il 4.5:1 richiesto. */
+.impact-card:hover .impact-lbl{color:#fff}
 
 .impact-certs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .impact-certs span{font:600 11.5px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--secondary);border:1px solid var(--line);border-radius:999px;padding:7px 18px}
 
 @media(max-width:720px){.impact-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.impact-grid{grid-template-columns:1fr}.impact-num{font-size:clamp(34px,11vw,56px)}}
+
+@media(prefers-reduced-motion:reduce){
+  .impact-card{transition:background .28s ease,border-color .28s ease}
+  .impact-card:hover{transform:none}
+}
