@@ -4,7 +4,6 @@
   var HERO_SCROLL_VH=300;
   var LERP=0.12;          // inseguimento morbido del target (0 = fermo, 1 = istantaneo)
   var READY_TIMEOUT=5000; // oltre questa soglia si resta sul poster
-  var MOBILE_BP=768;
   var TEXT_FADE_START=0.35,TEXT_FADE_END=0.55; // il video schiarisce: il testo bianco esce prima
   // Fondo del video, campionato a inizio e fine: le bande ai lati devono seguirlo
   var BG_FROM=[13,61,71],BG_TO=[245,245,245];
@@ -15,8 +14,12 @@
   var content=document.getElementById('heroContent');
   if(!video||!hero)return;
 
-  // Una sola sorgente, scelta prima del caricamento
-  video.src=(window.innerWidth<MOBILE_BP?'video/hero-mobile.mp4':'video/hero.mp4');
+  // Una sola sorgente, scelta prima del caricamento. Il criterio e' la FORMA della
+  // finestra, non la larghezza: un tablet in piedi e' largo 768px ma va servito col
+  // verticale, altrimenti il panoramico viene ingrandito e ritagliato all'osso.
+  var portrait=window.innerHeight>window.innerWidth;
+  if(portrait)video.poster='video/hero-poster-mobile.jpg';
+  video.src=portrait?'video/hero-mobile.mp4':'video/hero.mp4';
 
   // "SCROLL DOWN" si ritira appena si scrolla e torna se si risale (vedi loop)
   var scrollDown=hero.querySelector(".scroll-down");

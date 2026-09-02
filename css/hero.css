@@ -8,6 +8,16 @@
 /* Velo scuro sotto il testo: tiene il contrasto anche dove l'alone attorno alla goccia schiarisce */
 .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,rgba(4,21,33,0) 40%,rgba(4,21,33,.45) 75%,rgba(4,21,33,.6) 100%)}
+/* In finestra verticale va il video 9:16, che parte molto piu' chiaro del panoramico
+   (148 contro 65 di luminanza): senza piu' velo il testo bianco non tiene il contrasto.
+   Stesso criterio del JS che sceglie la sorgente: si spostano insieme. */
+@media(orientation:portrait){
+  .hero-scrim{background:linear-gradient(180deg,rgba(4,21,33,0) 18%,rgba(4,21,33,.5) 55%,rgba(4,21,33,.72) 100%)}
+  /* L'occhiello e' testo piccolo (12px, serve 4.5:1) e sul verticale chiaro si ferma
+     a 3.08:1. Per farlo passare servirebbe un azzurro cosi' pallido da leggersi
+     bianco: si nasconde, come gia' si fa sotto i 640px. */
+  .hero .eyebrow{display:none}
+}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(56px,8vh,96px)}
 .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7cc7dc;margin-bottom:22px}
 h1{font-family:var(--display);font-weight:700;font-size:clamp(32px,3.6vw,52px);line-height:1.02;letter-spacing:-.025em;max-width:15ch;color:#fff}
