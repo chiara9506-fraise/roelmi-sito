@@ -10,7 +10,7 @@
   background:linear-gradient(180deg,rgba(4,21,33,0) 40%,rgba(4,21,33,.45) 75%,rgba(4,21,33,.6) 100%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(56px,8vh,96px)}
 .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7cc7dc;margin-bottom:22px}
-h1{font-family:var(--display);font-weight:600;font-size:clamp(44px,7.4vw,100px);line-height:1.02;letter-spacing:-.025em;max-width:15ch;color:#fff}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,4.6vw,62px);line-height:1.02;letter-spacing:-.025em;max-width:15ch;color:#fff}
 .hero p{margin-top:26px;max-width:52ch;color:rgba(255,255,255,.88);font-size:clamp(15px,1.4vw,18px)}
 .scroll-down{display:inline-flex;gap:10px;margin-top:46px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);transition:opacity .35s ease}
 .scroll-down.is-hidden{opacity:0;pointer-events:none}
