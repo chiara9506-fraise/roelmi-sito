@@ -20,20 +20,16 @@
 .prod-desc .wrap{position:relative}
 .prod-desc-inner{max-width:72ch}
 
-/* Goccia del logomark nello spazio a destra — il contorno si traccia con lo
-   scroll, poi si riempie: stesso gesto di prima (linea+arco), ora nella forma
-   del brand invece di un elemento geometrico generico. */
+/* Goccia del logomark nello spazio a destra — diventa via via piu' visibile
+   con lo scroll (opacita' pilotata in JS, vedi product.js). */
 .prod-desc-mark{
   position:absolute;right:clamp(16px,5vw,72px);top:50%;
   width:clamp(120px,14vw,190px);height:auto;
   transform:translateY(-50%);
   pointer-events:none;
+  opacity:0;
 }
-.prod-desc-mark path{
-  stroke:var(--primary);stroke-width:1.5;vector-effect:non-scaling-stroke;
-  stroke-dasharray:1;stroke-dashoffset:1;
-  fill:var(--primary);fill-opacity:0;
-}
+.prod-desc-mark path{fill:var(--primary)}
 @media(max-width:1100px){.prod-desc-mark{display:none}}
 .prod-desc-eyebrow{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:16px}
 .prod-desc h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,32px);color:var(--secondary);letter-spacing:-.02em;margin-bottom:20px;line-height:1.2}

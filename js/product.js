@@ -7,12 +7,12 @@ document.querySelectorAll('.tech-acc-trigger').forEach(function(btn){
   });
 });
 
-/* ── Goccia del logomark nelle sezioni descrizione: il contorno si traccia
-   in funzione dello scroll, poi si riempie ── */
+/* ── Goccia del logomark nelle sezioni descrizione: diventa via via piu'
+   visibile scrollando verso il basso ── */
 (function(){
   var secs=[];
   document.querySelectorAll('.prod-desc').forEach(function(sec){
-    var mark=sec.querySelector('.prod-desc-mark path');
+    var mark=sec.querySelector('.prod-desc-mark');
     if(mark)secs.push({sec:sec,mark:mark});
   });
   if(!secs.length)return;
@@ -22,10 +22,7 @@ document.querySelectorAll('.tech-acc-trigger').forEach(function(btn){
       var r=s.sec.getBoundingClientRect();
       var p=(vh*0.92-r.top)/(vh*0.6); // parte quando la sezione entra, completa a ~1/3 dal top
       p=Math.max(0,Math.min(1,p));
-      var stroke=Math.max(0,Math.min(1,p/0.75));   // il contorno si traccia per primo
-      var fill=Math.max(0,Math.min(1,(p-0.6)/0.4)); // il riempimento arriva quando il contorno e' quasi finito
-      s.mark.style.strokeDashoffset=String(1-stroke);
-      s.mark.style.fillOpacity=String(fill*0.85);
+      s.mark.style.opacity=String(p);
     });
   }
   addEventListener('scroll',draw,{passive:true});
