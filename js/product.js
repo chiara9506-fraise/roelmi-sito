@@ -7,13 +7,13 @@ document.querySelectorAll('.tech-acc-trigger').forEach(function(btn){
   });
 });
 
-/* ── Linea + arco nelle sezioni descrizione: si disegnano in funzione dello scroll ── */
+/* ── Goccia del logomark nelle sezioni descrizione: il contorno si traccia
+   in funzione dello scroll, poi si riempie ── */
 (function(){
   var secs=[];
   document.querySelectorAll('.prod-desc').forEach(function(sec){
-    var ln=sec.querySelector('.prod-desc-line');
-    var arc=sec.querySelector('.prod-desc-arc path');
-    if(ln||arc)secs.push({sec:sec,ln:ln,arc:arc});
+    var mark=sec.querySelector('.prod-desc-mark path');
+    if(mark)secs.push({sec:sec,mark:mark});
   });
   if(!secs.length)return;
   function draw(){
@@ -22,9 +22,10 @@ document.querySelectorAll('.tech-acc-trigger').forEach(function(btn){
       var r=s.sec.getBoundingClientRect();
       var p=(vh*0.92-r.top)/(vh*0.6); // parte quando la sezione entra, completa a ~1/3 dal top
       p=Math.max(0,Math.min(1,p));
-      if(s.ln)s.ln.style.transform='scaleY('+p+')'; // prima la linea, dall'alto
-      var pa=Math.max(0,Math.min(1,(p-0.15)/0.85)); // l'arco parte poco dopo
-      if(s.arc)s.arc.style.strokeDashoffset=String(1-pa);
+      var stroke=Math.max(0,Math.min(1,p/0.75));   // il contorno si traccia per primo
+      var fill=Math.max(0,Math.min(1,(p-0.6)/0.4)); // il riempimento arriva quando il contorno e' quasi finito
+      s.mark.style.strokeDashoffset=String(1-stroke);
+      s.mark.style.fillOpacity=String(fill*0.85);
     });
   }
   addEventListener('scroll',draw,{passive:true});
