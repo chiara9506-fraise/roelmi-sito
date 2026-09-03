@@ -23,7 +23,7 @@
 /* Goccia del logomark nello spazio a destra — diventa via via piu' visibile
    con lo scroll (opacita' pilotata in JS, vedi product.js). */
 .prod-desc-mark{
-  position:absolute;right:clamp(16px,5vw,72px);top:50%;
+  position:absolute;right:clamp(96px,calc(41.2vw - 339px),188px);top:50%;
   width:clamp(120px,14vw,190px);height:auto;
   transform:translateY(-50%);
   pointer-events:none;
