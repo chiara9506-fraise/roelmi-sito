@@ -69,11 +69,15 @@ main{--about-text:color-mix(in srgb,var(--dark) 85%,var(--white));--about-muted:
 
 /* ── 2. What we do ── */
 .about-what-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:start}
-.about-nip{background:var(--accent1);border-radius:16px;padding:clamp(28px,3.5vw,48px)}
-.about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(48px,6vw,80px);line-height:1;letter-spacing:-.02em;color:var(--primary-ink)}
+.about-nip{background:var(--tint-olive);border-radius:16px;padding:clamp(28px,3.5vw,48px)}
+/* sotto il titolo di sezione nella gerarchia: max 44px contro i 58 dell'h2 */
+.about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(32px,3.2vw,44px);line-height:1;letter-spacing:-.02em;color:var(--primary-ink)}
 .about-nip-mark sup{font-size:.4em;vertical-align:1.1em;font-weight:500}
 .about-nip-sub{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--about-text);margin-top:12px}
-.about-nip-text{font:400 16px/1.65 var(--body);color:var(--about-text);margin-top:20px}
+.about-nip-text{font:400 17px/1.65 var(--body);color:var(--about-text);margin-top:20px}
+/* sulla tinta Olive il Cerulean ink fa 4.05: il link del riquadro va in Hard Grey */
+.about-nip-text a{color:var(--dark)}
+.about-nip-text a:focus-visible{outline-color:var(--dark)}
 .about-nip-text sup,.about-tl-body sup{font-size:.6em;vertical-align:.5em}
 
 /* ── 3. Our approach ── */
