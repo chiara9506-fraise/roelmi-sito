@@ -45,21 +45,33 @@ main{--nip-text:color-mix(in srgb,var(--dark) 85%,var(--white));--nip-muted:colo
 .nip-breadcrumb span[aria-current]{color:var(--nip-text);font-weight:600}
 
 /* ── 1. Apertura ── */
-/* header fixed e sempre compatto qui (.hero-light = .solid, 68px): la sezione parte sotto */
-.nip-hero{padding-top:calc(68px + clamp(40px,6vw,88px))}
+/* Foto a tutta larghezza + velo Hard Grey (80% in alto, 86% in basso). Calcolato col caso
+   peggiore, foto bianca sotto il testo: bianco >= 8.6:1, bianco 80% >= 6.2, Cerulean
+   (solo testo grande: segno NIP e iniziali) >= 4.4. Tutto sta in uno schermo. */
+.nip-hero{position:relative;overflow:hidden;background:var(--dark);min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding:calc(84px + clamp(20px,3vw,40px)) 0 clamp(40px,5vw,72px)}
+.nip-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.nip-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,color-mix(in srgb,var(--dark) 80%,transparent) 0%,color-mix(in srgb,var(--dark) 86%,transparent) 100%)}
+.nip-hero .wrap{position:relative;z-index:2;width:100%}
+/* su fondo scuro: breadcrumb, testi e link in bianco, segno e iniziali in Cerulean */
+.nip-hero .nip-breadcrumb,.nip-hero .nip-breadcrumb a{color:color-mix(in srgb,var(--white) 80%,transparent)}
+.nip-hero .nip-breadcrumb a{text-decoration-color:color-mix(in srgb,var(--white) 40%,transparent)}
+.nip-hero .nip-breadcrumb a:hover{color:var(--white)}
+.nip-hero .nip-breadcrumb a:focus-visible,.nip-hero .nip-lead a:focus-visible{outline-color:var(--white)}
+.nip-hero .nip-breadcrumb span[aria-current]{color:var(--white)}
 /* Composizione verticale e centrata: segno NIP® -> tre frasi -> paragrafo -> bottone */
 .nip-hero-center{text-align:center}
 .nip-mark{display:flex;flex-direction:column;align-items:center;margin-bottom:clamp(28px,3.5vw,48px)}
-.nip-mark-word{font-family:var(--display);font-weight:700;font-size:clamp(88px,13vw,190px);line-height:.85;letter-spacing:-.03em;color:var(--primary-ink)}
+.nip-mark-word{font-family:var(--display);font-weight:700;font-size:clamp(80px,11vw,160px);line-height:.85;letter-spacing:-.03em;color:var(--primary)}
 .nip-mark-word sup{font-size:.26em;vertical-align:2em;font-weight:500;margin-left:.04em}
-.nip-mark-sub{font:600 13px var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--nip-muted);margin-top:clamp(14px,1.6vw,22px)}
+.nip-mark-sub{font:600 13px var(--body);letter-spacing:.28em;text-transform:uppercase;color:color-mix(in srgb,var(--white) 80%,transparent);margin-top:clamp(14px,1.6vw,22px)}
 /* le frasi: blocco centrato, righe allineate fra loro dentro il blocco */
-.nip-h1{display:inline-block;text-align:left;font-family:var(--display);font-weight:600;font-size:clamp(26px,3.6vw,48px);letter-spacing:-.02em;line-height:1.1;color:var(--nip-text)}
+.nip-h1{display:inline-block;text-align:left;font-family:var(--display);font-weight:600;font-size:clamp(24px,3.2vw,44px);letter-spacing:-.02em;line-height:1.1;color:var(--white)}
 .nip-h1 strong{font-weight:700}
 .nip-h1-line{display:block}
 /* l'iniziale di ogni riga (N, I, P) e' ::first-letter: letta dentro la parola, niente
    elementi separati per lo screen reader. Cerulean ink su bianco 5.01:1 */
-.nip-h1-line::first-letter{font-size:1.5em;line-height:1;color:var(--primary-ink)}
+.nip-h1-line::first-letter{font-size:1.5em;line-height:1;color:var(--primary)}
 /* N, I e P hanno larghezze molto diverse (Montserrat 700: .81 / .33 / .73 em): le
    iniziali si allineano a destra sulla N, cosi' le tre parole partono dallo stesso
    punto e ogni iniziale resta attaccata alla sua parola */
@@ -67,8 +79,12 @@ main{--nip-text:color-mix(in srgb,var(--dark) 85%,var(--white));--nip-muted:colo
 .nip-h1-line:nth-child(3)::first-letter{margin-left:.076em}
 /* da tablet in su le tre frasi stanno su una riga ciascuna */
 @media(min-width:768px){.nip-h1-line{white-space:nowrap}}
-.nip-lead{font:400 clamp(17px,1.4vw,19px)/1.65 var(--body);color:var(--nip-text);max-width:52ch;margin:clamp(22px,2.6vw,34px) auto 0}
+.nip-lead{font:400 clamp(17px,1.4vw,19px)/1.65 var(--body);color:color-mix(in srgb,var(--white) 85%,transparent);max-width:52ch;margin:clamp(22px,2.6vw,34px) auto 0}
 .nip-hero-cta{margin-top:clamp(24px,3vw,36px)}
+/* link del paragrafo: il Cerulean non regge 4.5 su foto chiara, quindi bianco sottolineato */
+.nip-hero .nip-lead a{color:var(--white);text-decoration-color:color-mix(in srgb,var(--white) 60%,transparent)}
+/* bottone su fondo scuro: hover verso il chiaro, come nella card sostenibilita' della home */
+.nip-hero .sust-cta:hover{background:var(--white);color:var(--dark)}
 
 /* ── 2. Introduzione ── */
 .nip-statement{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.6vw,32px);line-height:1.3;letter-spacing:-.01em;color:var(--nip-text);max-width:40ch}
@@ -114,6 +130,6 @@ main{--nip-text:color-mix(in srgb,var(--dark) 85%,var(--white));--nip-muted:colo
   .nip-intro-cols{grid-template-columns:1fr;gap:18px}
 }
 @media(max-width:560px){
-  .nip-hero{padding-top:calc(68px + 36px)}
+  .nip-hero{padding-top:calc(68px + 28px)}
   .nip-action-grid{grid-template-columns:1fr}
 }
