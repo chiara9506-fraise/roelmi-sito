@@ -11,7 +11,7 @@
   background:none;border:none;cursor:pointer;
 }
 .leg-item:hover,.leg-item:focus-visible{background:rgba(0,156,196,.08)}
-.leg-item:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.leg-item:focus-visible{outline:2px solid var(--primary-ink);outline-offset:2px}
 @keyframes legJump{
   0%{transform:none}
   35%{transform:translateY(-5px) scale(1.12)}

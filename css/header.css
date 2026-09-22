@@ -41,7 +41,7 @@
 .icon-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .25s,background .25s,color .25s;color:#fff}
 .site-header.solid .icon-btn{border-color:var(--line);background:#fff;color:var(--secondary)}
 .icon-btn:hover{border-color:#fff;background:rgba(255,255,255,.2)}
-.site-header.solid .icon-btn:hover{border-color:var(--primary);background:var(--accent1);color:var(--primary)}
+.site-header.solid .icon-btn:hover{border-color:var(--primary-ink);background:var(--accent1);color:var(--primary-ink)}
 .icon-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
 
 /* search expanding field */

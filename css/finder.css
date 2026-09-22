@@ -130,7 +130,7 @@
     border:1.5px solid transparent;
     transition:border-color .2s,background .2s;
   }
-  .mob-finder-search:focus-within{border-color:var(--primary);background:#fff}
+  .mob-finder-search:focus-within{border-color:var(--primary-ink);background:#fff}
   .mob-finder-search svg{flex:0 0 auto;stroke:var(--muted);fill:none}
   .mob-finder-search input{border:0;background:none;font:400 14px var(--body);color:var(--secondary);width:100%;outline:none}
   .mob-finder-search input::placeholder{color:var(--muted)}
