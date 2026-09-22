@@ -30,7 +30,9 @@
   pointer-events:none;
   opacity:0;
 }
-.prod-desc-mark path{fill:var(--primary)}
+/* Cerulean scuro: il Cerulean puro e' un pastello e su bianco, anche a opacita' piena,
+   sembrava una goccia trasparente */
+.prod-desc-mark path{fill:var(--primary-ink)}
 @media(max-width:1100px){.prod-desc-mark{display:none}}
 .prod-desc-eyebrow{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:16px}
 .prod-desc h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,32px);color:var(--secondary);letter-spacing:-.02em;margin-bottom:20px;line-height:1.2}
