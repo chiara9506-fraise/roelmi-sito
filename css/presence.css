@@ -10,7 +10,7 @@
   padding:5px 12px;margin:-5px -12px;border-radius:999px;
   background:none;border:none;cursor:pointer;
 }
-.leg-item:hover,.leg-item:focus-visible{background:rgba(0,156,196,.08)}
+.leg-item:hover,.leg-item:focus-visible{background:rgba(161,187,216,.15)}
 .leg-item:focus-visible{outline:2px solid var(--primary-ink);outline-offset:2px}
 @keyframes legJump{
   0%{transform:none}
@@ -22,24 +22,24 @@
 @media(prefers-reduced-motion:reduce){.leg-item:hover .leg-mark{animation:none}}
 .leg-mark{width:14px;height:21px;display:inline-block;flex:0 0 auto;line-height:0}
 .leg-mark svg{width:100%;height:100%;display:block;overflow:visible}
-.leg-mark--branch{color:#001D29}
+.leg-mark--branch{color:#191919}
 .leg-mark--biotech{color:#4d2e99}
-.leg-mark--lab{color:#515253}
-.leg-mark--production{color:#295a0e}
-.leg-mark--site{color:#006073}
+.leg-mark--lab{color:#7d6220}
+.leg-mark--production{color:#5d6a45}
+.leg-mark--site{color:#3e6896}
 
 /* Map */
 .presence-map-wrap{position:relative;margin-top:clamp(28px,4vw,48px)}
 #globalMap{width:100%;height:480px;border-radius:20px;overflow:hidden;z-index:1}
 
 /* Leaflet overrides */
-.leaflet-container{background:#66c6de!important;font-family:var(--body)}
-/* Tinta dell'azzurro del logo (#009CC4, 192 gradi) su tile in scala di grigio.
-   I valori sono tarati, non a occhio: alzando la saturazione i marker scuri
-   perdono contrasto. Verificato che tutte e 5 le categorie restino sopra 3:1
-   (la piu' debole, Poli produttivi #006073, sta a 5.10:1). */
-.leaflet-tile-pane{filter:sepia(1) saturate(4.75) hue-rotate(165deg) brightness(.86) contrast(1.35)}
-.leaflet-control-attribution{background:rgba(0,29,41,.85)!important;color:rgba(255,255,255,.6)!important;font-size:10px!important;border-radius:4px 0 0 0!important}
+.leaflet-container{background:#d8e2eb!important;font-family:var(--body)}
+/* Tinta del Cerulean della palette (#A1BBD8, 212 gradi) su tile in scala di grigio:
+   acqua #d8e2eb, terre #c8daeb. Valori tarati sui grigi reali delle tile (239/208),
+   non a occhio. Tutti e 5 i marker restano sopra 4:1 sulla mappa (Hard Grey 12.3,
+   lilla biotech 6.8, gli altri tre ~4.05). */
+.leaflet-tile-pane{filter:sepia(1) saturate(2.75) hue-rotate(174deg) brightness(.9) contrast(1.05)}
+.leaflet-control-attribution{background:rgba(25,25,25,.85)!important;color:rgba(255,255,255,.6)!important;font-size:10px!important;border-radius:4px 0 0 0!important}
 .leaflet-control-attribution a{color:rgba(255,255,255,.75)!important}
 
 /* Custom marker */
@@ -63,11 +63,11 @@
   .pm-leaf-wrap:hover .pm-mark::after{animation:none}
 }
 .pm-mark svg{display:block;width:100%;height:100%}
-.pm-mark--site{color:#006073}
-.pm-mark--branch{color:#001D29}
+.pm-mark--site{color:#3e6896}
+.pm-mark--branch{color:#191919}
 .pm-mark--biotech{color:#4d2e99}
-.pm-mark--lab{color:#515253}
-.pm-mark--production{color:#295a0e}
+.pm-mark--lab{color:#7d6220}
+.pm-mark--production{color:#5d6a45}
 .pm-leaf-wrap:hover .pm-mark{transform:scale(1.28)}
 
 /* Ingresso animato dei marker: cadono in sequenza quando la mappa entra in viewport */
@@ -86,7 +86,7 @@
 
 /* Cluster */
 .pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary-ink);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:700 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
-.pm-cluster-icon:hover,.pm-cluster-icon:focus-visible{transform:scale(1.1);box-shadow:0 0 0 6px rgba(0,156,196,.25)}
+.pm-cluster-icon:hover,.pm-cluster-icon:focus-visible{transform:scale(1.1);box-shadow:0 0 0 6px rgba(161,187,216,.45)}
 .pm-cluster-icon:focus-visible{outline:2px solid #fff;outline-offset:2px}
 
 /* Tooltip hover sui marker */
@@ -112,7 +112,7 @@
 .pm-hl-production .pm-mark--production{transform:scale(1.22)}
 .leg-item{transition:color .2s,background .2s}
 .leg-item:hover,.leg-item:focus-visible,.leg-item.is-hl{color:var(--primary-ink)}
-.leg-item.is-hl{background:rgba(0,156,196,.08)}
+.leg-item.is-hl{background:rgba(161,187,216,.15)}
 
 /* Leaflet popup styling */
 .pm-map-popup .leaflet-popup-content-wrapper{background:#fff;border-radius:16px;box-shadow:0 16px 48px rgba(0,29,41,.18);padding:0;overflow:hidden;border:none}
