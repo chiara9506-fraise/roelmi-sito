@@ -201,7 +201,9 @@
     letter-spacing:.04em;text-align:center;
     position:sticky;bottom:16px;
     box-shadow:0 4px 16px rgba(0,156,196,.3);
+    transition:background .2s;
   }
+  .mob-sidebar-apply:hover{background:var(--dark)}
 
   /* ── Griglia 1 colonna, card full-width ── */
   .finder-grid{grid-template-columns:1fr;gap:16px}
