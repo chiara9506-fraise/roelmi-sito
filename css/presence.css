@@ -92,7 +92,7 @@
 /* Tooltip hover sui marker */
 .pm-tooltip{
   background:#fff;border:none;border-radius:8px;
-  box-shadow:0 6px 20px rgba(0,29,41,.18);
+  box-shadow:0 6px 20px rgba(25,25,25,.18);
   padding:7px 12px;
 }
 .pm-tooltip b{display:block;font:600 13px var(--display);color:var(--secondary);line-height:1.25}
@@ -115,7 +115,7 @@
 .leg-item.is-hl{background:rgba(161,187,216,.15)}
 
 /* Leaflet popup styling */
-.pm-map-popup .leaflet-popup-content-wrapper{background:#fff;border-radius:16px;box-shadow:0 16px 48px rgba(0,29,41,.18);padding:0;overflow:hidden;border:none}
+.pm-map-popup .leaflet-popup-content-wrapper{background:#fff;border-radius:16px;box-shadow:0 16px 48px rgba(25,25,25,.18);padding:0;overflow:hidden;border:none}
 .pm-map-popup .leaflet-popup-content{margin:0;width:260px!important}
 .pm-map-popup .leaflet-popup-tip-container{display:none}
 .pm-map-popup .leaflet-popup-close-button{top:9px;right:9px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--secondary);font-size:18px;line-height:26px;text-align:center;box-shadow:0 1px 5px rgba(0,0,0,.15);padding:0;font-weight:400}

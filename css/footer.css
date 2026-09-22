@@ -10,7 +10,7 @@
 .ft-social a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;transition:border-color .25s,background .25s,color .25s}
 .ft-social a:hover{border-color:#fff;background:rgba(255,255,255,.2)}
 .ft-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
-.ft-col h4{font:600 12px var(--body);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:20px}
+.ft-h{font:600 12px var(--body);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:20px}
 .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:13px}
 .ft-col a{font:400 14.5px var(--body);color:#fff;transition:color .2s}
 .ft-col a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
@@ -31,11 +31,15 @@
   .ft-tag{max-width:none;font-size:14px}
   .ft-social{margin-top:18px}
   .ft-col{border-bottom:1px solid rgba(255,255,255,.12)}
-  .ft-col h4{display:flex;justify-content:space-between;align-items:center;cursor:pointer;margin-bottom:0;padding:16px 0}
-  .ft-col h4::after{content:"";width:8px;height:8px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(45deg) translateY(-3px);transition:transform .25s;flex:0 0 auto}
-  .ft-col.is-open h4::after{transform:rotate(225deg) translateY(2px)}
-  .ft-col ul{max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease,opacity .25s ease}
-  .ft-col.is-open ul{max-height:300px;opacity:1;padding-bottom:16px}
+  /* su mobile il titolo contiene un bottone (creato da main.js) che apre la colonna */
+  .ft-h{margin-bottom:0}
+  .ft-toggle{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;min-height:44px;padding:12px 0;cursor:pointer}
+  .ft-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .ft-toggle::after{content:"";width:8px;height:8px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(45deg) translateY(-3px);transition:transform .25s;flex:0 0 auto}
+  .ft-col.is-open .ft-toggle::after{transform:rotate(225deg) translateY(2px)}
+  /* chiusa = anche fuori dal Tab: visibility nasconde i link alla tastiera */
+  .ft-col ul{max-height:0;overflow:hidden;opacity:0;visibility:hidden;transition:max-height .3s ease,opacity .25s ease,visibility 0s .3s}
+  .ft-col.is-open ul{max-height:300px;opacity:1;visibility:visible;padding-bottom:16px;transition:max-height .3s ease,opacity .25s ease,visibility 0s}
   .ft-bottom{flex-direction:column;align-items:flex-start;gap:10px;padding:18px 0}
   .ft-legal{gap:14px;flex-wrap:wrap}
   .ft-copy,.ft-legal a{font-size:12px}

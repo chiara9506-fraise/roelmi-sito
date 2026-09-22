@@ -3,7 +3,7 @@
 /* Page hero */
 .finder-hero{position:relative;padding:clamp(80px,10vw,130px) 0 clamp(60px,7vw,90px);overflow:hidden;background:var(--dark)}
 .finder-hero-bg{position:absolute;inset:0;background:url('../images/HEROINGREDIENTS.jpg') center/cover no-repeat;opacity:.45}
-.finder-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,29,41,.82) 0%,rgba(0,124,143,.55) 100%)}
+.finder-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(25,25,25,.82) 0%,rgba(68,114,165,.55) 100%)}
 .finder-hero .wrap{position:relative;z-index:1}
 .finder-hero-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
 .finder-hero h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:#fff;line-height:1.1;margin-bottom:14px}
@@ -62,7 +62,7 @@
 
 /* Card — base (usata anche fuori dal finder) */
 .ing-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;text-decoration:none;color:inherit}
-.ing-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,29,41,.10)}
+.ing-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(25,25,25,.10)}
 
 .ing-card-img{aspect-ratio:4/3;background:#fff;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden;width:100%}
 .ing-card-img img{width:100%;height:100%;object-fit:contain;transition:transform .4s ease}
@@ -71,7 +71,7 @@
 .ing-card-body{padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;flex:1}
 .ing-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .ing-card-tag{font:600 10px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:999px;border:1px solid var(--line)}
-.ing-card-tag.market{color:var(--primary-ink);border-color:var(--primary-ink);background:rgba(0,156,196,.06)}
+.ing-card-tag.market{color:var(--primary-ink);border-color:var(--primary-ink);background:rgba(68,114,165,.06)}
 .ing-card-tag.tech{color:#4f7a0a;border-color:#4f7a0a;background:rgba(125,189,15,.06)}
 
 .ing-card h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.5vw,21px);color:var(--primary-ink);letter-spacing:-.01em;line-height:1.15;margin-bottom:6px}
@@ -156,7 +156,7 @@
   /* ── Backdrop ── */
   .mob-filter-backdrop{
     display:block;position:fixed;inset:0;
-    background:rgba(0,29,41,.45);z-index:198;
+    background:rgba(25,25,25,.45);z-index:198;
     opacity:0;pointer-events:none;transition:opacity .3s;
   }
   .mob-filter-backdrop.is-open{opacity:1;pointer-events:auto}
@@ -170,7 +170,7 @@
     transform:translateY(110%);
     transition:transform .35s cubic-bezier(.4,0,.2,1);
     border-radius:20px 20px 0 0;
-    box-shadow:0 -8px 40px rgba(0,29,41,.18);
+    box-shadow:0 -8px 40px rgba(25,25,25,.18);
   }
   .finder-sidebar.mob-open{transform:translateY(0)}
   .finder-search{display:none}
@@ -200,7 +200,7 @@
     padding:14px;font:600 14px var(--body);cursor:pointer;
     letter-spacing:.04em;text-align:center;
     position:sticky;bottom:16px;
-    box-shadow:0 4px 16px rgba(0,156,196,.3);
+    box-shadow:0 4px 16px rgba(68,114,165,.3);
     transition:background .2s;
   }
   .mob-sidebar-apply:hover{background:var(--dark)}

@@ -38,8 +38,8 @@
     radial-gradient(circle at 50% 80%,rgba(255,255,255,.2) 0 3px,transparent 4px),
     radial-gradient(circle at 85% 25%,rgba(255,255,255,.25) 0 2px,transparent 3px);}
 
-.division .veil{position:absolute;inset:0;z-index:5;background:linear-gradient(180deg,rgba(0,29,41,0) 20%,rgba(0,29,41,.72) 55%,rgba(0,29,41,.9) 100%);transition:background .9s cubic-bezier(.4,0,.2,1)}
-.division:hover .veil{background:linear-gradient(180deg,rgba(0,29,41,.15) 0%,rgba(0,29,41,.72) 40%,rgba(0,29,41,.92) 100%)}
+.division .veil{position:absolute;inset:0;z-index:5;background:linear-gradient(180deg,rgba(25,25,25,0) 20%,rgba(25,25,25,.72) 55%,rgba(25,25,25,.9) 100%);transition:background .9s cubic-bezier(.4,0,.2,1)}
+.division:hover .veil{background:linear-gradient(180deg,rgba(25,25,25,.15) 0%,rgba(25,25,25,.72) 40%,rgba(25,25,25,.92) 100%)}
 
 /* ── Testo ── */
 .division .cat{position:relative;z-index:5;font:600 11.5px var(--body);letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:14px}
@@ -47,6 +47,8 @@
 .division p{position:relative;z-index:5;margin-top:14px;max-width:34ch;font-size:clamp(14px,1.1vw,16px);line-height:1.6;color:rgba(255,255,255,.9);
   max-height:0;opacity:0;overflow:hidden;transition:max-height .8s cubic-bezier(.4,0,.2,1),opacity .7s cubic-bezier(.4,0,.2,1),margin .7s cubic-bezier(.4,0,.2,1)}
 .division:hover p,.division:focus-within p{max-height:160px;opacity:1;margin-top:16px}
+/* senza mouse (tablet, touch) il testo non comparirebbe mai: sempre visibile */
+@media(hover:none){.division p{max-height:160px;opacity:1;margin-top:16px}}
 .division .explore{position:relative;z-index:5;display:inline-flex;align-items:center;gap:10px;margin-top:24px;font:600 13.5px var(--body);letter-spacing:.04em}
 .division .explore svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;transition:transform .25s}
 .division:hover .explore svg{transform:translateX(5px)}

@@ -6,7 +6,7 @@
   max-width:calc(100vw - 40px);
   background:#fff;
   border-radius:16px;
-  box-shadow:0 8px 40px rgba(0,29,41,.16);
+  box-shadow:0 8px 40px rgba(25,25,25,.16);
   padding:22px 22px 20px;
   z-index:9000;
   opacity:0;
@@ -46,7 +46,7 @@
   color:var(--primary-ink);
   margin-bottom:8px;
 }
-.site-popup h4{
+.site-popup h2{
   font-family:var(--display);
   font-weight:600;
   font-size:17px;

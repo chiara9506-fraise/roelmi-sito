@@ -431,11 +431,32 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
     if(!popup.hasAttribute('hidden')&&!popup.contains(e.target))popup.setAttribute('hidden','');
   });
 })();
-// Footer accordion (mobile)
+// Footer accordion (mobile): sotto i 560px il titolo diventa un vero bottone
+// (tastiera + aria-expanded); sopra torna testo, le colonne sono sempre aperte
 (function(){
-  document.querySelectorAll('.ft-col h4').forEach(function(h4){
-    h4.addEventListener('click', function(){
-      h4.closest('.ft-col').classList.toggle('is-open');
+  var mq=window.matchMedia('(max-width:560px)');
+  var cols=document.querySelectorAll('.ft-col');
+  function setup(){
+    cols.forEach(function(col,i){
+      var h=col.querySelector('.ft-h'),list=col.querySelector('ul');
+      if(!h||!list)return;
+      if(!list.id)list.id='ftList'+i;
+      var btn=h.querySelector('.ft-toggle');
+      if(mq.matches&&!btn){
+        btn=document.createElement('button');
+        btn.type='button';btn.className='ft-toggle';
+        btn.setAttribute('aria-controls',list.id);
+        btn.setAttribute('aria-expanded','false');
+        btn.textContent=h.textContent;h.textContent='';h.appendChild(btn);
+        btn.addEventListener('click',function(){
+          var open=col.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded',open?'true':'false');
+        });
+      }else if(!mq.matches&&btn){
+        h.textContent=btn.textContent;col.classList.remove('is-open');
+      }
     });
-  });
+  }
+  setup();
+  if(mq.addEventListener)mq.addEventListener('change',setup);else mq.addListener(setup);
 })();
