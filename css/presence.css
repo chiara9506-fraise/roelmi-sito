@@ -30,7 +30,7 @@
 
 /* Map */
 .presence-map-wrap{position:relative;margin-top:clamp(28px,4vw,48px)}
-#globalMap{width:100%;height:480px;border-radius:20px;overflow:hidden;z-index:1}
+#globalMap{width:100%;height:480px;border-radius:16px;overflow:hidden;z-index:1}
 
 /* Leaflet overrides */
 .leaflet-container{background:#d8e2eb!important;font-family:var(--body)}
@@ -130,7 +130,7 @@
 .pm-popup-link:hover svg{transform:translateX(3px)}
 
 @media(max-width:700px){
-  #globalMap{height:320px;border-radius:14px}
+  #globalMap{height:320px}
   .presence-legend{gap:16px}
   .pm-map-popup .leaflet-popup-content{width:200px!important}
   .pm-lp-img{height:100px}
