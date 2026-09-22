@@ -3,6 +3,11 @@
    non dichiarano uno sfondo. --primary-ink solo su fondo chiaro (5.01 su bianco,
    4.52 su --accent1). */
 
+/* Grigi solo dalla palette: Hard Grey (--dark) schiarito, niente piu' #565755/#747673
+   (i grigi della versione precedente, con una punta di verde).
+   85% = #3c3c3c 11.1:1 su bianco; 70% = #5e5e5e 6.5 su bianco, 5.3 sulla tinta Olive */
+main{--about-text:color-mix(in srgb,var(--dark) 85%,var(--white));--about-muted:color-mix(in srgb,var(--dark) 70%,var(--white));--about-line:color-mix(in srgb,var(--dark) 15%,transparent)}
+
 /* Animazioni d'entrata: stesse regole di who.css (che qui non e' caricato);
    la classe .in la aggiunge main.js */
 .r-up{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -18,9 +23,9 @@
 
 /* Tipografia condivisa, allineata alla home */
 .about-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:16px}
-.about-h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,5vw,68px);letter-spacing:-.025em;line-height:1.02;color:var(--secondary)}
-.about-h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;line-height:1.05;color:var(--secondary);margin-bottom:clamp(24px,3vw,40px)}
-.about-lead,.about-text{font:400 17px/1.65 var(--body);color:var(--secondary);max-width:62ch}
+.about-h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,5vw,68px);letter-spacing:-.025em;line-height:1.02;color:var(--about-text)}
+.about-h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;line-height:1.05;color:var(--about-text);margin-bottom:clamp(24px,3vw,40px)}
+.about-lead,.about-text{font:400 17px/1.65 var(--body);color:var(--about-text);max-width:62ch}
 .about-lead{margin-top:clamp(18px,2vw,26px)}
 .about-text + .about-text{margin-top:18px}
 /* link nel testo: Cerulean ink sottolineato */
@@ -31,14 +36,14 @@
 /* Segnaposto per materiale mancante. Etichetta in --muted su --accent1 fa 4.14:1:
    a 19px in grassetto conta come testo grande, soglia 3:1 */
 .about-ph{border-radius:16px;background:var(--accent1);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;list-style:none}
-.about-ph span{font:600 19px/1.3 var(--body);color:var(--muted)}
+.about-ph span{font:600 19px/1.3 var(--body);color:var(--about-muted)}
 
 /* ── Breadcrumb: stessa struttura della pagina prodotto, colori per fondo chiaro ── */
-.about-breadcrumb{display:flex;align-items:center;gap:8px;font:400 12px var(--body);color:var(--muted);margin-bottom:clamp(20px,2.5vw,32px)}
-.about-breadcrumb a{color:var(--muted);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px;transition:color .18s,text-decoration-color .18s}
+.about-breadcrumb{display:flex;align-items:center;gap:8px;font:400 12px var(--body);color:var(--about-muted);margin-bottom:clamp(20px,2.5vw,32px)}
+.about-breadcrumb a{color:var(--about-muted);text-decoration:underline;text-decoration-color:var(--about-line);text-underline-offset:2px;transition:color .18s,text-decoration-color .18s}
 .about-breadcrumb a:hover{color:var(--primary-ink);text-decoration-color:currentColor}
 .about-breadcrumb a:focus-visible{outline:2px solid var(--primary-ink);outline-offset:2px;border-radius:2px}
-.about-breadcrumb span{color:var(--secondary);font-weight:600}
+.about-breadcrumb span{color:var(--about-text);font-weight:600}
 
 /* ── 1. Apertura ── */
 /* header fixed e sempre compatto qui (.hero-light = .solid, 68px): la sezione parte sotto */
@@ -49,15 +54,15 @@
 .about-name{justify-self:center}
 .about-name-parts{display:flex;align-items:flex-start;justify-content:center;gap:clamp(8px,1.4vw,18px)}
 .about-name-part{display:flex;flex-direction:column;align-items:center;gap:10px}
-.about-name-syl{font-family:var(--display);font-weight:700;font-size:clamp(56px,8vw,112px);line-height:.9;letter-spacing:-.02em;color:var(--secondary)}
+.about-name-syl{font-family:var(--display);font-weight:700;font-size:clamp(56px,8vw,112px);line-height:.9;letter-spacing:-.02em;color:var(--about-text)}
 .about-name-syl{border-bottom:4px solid var(--primary);padding-bottom:10px}
 .about-name-part:nth-child(3) .about-name-syl{border-bottom-color:var(--accent3)}
 .about-name-part:nth-child(5) .about-name-syl{border-bottom-color:var(--accent2)}
 .about-name-src{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink)}
 .about-name-dot{font-family:var(--display);font-weight:700;font-size:clamp(40px,5vw,72px);line-height:1.1;color:var(--primary-ink)}
-.about-name-hpc{display:flex;align-items:baseline;justify-content:center;gap:16px;margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(16px,2vw,22px);border-top:1px solid var(--line);flex-wrap:wrap}
-.about-name-hpc-code{font-family:var(--display);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-.01em;color:var(--secondary)}
-.about-name-hpc-txt{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.about-name-hpc{display:flex;align-items:baseline;justify-content:center;gap:16px;margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(16px,2vw,22px);border-top:1px solid var(--about-line);flex-wrap:wrap}
+.about-name-hpc-code{font-family:var(--display);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-.01em;color:var(--about-text)}
+.about-name-hpc-txt{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--about-muted)}
 
 .about-ph--family{aspect-ratio:21/9;margin-top:clamp(40px,5vw,72px)}
 .about-hq{margin-top:clamp(28px,3vw,40px)}
@@ -68,8 +73,8 @@
 .about-nip{background:var(--tint-olive);border-radius:16px;padding:clamp(28px,3.5vw,48px)}
 .about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(48px,6vw,80px);line-height:1;letter-spacing:-.02em;color:var(--primary-ink)}
 .about-nip-mark sup{font-size:.4em;vertical-align:1.1em;font-weight:500}
-.about-nip-sub{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--secondary);margin-top:12px}
-.about-nip-text{font:400 16px/1.65 var(--body);color:var(--secondary);margin-top:20px}
+.about-nip-sub{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--about-text);margin-top:12px}
+.about-nip-text{font:400 16px/1.65 var(--body);color:var(--about-text);margin-top:20px}
 .about-nip-text a{color:var(--dark)}
 .about-nip-text a:focus-visible{outline-color:var(--dark)}
 .about-nip-text sup,.about-tl-body sup{font-size:.6em;vertical-align:.5em}
@@ -80,32 +85,36 @@
 .about-approach-fig img{width:100%;height:100%;object-fit:cover;display:block}
 /* stessa forma dei tag di .prod-hero-tags, colori per fondo chiaro */
 .about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.about-tag{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:999px;background:var(--tint-cerulean);color:var(--secondary)}
+.about-tag{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:999px;background:var(--tint-cerulean);color:var(--about-text)}
 .about-tag:nth-child(2){background:var(--tint-olive)}
 .about-tag:nth-child(3){background:var(--tint-caramel)}
 .about-tags + .about-text{margin-top:18px}
 
-/* ── 4. Timeline ── */
+/* ── 4. Timeline: fascia Hard Grey a tutta larghezza, spezza la sequenza di sezioni chiare ── */
+.about-timeline{background:var(--dark);padding:clamp(56px,7vw,112px) 0;margin-bottom:clamp(48px,6vw,96px)}
+.about-timeline .about-h2{color:var(--white)}
+.about-timeline{--about-line:color-mix(in srgb,var(--white) 22%,transparent)}
 .about-tl{list-style:none;padding:0;margin:0}
 .about-tl-item{display:grid;grid-template-columns:clamp(96px,12vw,150px) 1fr}
-.about-tl-year{font-family:var(--display);font-weight:700;font-size:clamp(28px,3vw,40px);line-height:1;letter-spacing:-.02em;color:var(--primary-ink);padding-top:2px}
+.about-tl-year{font-family:var(--display);font-weight:700;font-size:clamp(28px,3vw,40px);line-height:1;letter-spacing:-.02em;color:var(--primary);padding-top:2px}
 /* la linea e' il bordo sinistro dei testi: le voci sono contigue, quindi e' continua */
-.about-tl-body{position:relative;border-left:1px solid var(--line);padding:0 0 clamp(28px,3.5vw,44px) clamp(24px,3vw,40px)}
+.about-tl-body{position:relative;border-left:1px solid var(--about-line);padding:0 0 clamp(28px,3.5vw,44px) clamp(24px,3vw,40px)}
 .about-tl-item:last-child .about-tl-body{padding-bottom:0}
-/* pallini: richiamo dei tre accenti, decorativi; contorno Cerulean ink per staccare dal bianco */
-.about-tl-body::before{content:"";position:absolute;left:-7px;top:9px;width:13px;height:13px;border-radius:50%;background:var(--primary);border:2px solid var(--primary-ink);box-sizing:border-box}
+/* pallini: richiamo dei tre accenti, decorativi; sul fondo scuro si vedono da soli */
+.about-tl-body::before{content:"";position:absolute;left:-7px;top:9px;width:13px;height:13px;border-radius:50%;background:var(--primary)}
 .about-tl-item:nth-child(3n+2) .about-tl-body::before{background:var(--accent3)}
 .about-tl-item:nth-child(3n) .about-tl-body::before{background:var(--accent2)}
-.about-tl-body p{font:400 17px/1.65 var(--body);color:var(--secondary);max-width:62ch}
+.about-tl-body p{font:400 17px/1.65 var(--body);color:color-mix(in srgb,var(--white) 85%,transparent);max-width:62ch}
 .about-tl-body p + p{margin-top:12px}
 /* tanti link in poco spazio: sottolineatura tenue, piena in hover (resta il segnale non cromatico) */
-.about-tl-body a{text-decoration-color:color-mix(in srgb,var(--primary-ink) 40%,transparent)}
+.about-tl-body a{color:var(--primary);text-decoration-color:color-mix(in srgb,var(--primary) 45%,transparent)}
+.about-tl-body a:focus-visible{outline-color:var(--primary)}
 .about-tl-body a:hover{text-decoration-color:currentColor}
 
 /* ── 5. Presence ── */
 .about-world-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
 /* stesso gesto dei box dei numeri in home (.impact-card) */
-.about-card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--primary);border-radius:16px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;
+.about-card{background:var(--white);border:1px solid var(--about-line);border-top:4px solid var(--primary);border-radius:16px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;
   box-shadow:0 4px 20px color-mix(in srgb,var(--dark) 5%,transparent);cursor:default;
   transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
 .about-card:hover{background:var(--primary-ink);border-color:var(--primary-ink);transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--primary-ink) 22%,transparent)}
@@ -113,9 +122,9 @@
 .about-card-country,.about-card-name,.about-card-role,.about-card-todo{transition:color .28s ease}
 .about-card:hover .about-card-country,.about-card:hover .about-card-name,.about-card:hover .about-card-role,.about-card:hover .about-card-todo{color:var(--white)}
 .about-card-country{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:10px}
-.about-card-name{font-family:var(--display);font-weight:600;font-size:clamp(20px,1.8vw,24px);letter-spacing:-.01em;line-height:1.2;color:var(--secondary)}
-.about-card-role{font:400 15px var(--body);color:var(--secondary);margin-top:6px}
-.about-card-todo{font:400 14px var(--body);color:var(--muted);margin-top:auto;padding-top:20px}
+.about-card-name{font-family:var(--display);font-weight:600;font-size:clamp(20px,1.8vw,24px);letter-spacing:-.01em;line-height:1.2;color:var(--about-text)}
+.about-card-role{font:400 15px var(--body);color:var(--about-text);margin-top:6px}
+.about-card-todo{font:400 14px var(--body);color:var(--about-muted);margin-top:auto;padding-top:20px}
 
 /* ── 6. Partnership ── */
 .about-partners-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
@@ -123,14 +132,14 @@
 
 /* ── 7. Chiusura: box Ingredient Finder, stesso aspetto di .ing-finder in home ── */
 .about-close{padding:0 0 clamp(48px,6vw,96px)}
-.about-finder{display:flex;align-items:center;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,30px);box-shadow:0 10px 30px color-mix(in srgb,var(--primary-ink) 8%,transparent);transition:border-color .25s,box-shadow .25s,transform .2s}
+.about-finder{display:flex;align-items:center;gap:18px;background:var(--white);border:1px solid var(--about-line);border-radius:16px;padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,30px);box-shadow:0 10px 30px color-mix(in srgb,var(--primary-ink) 8%,transparent);transition:border-color .25s,box-shadow .25s,transform .2s}
 .about-finder:hover{border-color:var(--primary-ink);box-shadow:0 16px 38px color-mix(in srgb,var(--primary-ink) 16%,transparent);transform:translateY(-2px)}
 .about-finder:focus-visible{outline:2px solid var(--primary-ink);outline-offset:3px}
 .about-finder-ic{width:50px;height:50px;border-radius:50%;background:linear-gradient(120deg,var(--primary),var(--primary-ink));display:flex;align-items:center;justify-content:center;flex:0 0 auto}
 .about-finder-ic svg{width:21px;height:21px;stroke:var(--white);fill:none;stroke-width:2}
 .about-finder-txt{display:flex;flex-direction:column;line-height:1.3;flex:1 1 auto}
-.about-finder-txt b{font:600 16px var(--body);color:var(--secondary);letter-spacing:.01em}
-.about-finder-txt small{font:400 13.5px var(--body);color:var(--muted)}
+.about-finder-txt b{font:600 16px var(--body);color:var(--about-text);letter-spacing:.01em}
+.about-finder-txt small{font:400 13.5px var(--body);color:var(--about-muted)}
 .about-finder-cta{flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;background:var(--primary-ink);color:var(--white);font:600 14px var(--body);padding:13px 24px;border-radius:999px;transition:background .25s}
 .about-finder:hover .about-finder-cta{background:var(--dark)}
 .about-finder-cta svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s}
@@ -150,7 +159,7 @@
   .about-name{justify-self:stretch}
   .about-ph--family{aspect-ratio:4/3}
   .about-ph span{font-size:19px}
-  .about-tl-item{grid-template-columns:1fr;border-left:1px solid var(--line);padding-left:24px;position:relative}
+  .about-tl-item{grid-template-columns:1fr;border-left:1px solid var(--about-line);padding-left:24px;position:relative}
   .about-tl-year{padding-bottom:8px}
   .about-tl-body{border-left:0;padding-left:0;position:static}
   .about-tl-body::before{left:-6px;top:6px}
