@@ -30,6 +30,20 @@
 .ing-caption .pill{display:inline-block;font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--primary-ink);border:1px solid var(--primary-ink);border-radius:999px;padding:5px 13px;margin-bottom:18px}
 .ing-name{font-family:var(--display);font-weight:600;font-size:clamp(26px,3vw,40px);letter-spacing:-.02em;color:var(--secondary);line-height:1.08}
 .ing-name b{color:var(--primary-ink);font-weight:600}
+/* Titolo cliccabile solo se il prodotto ha una pagina: sottolineato al passaggio */
+.ing-name a{color:inherit;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-decoration-color .2s}
+.ing-name a:hover{text-decoration-color:currentColor}
+.ing-name a:focus-visible{outline:2px solid var(--primary-ink);outline-offset:4px;border-radius:4px}
+/* Link esplicito alla pagina prodotto, stesso stile dei "Read more" delle news */
+.ing-more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font:600 14px var(--body);color:var(--primary-ink)}
+.ing-more[hidden]{display:none}
+.ing-more sup{font-size:.6em;vertical-align:.5em}
+.ing-more svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+.ing-more:hover svg{transform:translateX(4px)}
+.ing-more:focus-visible{outline:2px solid var(--primary-ink);outline-offset:3px;border-radius:4px}
+/* Immagine cliccabile: la figura ignora il mouse (parallasse), il link no */
+.ing-figure-link{position:absolute;inset:0;z-index:2;pointer-events:auto;cursor:pointer}
+.ing-figure-link[hidden]{display:none}
 .ing-desc{color:var(--muted);margin-top:16px;font-size:clamp(14px,1.15vw,16.5px);line-height:1.6}
 .ing-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .ing-tags span{font:500 11.5px var(--body);color:var(--secondary);background:rgba(68,114,165,.08);border:1px solid var(--line);padding:5px 11px;border-radius:999px}

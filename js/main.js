@@ -252,7 +252,7 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 
 (function(){
   var data=[
-    {pill:"Biologically active waters",name:"CytoFruit<b>\u00ae</b>",desc:"Fruit-derived active waters that replace demineralized water. Naturally processed, enriched in oligoelements, with protective and cell-vitality benefits for sustainable formulas.",tags:["Sustainable","Cellular protection","Water-free option"]},
+    {pill:"Biologically active waters",href:"cytofruit.html",name:"CytoFruit<b>\u00ae</b>",desc:"Fruit-derived active waters that replace demineralized water. Naturally processed, enriched in oligoelements, with protective and cell-vitality benefits for sustainable formulas.",tags:["Sustainable","Cellular protection","Water-free option"]},
     {pill:"GLP-1 natural support",name:"SelectSIEVE<b>\u00ae</b> HopE",desc:"Hop cone bioactives via supercritical CO\u2082 extraction, stabilised in powder form \u2014 supporting weight management, insulin sensitivity and natural GLP-1 release.",tags:["Metabolic health","Weight management","GLP-1 support"]},
     {pill:"Active Make-Up",name:"TechnoHYAL<b>\u00ae</b> HyaPearl",desc:"Olive glycerides and hyaluronic acid combined in a patented matrix \u2014 delivering hydration and skin nourishment in anhydrous color cosmetic formulations.",tags:["Active Make-Up","Hydration","Anhydrous"]},
     {pill:"Color portfolio",name:"ColorGLAM<b>\u00ae</b>",desc:"Ester-coated pigments functionalized with Tripelargonin, an upcycled sustainable ester \u2014 for high color release, formulation stability and a weightless, refined skin feel.",tags:["High color release","Formulation stability","Upcycled ester"]}
@@ -262,13 +262,18 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   var cap=document.getElementById('ingCaption');
   var pill=document.getElementById('ingPill'),nm=document.getElementById('ingName'),desc=document.getElementById('ingDesc'),tags=document.getElementById('ingTags'),num=document.getElementById('ingNum');
   var numMob=document.getElementById('ingNumMob');
+  var more=document.getElementById('ingMore'),moreTxt=document.getElementById('ingMoreTxt'),figLink=document.getElementById('ingFigLink');
   document.getElementById('ingTot').textContent=String(total).padStart(2,'0');
   var totMob=document.getElementById('ingTotMob');if(totMob)totMob.textContent=String(total).padStart(2,'0');
   function render(){
     cap.classList.add('swap');
     setTimeout(function(){
       var d=data[i];
-      pill.textContent=d.pill;nm.innerHTML=d.name;desc.innerHTML=d.desc;
+      pill.textContent=d.pill;desc.innerHTML=d.desc;
+      // link alla pagina prodotto solo se esiste (campo href): titolo, immagine e "Discover"
+      nm.innerHTML=d.href?'<a href="'+d.href+'">'+d.name+'</a>':d.name;
+      if(more){more.hidden=!d.href;if(d.href){more.href=d.href;moreTxt.innerHTML='Discover '+d.name;}}
+      if(figLink){figLink.hidden=!d.href;if(d.href)figLink.href=d.href;}
       tags.innerHTML=d.tags.map(function(t){return '<span>'+t+'</span>'}).join('');
       var n=String(i+1).padStart(2,'0');
       num.textContent=n;if(numMob)numMob.textContent=n;
