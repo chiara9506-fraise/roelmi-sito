@@ -346,12 +346,13 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   function countUp(el){
     var target=parseFloat(el.getAttribute('data-target'));
     var suf=el.getAttribute('data-suffix')||'';
+    var pre=el.getAttribute('data-prefix')||'';
     var dur=1200,t0=null;
     function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur);
       var ease=1-Math.pow(1-p,3);
       var val=Math.round(target*ease);
-      el.textContent=val+suf;
-      if(p<1)requestAnimationFrame(step);else el.textContent=target+suf;}
+      el.textContent=pre+val+suf;
+      if(p<1)requestAnimationFrame(step);else el.textContent=pre+target+suf;}
     requestAnimationFrame(step);
   }
   var grid=sec.querySelector('.impact-grid');
