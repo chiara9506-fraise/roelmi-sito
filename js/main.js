@@ -6,7 +6,7 @@
   var READY_TIMEOUT=5000; // oltre questa soglia si resta sul poster
   var TEXT_FADE_START=0.35,TEXT_FADE_END=0.55; // il video schiarisce: il testo bianco esce prima
   // Fondo del video, campionato a inizio e fine: le bande ai lati devono seguirlo
-  var BG_FROM=[13,61,71],BG_TO=[247,243,235];
+  var BG_FROM=[13,61,71],BG_TO=[245,245,245];
 
   var video=document.getElementById('heroVideo');
   var hero=document.getElementById('hero');

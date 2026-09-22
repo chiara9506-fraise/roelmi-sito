@@ -1,6 +1,6 @@
 /* L'altezza della sezione e' il budget di scroll che alimenta lo scrub del video.
    Va tenuta uguale a HERO_SCROLL_VH in js/main.js. */
-.hero{position:relative;height:300vh;background:var(--accent1)}
+.hero{position:relative;height:300vh;background:#fff}
 /* Il video parte SCURO e finisce bianco: testo chiaro, che si ritira prima che schiarisca */
 .hero-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:flex-end;background:#0d3d47;z-index:10}
 /* Il video e' 2.36:1, quasi identico alla viewport: cover lo copre quasi senza ritagli */

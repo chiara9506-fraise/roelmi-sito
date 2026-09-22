@@ -2,7 +2,7 @@
 /* ===== Our Ingredients ===== */
 .ingredients{
   position:relative;overflow:hidden;
-  background:var(--accent1);
+  background:#fff;
   padding:clamp(32px,4vw,56px) 0;
 }
 .ing-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:14px}

@@ -1,5 +1,5 @@
 /* ===== Who We Are ===== */
-.who{position:relative;background:var(--accent1);padding:clamp(32px,4vw,56px) 0 clamp(12px,1.5vw,20px)}
+.who{position:relative;background:#fff;padding:clamp(32px,4vw,56px) 0 clamp(12px,1.5vw,20px)}
 .who-inner{position:relative}
 
 .who-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(40px,5vw,72px);align-items:center}
@@ -15,7 +15,7 @@
 .who-text p{font-size:17px;line-height:1.65;color:var(--secondary);max-width:42ch;margin:0}
 /* Open Sans e caricato fino a 600: con il 700 di default il browser simulerebbe il grassetto */
 .who-text strong{font-weight:600}
-.who-pill{align-self:flex-start;display:inline-flex;align-items:center;background:#fff;border-radius:999px;padding:5px 5px 5px 24px;gap:6px;margin-top:34px}
+.who-pill{align-self:flex-start;display:inline-flex;align-items:center;background:var(--accent1);border-radius:999px;padding:5px 5px 5px 24px;gap:6px;margin-top:34px}
 .who-pill .pill-ghost{display:inline-flex;align-items:center;gap:6px;font:600 14px var(--body);color:var(--secondary);white-space:nowrap;padding:10px 6px;transition:color .25s;text-decoration:none}
 .who-pill .pill-ghost:hover{color:var(--primary-ink)}
 .who-pill .pill-ghost svg{transition:transform .25s}
