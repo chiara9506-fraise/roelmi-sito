@@ -72,7 +72,7 @@
 .ing-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .ing-card-tag{font:600 10px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:999px;border:1px solid var(--line)}
 .ing-card-tag.market{color:var(--primary-ink);border-color:var(--primary-ink);background:rgba(68,114,165,.06)}
-.ing-card-tag.tech{color:#4f7a0a;border-color:#4f7a0a;background:rgba(125,189,15,.06)}
+.ing-card-tag.tech{color:#5d6a45;border-color:#5d6a45;background:rgba(93,106,69,.08)}
 
 .ing-card h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.5vw,21px);color:var(--primary-ink);letter-spacing:-.01em;line-height:1.15;margin-bottom:6px}
 .ing-card-function{font:500 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
@@ -125,7 +125,7 @@
   }
   .mob-finder-search{
     flex:1;display:flex;align-items:center;gap:8px;
-    background:var(--surface);border-radius:10px;
+    background:#fff;border-radius:10px;
     padding:10px 14px;
     border:1.5px solid transparent;
     transition:border-color .2s,background .2s;

@@ -17,7 +17,7 @@
 .prod-hero-img img{width:100%;max-width:420px;height:auto;filter:drop-shadow(0 24px 60px rgba(68,114,165,.22))}
 
 /* ── Description ── */
-.prod-desc{padding:clamp(48px,6vw,80px) 0;background:#fff;position:relative;overflow:hidden}
+.prod-desc{padding:clamp(48px,6vw,80px) 0;background:var(--accent1);position:relative;overflow:hidden}
 .prod-desc .wrap{position:relative}
 .prod-desc-inner{max-width:72ch}
 
@@ -39,7 +39,7 @@
 .prod-desc p{font:400 16px/1.75 var(--body);color:var(--muted)}
 
 /* ── Benefits ── */
-.prod-benefits{padding:clamp(48px,6vw,80px) 0;background:var(--surface)}
+.prod-benefits{padding:clamp(48px,6vw,80px) 0;background:var(--accent1)}
 .prod-benefits-head{margin-bottom:clamp(32px,4vw,48px)}
 .prod-benefits-eyebrow{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:12px}
 .prod-benefits-head h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,32px);color:var(--secondary);letter-spacing:-.02em}
@@ -53,7 +53,7 @@
 .benefit-card:hover p{color:#fff}
 
 /* ── Technical ── */
-.prod-tech{padding:clamp(48px,6vw,80px) 0;background:#fff}
+.prod-tech{padding:clamp(48px,6vw,80px) 0;background:var(--accent1)}
 .prod-tech-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,72px)}
 .prod-tech-block h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.6vw,22px);color:var(--secondary);margin-bottom:20px;padding-bottom:14px;border-bottom:2px solid var(--primary)}
 /* Accordion */
@@ -69,14 +69,14 @@
 .tech-acc-body p{padding:0 0 14px;font:400 13.5px/1.65 var(--body);color:var(--muted)}
 
 /* ── Certifications ── */
-.prod-certs{padding:clamp(40px,5vw,64px) 0;background:var(--surface);border-top:1px solid var(--line)}
+.prod-certs{padding:clamp(40px,5vw,64px) 0;background:var(--accent1);border-top:1px solid var(--line)}
 .prod-certs-inner{display:flex;align-items:center;gap:clamp(24px,4vw,48px);flex-wrap:wrap}
 .prod-certs-label{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);flex:0 0 auto}
 .cert-badge{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:8px;padding:8px 16px;font:600 12px var(--body);color:var(--secondary);letter-spacing:.04em}
 .cert-badge svg{width:16px;height:16px;stroke:var(--primary);fill:none;stroke-width:2}
 
 /* ── CTA ── */
-.prod-cta{padding:clamp(18px,2.5vw,32px) 0;background:var(--surface);margin-bottom:clamp(20px,3vw,40px)}
+.prod-cta{padding:clamp(18px,2.5vw,32px) 0;background:var(--accent1);margin-bottom:clamp(20px,3vw,40px)}
 .prod-cta-card{background:var(--dark);border-radius:24px;padding:clamp(48px,6vw,72px) clamp(32px,5vw,80px);text-align:center;max-width:860px;margin:0 auto}
 .prod-cta-card h2{font-family:var(--display);font-weight:600;font-size:clamp(24px,3vw,40px);color:#fff;letter-spacing:-.02em;margin-bottom:14px}
 .prod-cta-card p{color:rgba(255,255,255,.6);font-size:15px;margin-bottom:32px}
@@ -87,7 +87,7 @@
 .prod-cta-btns .btn-ghost:hover{border-color:#fff}
 
 /* ── Related products ── */
-.prod-related{padding:clamp(48px,6vw,80px) 0;background:var(--surface)}
+.prod-related{padding:clamp(48px,6vw,80px) 0;background:var(--accent1)}
 .prod-related-head{margin-bottom:clamp(28px,3.5vw,40px)}
 .prod-related-head h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,32px);color:var(--secondary);letter-spacing:-.02em}
 .prod-related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.4vw,30px);max-width:740px}

@@ -1,5 +1,5 @@
 /* ===== GLOBAL PRESENCE ===== */
-.presence{background:#fff;padding:clamp(32px,4vw,56px) 0}
+.presence{background:var(--accent1);padding:clamp(32px,4vw,56px) 0}
 .presence-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:14px}
 .presence-title{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;color:var(--secondary);line-height:1.05;margin-bottom:22px}
 .presence-legend{display:flex;gap:24px;flex-wrap:wrap}
@@ -10,7 +10,7 @@
   padding:5px 12px;margin:-5px -12px;border-radius:999px;
   background:none;border:none;cursor:pointer;
 }
-.leg-item:hover,.leg-item:focus-visible{background:rgba(161,187,216,.15)}
+.leg-item:hover,.leg-item:focus-visible{background:#fff}
 .leg-item:focus-visible{outline:2px solid var(--primary-ink);outline-offset:2px}
 @keyframes legJump{
   0%{transform:none}
@@ -112,7 +112,7 @@
 .pm-hl-production .pm-mark--production{transform:scale(1.22)}
 .leg-item{transition:color .2s,background .2s}
 .leg-item:hover,.leg-item:focus-visible,.leg-item.is-hl{color:var(--primary-ink)}
-.leg-item.is-hl{background:rgba(161,187,216,.15)}
+.leg-item.is-hl{background:#fff}
 
 /* Leaflet popup styling */
 .pm-map-popup .leaflet-popup-content-wrapper{background:#fff;border-radius:16px;box-shadow:0 16px 48px rgba(25,25,25,.18);padding:0;overflow:hidden;border:none}

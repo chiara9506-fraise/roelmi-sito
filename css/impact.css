@@ -1,5 +1,5 @@
 /* ===== OUR IMPACT ===== */
-.impact{background:radial-gradient(ellipse 120% 80% at 50% 0%,var(--accent1) 0%,var(--surface) 50%,#fff 100%);padding:clamp(32px,4vw,56px) 0;text-align:center}
+.impact{background:var(--accent1);padding:clamp(32px,4vw,56px) 0;text-align:center}
 .impact-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:14px}
 .impact-title{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;color:var(--secondary);line-height:1.05;margin-bottom:clamp(36px,5vw,60px)}
 

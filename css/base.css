@@ -9,7 +9,7 @@
    --dark        ora Hard Grey (era navy): controllare che dove --primary segue --dark nello
                  stesso elemento la coppia resti quella giusta.
    Non invertirli: ognuno fallisce il contrasto sul fondo dell'altro. */
-:root{--primary:#A1BBD8;--secondary:#565755;--ink:#3a3b39;--muted:#747673;--accent1:#F7F3EB;--accent2:#B4C09D;--primary-ink:#4472a5;--surface:#f7f9fa;--dark:#191919;--line:rgba(86,87,85,.22);--display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
+:root{--primary:#A1BBD8;--secondary:#565755;--ink:#3a3b39;--muted:#6c6e6c;--accent1:#F7F3EB;--accent2:#B4C09D;--primary-ink:#4472a5;--surface:#f7f9fa;--dark:#191919;--line:rgba(86,87,85,.22);--display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,56px)}
 a{text-decoration:none;color:inherit}
