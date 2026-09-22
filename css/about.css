@@ -10,7 +10,7 @@
 .r-img{opacity:0;transform:translateY(70px) scale(.98);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
 .r-img.in{opacity:1;transform:none}
 .delay1{transition-delay:.12s}.delay2{transition-delay:.24s}
-@media(prefers-reduced-motion:reduce){.r-up,.r-img{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){.r-up,.r-img{opacity:1;transform:none;transition:none}.about-card:hover{transform:none}}
 
 /* Ritmo verticale comune */
 .about-hero,.about-what,.about-approach,.about-timeline,.about-world,.about-partners{padding:clamp(48px,6vw,96px) 0}
@@ -90,7 +90,14 @@
 
 /* ── 5. Presence ── */
 .about-world-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
-.about-card{border:1px solid var(--line);border-top:4px solid var(--primary);border-radius:16px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column}
+/* stesso gesto dei box dei numeri in home (.impact-card) */
+.about-card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--primary);border-radius:16px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;
+  box-shadow:0 4px 20px color-mix(in srgb,var(--dark) 5%,transparent);cursor:default;
+  transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
+.about-card:hover{background:var(--primary-ink);border-color:var(--primary-ink);transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--primary-ink) 22%,transparent)}
+/* sul Cerulean ink solo il bianco pieno passa (5.01:1): tutto il testo diventa bianco */
+.about-card-country,.about-card-name,.about-card-role,.about-card-todo{transition:color .28s ease}
+.about-card:hover .about-card-country,.about-card:hover .about-card-name,.about-card:hover .about-card-role,.about-card:hover .about-card-todo{color:var(--white)}
 .about-card:nth-child(3n+2){border-top-color:var(--accent3)}
 .about-card:nth-child(3n){border-top-color:var(--accent2)}
 .about-card-country{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:10px}
