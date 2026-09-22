@@ -18,7 +18,9 @@ main{--nip-text:color-mix(in srgb,var(--dark) 85%,var(--white));--nip-muted:colo
 
 /* Ritmo verticale: come about.css */
 .nip-hero,.nip-intro,.nip-pillars,.nip-action{padding:clamp(48px,6vw,96px) 0}
-.nip-intro,.nip-pillars,.nip-action{padding-top:0}
+.nip-pillars,.nip-action{padding-top:0}
+/* la hero e una foto a filo: lo spazio sopra lo deve dare la sezione che segue */
+.nip-intro{padding-top:clamp(56px,7vw,112px)}
 .nip-report{padding:0 0 clamp(48px,6vw,96px)}
 
 /* Tipografia condivisa */
