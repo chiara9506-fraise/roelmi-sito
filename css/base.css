@@ -11,9 +11,8 @@
    Non invertirli: ognuno fallisce il contrasto sul fondo dell'altro.
    ACCENTI (Cerulean --primary, Olive --accent2, Caramel --accent3): pastelli, mai testo.
    Pieni: solo decorazione, o fondo con testo --dark (8.9-10.2). Tinte --tint-*: fondo
-   con testo --secondary (~5.9); i link sopra vanno in --dark (--primary-ink fa ~4.1).
-   --accent2-ink #5d6a45: Olive scuro, testo/link su tinta Olive (4.71) e su bianco (5.81). */
-:root{--primary:#A1BBD8;--secondary:#565755;--ink:#3a3b39;--muted:#747673;--accent1:#F7F3EB;--accent2:#B4C09D;--accent2-ink:#5d6a45;--white:#fff;--accent3:#DEC37F;--tint-cerulean:#dee7f1;--tint-olive:#e5e9dd;--tint-caramel:#f3ead2;--primary-ink:#4472a5;--surface:#f7f9fa;--dark:#191919;--line:rgba(86,87,85,.22);--display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
+   con testo --secondary (~5.9); i link sopra vanno in --dark (--primary-ink fa ~4.1). */
+:root{--primary:#A1BBD8;--secondary:#565755;--ink:#3a3b39;--muted:#747673;--accent1:#F7F3EB;--accent2:#B4C09D;--white:#fff;--accent3:#DEC37F;--tint-cerulean:#dee7f1;--tint-olive:#e5e9dd;--tint-caramel:#f3ead2;--primary-ink:#4472a5;--surface:#f7f9fa;--dark:#191919;--line:rgba(86,87,85,.22);--display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,56px)}
 a{text-decoration:none;color:inherit}

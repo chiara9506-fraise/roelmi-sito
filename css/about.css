@@ -68,16 +68,12 @@ main{--about-text:color-mix(in srgb,var(--dark) 85%,var(--white));--about-muted:
 .about-hq{margin-top:clamp(28px,3vw,40px)}
 
 /* ── 2. What we do ── */
-.about-what-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
-.about-what .about-text{font-size:clamp(18px,1.5vw,20px)}
-.about-nip{background:var(--tint-olive);border-radius:16px;padding:clamp(28px,3.5vw,48px)}
-/* tutto il riquadro in Olive: tinta di fondo, scritta e link in Olive scuro (4.71:1) */
-.about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(36px,3.6vw,52px);line-height:1;letter-spacing:-.02em;color:var(--accent2-ink)}
-.about-nip-mark sup{font-size:.32em;vertical-align:1.5em;font-weight:500;margin-left:2px}
-.about-nip-sub{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--accent2-ink);margin-top:10px}
+.about-what-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:start}
+.about-nip{background:var(--accent1);border-radius:16px;padding:clamp(28px,3.5vw,48px)}
+.about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(48px,6vw,80px);line-height:1;letter-spacing:-.02em;color:var(--primary-ink)}
+.about-nip-mark sup{font-size:.4em;vertical-align:1.1em;font-weight:500}
+.about-nip-sub{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--about-text);margin-top:12px}
 .about-nip-text{font:400 16px/1.65 var(--body);color:var(--about-text);margin-top:20px}
-.about-nip-text a{color:var(--accent2-ink)}
-.about-nip-text a:focus-visible{outline-color:var(--accent2-ink)}
 .about-nip-text sup,.about-tl-body sup{font-size:.6em;vertical-align:.5em}
 
 /* ── 3. Our approach ── */
