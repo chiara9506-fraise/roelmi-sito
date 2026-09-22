@@ -1,6 +1,6 @@
 /* ===== SUSTAINABILITY ===== */
 .sustainability{padding:clamp(32px,4vw,56px) 0}
-.sust-card{position:relative;border-radius:16px;overflow:hidden;min-height:clamp(300px,36vw,420px);
+.sust-card{position:relative;border-radius:16px;overflow:hidden;min-height:clamp(320px,38vw,460px);
   display:flex;background:var(--dark)}
 .sust-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .sust-card::after{content:"";position:absolute;inset:0;background:
@@ -9,7 +9,7 @@
 .sust-inner{position:relative;z-index:2;width:100%;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:flex-end}
 .sust-eyebrow{font:600 12px var(--body);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.82)}
 .sust-card h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);line-height:1.04;letter-spacing:-.02em;color:#fff;margin-top:14px;max-width:22ch}
-.sust-sub{font:400 17px var(--body);line-height:1.65;color:rgba(255,255,255,.88);margin-top:18px;max-width:70ch}
+.sust-sub{font:400 17px var(--body);line-height:1.65;color:rgba(255,255,255,.88);margin-top:18px;max-width:min(64ch,calc(100% - 470px))}
 .sust-sub strong{font-weight:600}
 /* stat cards in vetro, in alto a destra */
 .sust-stats{position:absolute;z-index:3;top:clamp(22px,3vw,40px);right:clamp(22px,3vw,40px);display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;max-width:70%}
@@ -17,8 +17,10 @@
   border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:16px 20px;min-width:118px}
 .stat .num{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.4vw,30px);color:#fff;line-height:1}
 .stat .lbl{font:600 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.92);margin-top:8px}
-/* due bottoni sotto il paragrafo: pieno + a contorno bianco */
-.sust-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+/* due bottoni in basso a destra, fuori dal flusso: il testo resta appoggiato in basso a sinistra */
+.sust-actions{position:absolute;z-index:3;right:clamp(28px,4vw,56px);bottom:clamp(28px,4vw,56px);display:flex;gap:12px}
+/* sotto i 1100px non c'e' spazio a fianco del testo: tornano sotto il paragrafo */
+@media(max-width:1100px){.sust-actions{position:static;flex-wrap:wrap;margin-top:26px}.sust-sub{max-width:64ch}}
 .sust-cta{display:inline-flex;align-items:center;gap:10px;background:var(--primary-ink);color:#fff;
   font:600 15px var(--body);padding:14px 26px;border-radius:999px;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
 .sust-cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
