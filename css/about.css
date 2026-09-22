@@ -10,7 +10,7 @@
 .r-img{opacity:0;transform:translateY(70px) scale(.98);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
 .r-img.in{opacity:1;transform:none}
 .delay1{transition-delay:.12s}.delay2{transition-delay:.24s}
-@media(prefers-reduced-motion:reduce){.r-up,.r-img{opacity:1;transform:none;transition:none}.about-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.r-up,.r-img{opacity:1;transform:none;transition:none}.about-card:hover,.about-finder:hover{transform:none}}
 
 /* Ritmo verticale comune */
 .about-hero,.about-what,.about-approach,.about-timeline,.about-world,.about-partners{padding:clamp(48px,6vw,96px) 0}
@@ -32,6 +32,13 @@
    a 19px in grassetto conta come testo grande, soglia 3:1 */
 .about-ph{border-radius:16px;background:var(--accent1);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;list-style:none}
 .about-ph span{font:600 19px/1.3 var(--body);color:var(--muted)}
+
+/* ── Breadcrumb: stessa struttura della pagina prodotto, colori per fondo chiaro ── */
+.about-breadcrumb{display:flex;align-items:center;gap:8px;font:400 12px var(--body);color:var(--muted);margin-bottom:clamp(20px,2.5vw,32px)}
+.about-breadcrumb a{color:var(--muted);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px;transition:color .18s,text-decoration-color .18s}
+.about-breadcrumb a:hover{color:var(--primary-ink);text-decoration-color:currentColor}
+.about-breadcrumb a:focus-visible{outline:2px solid var(--primary-ink);outline-offset:2px;border-radius:2px}
+.about-breadcrumb span{color:var(--secondary);font-weight:600}
 
 /* ── 1. Apertura ── */
 /* header fixed e sempre compatto qui (.hero-light = .solid, 68px): la sezione parte sotto */
@@ -56,7 +63,8 @@
 .about-hq{margin-top:clamp(28px,3vw,40px)}
 
 /* ── 2. What we do ── */
-.about-what-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:start}
+.about-what-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
+.about-what .about-text{font-size:clamp(18px,1.5vw,20px)}
 .about-nip{background:var(--tint-olive);border-radius:16px;padding:clamp(28px,3.5vw,48px)}
 .about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(48px,6vw,80px);line-height:1;letter-spacing:-.02em;color:var(--primary-ink)}
 .about-nip-mark sup{font-size:.4em;vertical-align:1.1em;font-weight:500}
@@ -84,23 +92,26 @@
 /* la linea e' il bordo sinistro dei testi: le voci sono contigue, quindi e' continua */
 .about-tl-body{position:relative;border-left:1px solid var(--line);padding:0 0 clamp(28px,3.5vw,44px) clamp(24px,3vw,40px)}
 .about-tl-item:last-child .about-tl-body{padding-bottom:0}
-.about-tl-body::before{content:"";position:absolute;left:-6px;top:10px;width:11px;height:11px;border-radius:50%;background:var(--primary-ink)}
+/* pallini: richiamo dei tre accenti, decorativi; contorno Cerulean ink per staccare dal bianco */
+.about-tl-body::before{content:"";position:absolute;left:-7px;top:9px;width:13px;height:13px;border-radius:50%;background:var(--primary);border:2px solid var(--primary-ink);box-sizing:border-box}
+.about-tl-item:nth-child(3n+2) .about-tl-body::before{background:var(--accent3)}
+.about-tl-item:nth-child(3n) .about-tl-body::before{background:var(--accent2)}
 .about-tl-body p{font:400 17px/1.65 var(--body);color:var(--secondary);max-width:62ch}
 .about-tl-body p + p{margin-top:12px}
+/* tanti link in poco spazio: sottolineatura tenue, piena in hover (resta il segnale non cromatico) */
+.about-tl-body a{text-decoration-color:color-mix(in srgb,var(--primary-ink) 40%,transparent)}
+.about-tl-body a:hover{text-decoration-color:currentColor}
 
 /* ── 5. Presence ── */
 .about-world-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
 /* stesso gesto dei box dei numeri in home (.impact-card) */
-/* --card-accent: colore del filo in alto, e dello sfondo in hover */
-.about-card{--card-accent:var(--primary);background:var(--white);border:1px solid var(--line);border-top:4px solid var(--card-accent);border-radius:16px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;
+.about-card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--primary);border-radius:16px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;
   box-shadow:0 4px 20px color-mix(in srgb,var(--dark) 5%,transparent);cursor:default;
   transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
-.about-card:hover{background:var(--card-accent);border-color:var(--card-accent);transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--card-accent) 45%,transparent)}
-/* sui pastelli pieni solo Hard Grey regge (8.9-10.2:1): tutto il testo diventa --dark */
+.about-card:hover{background:var(--primary-ink);border-color:var(--primary-ink);transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--primary-ink) 22%,transparent)}
+/* sul Cerulean ink solo il bianco pieno passa (5.01:1): tutto il testo diventa bianco */
 .about-card-country,.about-card-name,.about-card-role,.about-card-todo{transition:color .28s ease}
-.about-card:hover .about-card-country,.about-card:hover .about-card-name,.about-card:hover .about-card-role,.about-card:hover .about-card-todo{color:var(--dark)}
-.about-card:nth-child(3n+2){--card-accent:var(--accent3)}
-.about-card:nth-child(3n){--card-accent:var(--accent2)}
+.about-card:hover .about-card-country,.about-card:hover .about-card-name,.about-card:hover .about-card-role,.about-card:hover .about-card-todo{color:var(--white)}
 .about-card-country{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:10px}
 .about-card-name{font-family:var(--display);font-weight:600;font-size:clamp(20px,1.8vw,24px);letter-spacing:-.01em;line-height:1.2;color:var(--secondary)}
 .about-card-role{font:400 15px var(--body);color:var(--secondary);margin-top:6px}
@@ -110,12 +121,29 @@
 .about-partners-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
 .about-ph--logo{aspect-ratio:3/2}
 
+/* ── 7. Chiusura: box Ingredient Finder, stesso aspetto di .ing-finder in home ── */
+.about-close{padding:0 0 clamp(48px,6vw,96px)}
+.about-finder{display:flex;align-items:center;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,30px);box-shadow:0 10px 30px color-mix(in srgb,var(--primary-ink) 8%,transparent);transition:border-color .25s,box-shadow .25s,transform .2s}
+.about-finder:hover{border-color:var(--primary-ink);box-shadow:0 16px 38px color-mix(in srgb,var(--primary-ink) 16%,transparent);transform:translateY(-2px)}
+.about-finder:focus-visible{outline:2px solid var(--primary-ink);outline-offset:3px}
+.about-finder-ic{width:50px;height:50px;border-radius:50%;background:linear-gradient(120deg,var(--primary),var(--primary-ink));display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.about-finder-ic svg{width:21px;height:21px;stroke:var(--white);fill:none;stroke-width:2}
+.about-finder-txt{display:flex;flex-direction:column;line-height:1.3;flex:1 1 auto}
+.about-finder-txt b{font:600 16px var(--body);color:var(--secondary);letter-spacing:.01em}
+.about-finder-txt small{font:400 13.5px var(--body);color:var(--muted)}
+.about-finder-cta{flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;background:var(--primary-ink);color:var(--white);font:600 14px var(--body);padding:13px 24px;border-radius:999px;transition:background .25s}
+.about-finder:hover .about-finder-cta{background:var(--dark)}
+.about-finder-cta svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s}
+.about-finder:hover .about-finder-cta svg{transform:translateX(4px)}
+
 /* ── Responsive ── */
 @media(max-width:900px){
   .about-hero-grid,.about-what-grid,.about-approach-grid{grid-template-columns:1fr}
   .about-name{justify-self:start}
   .about-approach-fig{order:-1;aspect-ratio:16/10}
   .about-world-grid{grid-template-columns:repeat(2,1fr)}
+  .about-finder{flex-direction:column;align-items:flex-start;gap:14px}
+  .about-finder-cta{align-self:stretch;justify-content:center}
 }
 @media(max-width:560px){
   .about-hero{padding-top:calc(68px + 36px)}
