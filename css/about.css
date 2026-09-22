@@ -1,0 +1,117 @@
+/* ===== ABOUT US ===== */
+/* Solo variabili di base.css. Fondo della pagina bianco (reset.css): le sezioni
+   non dichiarano uno sfondo. --primary-ink solo su fondo chiaro (5.01 su bianco,
+   4.52 su --accent1). */
+
+/* Animazioni d'entrata: stesse regole di who.css (che qui non e' caricato);
+   la classe .in la aggiunge main.js */
+.r-up{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.r-up.in{opacity:1;transform:none}
+.r-img{opacity:0;transform:translateY(70px) scale(.98);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.r-img.in{opacity:1;transform:none}
+.delay1{transition-delay:.12s}.delay2{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.r-up,.r-img{opacity:1;transform:none;transition:none}}
+
+/* Ritmo verticale comune */
+.about-hero,.about-what,.about-approach,.about-timeline,.about-world,.about-partners{padding:clamp(48px,6vw,96px) 0}
+.about-what,.about-approach,.about-timeline,.about-world,.about-partners{padding-top:0}
+
+/* Tipografia condivisa, allineata alla home */
+.about-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:16px}
+.about-h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,5vw,68px);letter-spacing:-.025em;line-height:1.02;color:var(--secondary)}
+.about-h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;line-height:1.05;color:var(--secondary);margin-bottom:clamp(24px,3vw,40px)}
+.about-lead,.about-text{font:400 17px/1.65 var(--body);color:var(--secondary);max-width:62ch}
+.about-lead{margin-top:clamp(18px,2vw,26px)}
+.about-text + .about-text{margin-top:18px}
+/* link nel testo: Cerulean ink sottolineato */
+.about-lead a,.about-text a,.about-nip-text a,.about-tl-body a{color:var(--primary-ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:text-decoration-thickness .15s}
+.about-lead a:hover,.about-text a:hover,.about-nip-text a:hover,.about-tl-body a:hover{text-decoration-thickness:2px}
+.about-lead a:focus-visible,.about-text a:focus-visible,.about-nip-text a:focus-visible,.about-tl-body a:focus-visible{outline:2px solid var(--primary-ink);outline-offset:2px;border-radius:2px}
+
+/* Segnaposto per materiale mancante. Etichetta in --muted su --accent1 fa 4.14:1:
+   a 19px in grassetto conta come testo grande, soglia 3:1 */
+.about-ph{border-radius:16px;background:var(--accent1);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;list-style:none}
+.about-ph span{font:600 19px/1.3 var(--body);color:var(--muted)}
+
+/* ── 1. Apertura ── */
+/* header fixed e sempre compatto qui (.hero-light = .solid, 68px): la sezione parte sotto */
+.about-hero{padding-top:calc(68px + clamp(40px,6vw,88px))}
+.about-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);align-items:center}
+
+/* nome scomposto RO · EL · MI */
+.about-name{justify-self:center}
+.about-name-parts{display:flex;align-items:flex-start;justify-content:center;gap:clamp(8px,1.4vw,18px)}
+.about-name-part{display:flex;flex-direction:column;align-items:center;gap:10px}
+.about-name-syl{font-family:var(--display);font-weight:700;font-size:clamp(56px,8vw,112px);line-height:.9;letter-spacing:-.02em;color:var(--secondary)}
+.about-name-src{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink)}
+.about-name-dot{font-family:var(--display);font-weight:700;font-size:clamp(40px,5vw,72px);line-height:1.1;color:var(--primary-ink)}
+.about-name-hpc{display:flex;align-items:baseline;justify-content:center;gap:16px;margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(16px,2vw,22px);border-top:1px solid var(--line);flex-wrap:wrap}
+.about-name-hpc-code{font-family:var(--display);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-.01em;color:var(--secondary)}
+.about-name-hpc-txt{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+.about-ph--family{aspect-ratio:21/9;margin-top:clamp(40px,5vw,72px)}
+.about-hq{margin-top:clamp(28px,3vw,40px)}
+
+/* ── 2. What we do ── */
+.about-what-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:start}
+.about-nip{background:var(--accent1);border-radius:16px;padding:clamp(28px,3.5vw,48px)}
+.about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(48px,6vw,80px);line-height:1;letter-spacing:-.02em;color:var(--primary-ink)}
+.about-nip-mark sup{font-size:.4em;vertical-align:1.1em;font-weight:500}
+.about-nip-sub{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--secondary);margin-top:12px}
+.about-nip-text{font:400 16px/1.65 var(--body);color:var(--secondary);margin-top:20px}
+.about-nip-text sup,.about-tl-body sup{font-size:.6em;vertical-align:.5em}
+
+/* ── 3. Our approach ── */
+.about-approach-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+.about-approach-fig{margin:0;border-radius:16px;overflow:hidden;aspect-ratio:4/5}
+.about-approach-fig img{width:100%;height:100%;object-fit:cover;display:block}
+/* stessa forma dei tag di .prod-hero-tags, colori per fondo chiaro */
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.about-tag{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:999px;border:1px solid var(--primary-ink);color:var(--primary-ink)}
+.about-tags + .about-text{margin-top:18px}
+
+/* ── 4. Timeline ── */
+.about-tl{list-style:none;padding:0;margin:0}
+.about-tl-item{display:grid;grid-template-columns:clamp(96px,12vw,150px) 1fr}
+.about-tl-year{font-family:var(--display);font-weight:700;font-size:clamp(28px,3vw,40px);line-height:1;letter-spacing:-.02em;color:var(--primary-ink);padding-top:2px}
+/* la linea e' il bordo sinistro dei testi: le voci sono contigue, quindi e' continua */
+.about-tl-body{position:relative;border-left:1px solid var(--line);padding:0 0 clamp(28px,3.5vw,44px) clamp(24px,3vw,40px)}
+.about-tl-item:last-child .about-tl-body{padding-bottom:0}
+.about-tl-body::before{content:"";position:absolute;left:-6px;top:10px;width:11px;height:11px;border-radius:50%;background:var(--primary-ink)}
+.about-tl-body p{font:400 17px/1.65 var(--body);color:var(--secondary);max-width:62ch}
+.about-tl-body p + p{margin-top:12px}
+
+/* ── 5. Presence ── */
+.about-world-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
+.about-card{border:1px solid var(--line);border-radius:16px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column}
+.about-card-country{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:10px}
+.about-card-name{font-family:var(--display);font-weight:600;font-size:clamp(20px,1.8vw,24px);letter-spacing:-.01em;line-height:1.2;color:var(--secondary)}
+.about-card-role{font:400 15px var(--body);color:var(--secondary);margin-top:6px}
+.about-card-todo{font:400 14px var(--body);color:var(--muted);margin-top:auto;padding-top:20px}
+
+/* ── 6. Partnership ── */
+.about-partners-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
+.about-ph--logo{aspect-ratio:3/2}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .about-hero-grid,.about-what-grid,.about-approach-grid{grid-template-columns:1fr}
+  .about-name{justify-self:start}
+  .about-approach-fig{order:-1;aspect-ratio:16/10}
+  .about-world-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .about-hero{padding-top:calc(68px + 36px)}
+  .about-name{justify-self:stretch}
+  .about-ph--family{aspect-ratio:4/3}
+  .about-ph span{font-size:19px}
+  .about-tl-item{grid-template-columns:1fr;border-left:1px solid var(--line);padding-left:24px;position:relative}
+  .about-tl-year{padding-bottom:8px}
+  .about-tl-body{border-left:0;padding-left:0;position:static}
+  .about-tl-body::before{left:-6px;top:6px}
+  .about-tl-item{padding-bottom:28px}
+  .about-tl-item:last-child{padding-bottom:0}
+  .about-tl-item .about-tl-body{padding-bottom:0}
+  .about-world-grid{grid-template-columns:1fr}
+  .about-partners-grid{grid-template-columns:repeat(2,1fr)}
+}

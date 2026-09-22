@@ -260,6 +260,9 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   var i=0,total=data.length;
   var imgs=document.querySelectorAll('#ingFloat img');
   var cap=document.getElementById('ingCaption');
+  // pagine senza carosello (prodotto, finder, about): senza questa uscita l errore
+  // qui sotto bloccava tutto il resto di main.js, footer compreso
+  if(!cap)return;
   var pill=document.getElementById('ingPill'),nm=document.getElementById('ingName'),desc=document.getElementById('ingDesc'),tags=document.getElementById('ingTags'),num=document.getElementById('ingNum');
   var numMob=document.getElementById('ingNumMob');
   var more=document.getElementById('ingMore'),moreTxt=document.getElementById('ingMoreTxt'),figLink=document.getElementById('ingFigLink');
