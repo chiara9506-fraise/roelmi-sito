@@ -3,7 +3,7 @@
 .div-head{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,40px)}
 .div-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:16px}
 .div-title{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;color:var(--secondary);line-height:1.05}
-.div-intro{color:var(--muted);max-width:42ch;font-size:clamp(15px,1.2vw,17px)}
+.div-intro{color:var(--muted);max-width:42ch;font-size:17px;line-height:1.65}
 
 /* Divisions: testo a piena larghezza, layout colonna */
 .divisions .div-head{flex-direction:column;align-items:flex-start;gap:0;margin-bottom:clamp(32px,4vw,52px)}

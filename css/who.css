@@ -10,7 +10,7 @@
 .who-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(16px,3vw,40px) 0}
 
 .who-title{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;color:var(--secondary);line-height:1.05;margin-bottom:clamp(20px,3vw,36px)}
-.who-title .eyebrow{display:block;font-family:var(--body);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:18px}
+.who-title .eyebrow{display:block;font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:18px}
 
 .who-text p{font-size:17px;line-height:1.65;color:var(--secondary);max-width:42ch;margin:0}
 /* Open Sans e caricato fino a 600: con il 700 di default il browser simulerebbe il grassetto */

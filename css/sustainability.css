@@ -7,8 +7,8 @@
   linear-gradient(90deg,rgba(0,29,41,.78) 0%,rgba(0,29,41,.45) 42%,rgba(0,29,41,.12) 70%,rgba(0,29,41,.30) 100%)}
 .sust-inner{position:relative;z-index:2;width:100%;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:flex-end}
 .sust-eyebrow{font:600 12px var(--body);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.82)}
-.sust-card h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);line-height:1.04;color:#fff;margin-top:14px;max-width:14ch}
-.sust-sub{font:400 18px var(--body);line-height:1.55;color:rgba(255,255,255,.88);margin-top:18px;max-width:48ch}
+.sust-card h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);line-height:1.04;letter-spacing:-.02em;color:#fff;margin-top:14px;max-width:14ch}
+.sust-sub{font:400 17px var(--body);line-height:1.65;color:rgba(255,255,255,.88);margin-top:18px;max-width:48ch}
 /* stat cards in vetro, in alto a destra */
 .sust-stats{position:absolute;z-index:3;top:clamp(22px,3vw,40px);right:clamp(22px,3vw,40px);display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;max-width:70%}
 .stat{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(0,29,41,.68);

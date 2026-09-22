@@ -1,7 +1,7 @@
 /* ===== GLOBAL PRESENCE ===== */
 .presence{background:#fff;padding:clamp(32px,4vw,56px) 0}
 .presence-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:14px}
-.presence-title{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:var(--secondary);line-height:1.1;margin-bottom:22px}
+.presence-title{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;color:var(--secondary);line-height:1.05;margin-bottom:22px}
 .presence-legend{display:flex;gap:24px;flex-wrap:wrap}
 .leg-item{
   display:flex;align-items:center;gap:8px;
@@ -85,7 +85,7 @@
 }
 
 /* Cluster */
-.pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary-ink);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:700 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary-ink);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:600 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
 .pm-cluster-icon:hover,.pm-cluster-icon:focus-visible{transform:scale(1.1);box-shadow:0 0 0 6px rgba(161,187,216,.45)}
 .pm-cluster-icon:focus-visible{outline:2px solid #fff;outline-offset:2px}
 
