@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/sustainability.css">
   <link rel="stylesheet" href="css/news.css">
   <link rel="stylesheet" href="css/presence.css">
+  <link rel="stylesheet" href="css/newsletter.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/popup.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -443,6 +444,44 @@
   </div>
 </section>
 
+<!-- ===== NEWSLETTER ===== -->
+<!-- Testi provvisori, da far approvare al cliente. Form non ancora collegato a un
+     servizio: quando c'e', impostare action/method (o l'invio) in js/newsletter.js -->
+<section class="newsletter" id="newsletter" aria-labelledby="nlTitle">
+  <div class="wrap">
+    <div class="nl-card">
+      <div class="nl-text">
+        <div class="nl-eyebrow">Newsletter</div>
+        <h2 class="nl-title" id="nlTitle">Stay up to date</h2>
+        <p class="nl-intro">Ingredient launches, research and events, straight to your inbox.</p>
+      </div>
+      <form class="nl-form" id="nlForm" novalidate>
+        <div>
+          <label class="nl-label" for="nlEmail">Email address</label>
+          <div class="nl-row">
+            <input class="nl-input" id="nlEmail" name="email" type="email" autocomplete="email" required aria-describedby="nlEmailErr">
+            <button class="nl-submit" type="submit">Subscribe</button>
+          </div>
+          <p class="nl-error" id="nlEmailErr"></p>
+        </div>
+        <fieldset class="nl-fieldset" aria-describedby="nlTopicErr">
+          <legend class="nl-legend">I'm interested in</legend>
+          <div class="nl-options">
+            <label class="nl-check"><input type="checkbox" name="topics" value="personal-care">Personal Care / Cosmetic</label>
+            <label class="nl-check"><input type="checkbox" name="topics" value="nutraceutical">Nutraceutical</label>
+          </div>
+          <p class="nl-error" id="nlTopicErr"></p>
+        </fieldset>
+        <div>
+          <label class="nl-check nl-consent"><input type="checkbox" name="consent" id="nlConsent" required aria-describedby="nlConsentErr">I agree to receive the newsletter and have read the <a href="#">Privacy Policy</a>.</label>
+          <p class="nl-error" id="nlConsentErr"></p>
+        </div>
+        <p class="nl-status" id="nlStatus" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 </main>
 
@@ -559,6 +598,7 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
   <script src="js/map.js"></script>
   <script src="js/main.js?v=10"></script>
+  <script src="js/newsletter.js"></script>
   <script>
     (function(){
       var popup=document.getElementById('sitePopup');
