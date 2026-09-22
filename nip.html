@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CytoFruit® — ROELMI HPC</title>
+  <title>Sustainability — NIP® — ROELMI HPC</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/product.css">
-  <link rel="stylesheet" href="css/finder.css">
+  <link rel="stylesheet" href="css/sustainability.css">
+  <link rel="stylesheet" href="css/nip.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -88,7 +88,7 @@
           <div class="dropdown">
             <a href="about.html">About us</a>
             <a href="#">Philosophy</a>
-            <a href="nip.html">Sustainability</a>
+            <a href="nip.html" aria-current="page">Sustainability</a>
             <a href="#">Certifications</a>
           </div>
         </li>
@@ -137,7 +137,7 @@
       <ul id="mobGroupCompany" class="is-collapsed">
         <li><a href="about.html">About us</a></li>
         <li><a href="#">Philosophy</a></li>
-        <li><a href="nip.html">Sustainability</a></li>
+        <li><a href="nip.html" aria-current="page">Sustainability</a></li>
         <li><a href="#">Certifications</a></li>
       </ul>
     </li>
@@ -159,256 +159,130 @@
 <div class="mob-overlay" id="mobOverlay"></div>
 
 <main>
-<!-- PRODUCT HERO -->
-<section class="prod-hero" id="main-content" tabindex="-1">
+<!-- 1. APERTURA — fondo bianco: .hero-light tiene l'header in versione scura (main.js) -->
+<section class="nip-hero hero-light" id="main-content" tabindex="-1">
   <div class="wrap">
-    <div class="prod-breadcrumb">
-      <nav aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        <a href="ingredient-finder.html">Ingredient Finder</a>
-        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        <span aria-current="page">CytoFruit<sup>®</sup></span>
-      </nav>
-    </div>
-    <div class="prod-hero-inner">
-      <div class="prod-hero-text">
-        <div class="prod-hero-line">Personal Care · Nature</div>
-        <h1>CytoFruit<sup>®</sup></h1>
-        <p class="prod-hero-sub">Biologically active waters</p>
-        <p class="prod-hero-desc">Fruit-derived active waters designed to replace demineralized water in cosmetic formulations — a symbiosis between technology and sustainability, obtained from ingredients that have already left the food chain.</p>
-        <div class="prod-hero-tags">
-          <span class="prod-hero-tag">COSMOS / ICEA</span>
-          <span class="prod-hero-tag">Palm oil free</span>
+    <nav class="nip-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <span>Company</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <span aria-current="page">Sustainability</span>
+    </nav>
+    <div class="nip-hero-grid">
+      <div class="nip-hero-text">
+        <div class="nip-eyebrow r-up">NIP<sup>®</sup> · Nature is People</div>
+        <!-- l'iniziale grande di ogni riga e' ::first-letter: nessun elemento in piu',
+             lo screen reader legge le tre frasi normali -->
+        <h1 class="nip-h1 r-up">
+          <span class="nip-h1-line"><strong>Nature</strong> inspires us.</span>
+          <span class="nip-h1-line"><strong>Innovation</strong> drives us.</span>
+          <span class="nip-h1-line"><strong>People</strong> make it possible.</span>
+        </h1>
+        <p class="nip-lead r-up delay1">Discover how our <a href="#in-action">sustainability initiatives</a> are turning our commitments into concrete results.</p>
+        <div class="nip-hero-cta r-up delay2">
+          <a class="sust-cta" href="#" data-todo="link">Download the Sustainability Report <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <a href="#contact" class="prod-hero-cta">
-          Request datasheet
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+      <div class="nip-mark r-up delay2" aria-hidden="true">
+        <span class="nip-mark-word">NIP<sup>®</sup></span>
+        <span class="nip-mark-sub">Nature is People</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. INTRODUZIONE -->
+<section class="nip-intro">
+  <div class="wrap">
+    <p class="nip-statement r-up"><strong>Nature is People (NIP)</strong> is much more than just a name. We believe that <strong>nature</strong>, <strong>innovation</strong> and <strong>people</strong> are closely interconnected.</p>
+    <div class="nip-intro-cols">
+      <p class="nip-text r-up">Our aim, in fact, is to reduce our <strong>environmental impact</strong> while developing <a href="ingredient-finder.html"><strong>high-performance ingredients</strong></a> for our customers.</p>
+      <p class="nip-text r-up delay1">We apply the principles of the <strong>circular economy</strong> to agricultural resources: using cutting-edge technological processes, we regenerate supply chain waste to <strong>create premium raw materials for the cosmetics and nutraceuticals markets</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. I TRE PILASTRI -->
+<section class="nip-pillars">
+  <div class="wrap">
+    <p class="nip-pillars-intro r-up">Our <strong>sustainability approach</strong> is built around three interconnected pillars: <strong>Nature</strong>, <strong>Innovation</strong> and <strong>People</strong>.</p>
+    <ul class="nip-pillars-grid">
+      <li class="nip-pillar nip-pillar--nature r-up">
+        <span class="nip-pillar-initial" aria-hidden="true">N</span>
+        <h3 class="nip-pillar-title">Nature</h3>
+        <p>We promote the use of <strong>renewable raw materials</strong> while working constantly to optimize our production processes and lower carbon emissions.</p>
+        <p>By embracing <strong>circular economy</strong> principles, we help our customers develop ingredients with a lower ecological footprint.</p>
+      </li>
+      <li class="nip-pillar nip-pillar--innovation r-up delay1">
+        <span class="nip-pillar-initial" aria-hidden="true">I</span>
+        <h3 class="nip-pillar-title">Innovation</h3>
+        <p>We develop <strong>innovative technologies</strong> and <strong>smarter solutions</strong> to improve our product performance while continuously maximizing process efficiency.</p>
+        <p>We are constantly striving to improve our production processes and reduce waste that is harmful to the environment.</p>
+      </li>
+      <li class="nip-pillar nip-pillar--people r-up delay2">
+        <span class="nip-pillar-initial" aria-hidden="true">P</span>
+        <h3 class="nip-pillar-title">People</h3>
+        <p>We invest heavily in creating a <strong>safe and inclusive</strong> workplace while strongly supporting the professional development and overall wellbeing of our employees.</p>
+        <p>We firmly believe that responsible innovation can only start with people who feel fully valued, supported, and empowered.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4. SUSTAINABILITY IN ACTION -->
+<section class="nip-action" id="in-action">
+  <div class="wrap">
+    <h2 class="nip-h2 r-up">Sustainability in action</h2>
+    <p class="nip-text nip-action-intro r-up delay1">Discover how our sustainability initiatives are turning our commitments into concrete results.</p>
+    <ul class="nip-action-grid">
+      <li class="r-up">
+        <a class="nip-card" href="cytofruit.html">
+          <span class="nip-card-img"><img src="images/CYTOFRUIT-NO%20SFONDO.png" alt="" loading="lazy"></span>
+          <h3 class="nip-card-name">CytoFruit<sup>®</sup></h3>
+          <p class="nip-card-text">we offer fruit-derived waters from food chain by-products as alternative to demineralized water in cosmetics</p>
         </a>
-      </div>
-      <div class="prod-hero-img">
-        <img src="images/CYTOFRUIT-NO SFONDO.png" alt="CytoFruit® — Biologically active waters">
-      </div>
-    </div>
+      </li>
+      <li class="r-up delay1">
+        <a class="nip-card" href="#" data-todo="link">
+          <span class="nip-card-img nip-ph" data-todo="asset"><span>Immagine SeidoTech<sup>®</sup> Capillys — da fornire</span></span>
+          <h3 class="nip-card-name">SeidoTech <sup>®</sup> Capillys</h3>
+          <p class="nip-card-text">precision fermentation is applied to byproducts of pruning Italian prickly pears to create the ally in hair care</p>
+        </a>
+      </li>
+      <li class="r-up">
+        <a class="nip-card" href="#" data-todo="link">
+          <span class="nip-card-img nip-ph" data-todo="asset"><span>Immagine EMotion<sup>®</sup> — da fornire</span></span>
+          <h3 class="nip-card-name">EMotion<sup>®</sup> Glow and EMotion<sup>®</sup> SKin</h3>
+          <p class="nip-card-text">are produced through the valorization of olive byproducts from the food industry.</p>
+        </a>
+      </li>
+      <li class="r-up delay1">
+        <a class="nip-card" href="#" data-todo="link">
+          <span class="nip-card-img"><img src="images/SELECT%20SIEVE%20-%20HOPE.png" alt="" loading="lazy"></span>
+          <h3 class="nip-card-name">SelectSIEVE OptiChol</h3>
+          <p class="nip-card-text nip-card-todo" data-todo="asset">Description to be provided</p>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- DESCRIPTION -->
-<section class="prod-desc">
+<!-- 5. CHIUSURA: componente .sust-card della home, senza numeri -->
+<section class="nip-report">
   <div class="wrap">
-    <div class="prod-desc-inner">
-      <div class="prod-desc-eyebrow">About the product</div>
-      <h2>A new generation of cosmetic water</h2>
-      <p>CytoFruit<sup>®</sup> is a line of fruit-derived active waters formulated to replace demineralized water in cosmetics. Obtained exclusively through natural processes from pure juices — without flash distillation or microwave treatment — they are microbiologically pure and enrich the formula with oligoelements and bioactive compounds released through a natural biological filter. The result is a water phase that is significantly more biologically active than standard distilled water, confirmed by in vitro testing.</p>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section class="prod-benefits">
-  <div class="wrap">
-    <div class="prod-benefits-head">
-      <div class="prod-benefits-eyebrow">Why CytoFruit<sup>®</sup></div>
-      <h2>Key benefits</h2>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <h3>Enhanced Cell Vitality</h3>
-        <p>Boosts cellular vitality through naturally active oligoelements, promoting healthy and resilient skin.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Antioxidant Protection</h3>
-        <p>Protects skin cells against pollution and oxidative stress, supporting long-term skin health.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Anti-inflammatory Effect</h3>
-        <p>Modulating action on skin inflammation, suitable for sensitive and reactive skin types.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Universal Compatibility</h3>
-        <p>Dermatologically compatible with all skin types, making it a versatile ingredient for any cosmetic formula.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT (PLACEHOLDER) -->
-<section class="prod-desc">
-  <div class="wrap">
-    <!-- Goccia del logomark: diventa via via piu' visibile con lo scroll -->
-    <svg class="prod-desc-mark" aria-hidden="true" viewBox="0 0 36 54">
-      <path d="M0.783 39.064C0.604 39.192 0.437 39.326 0.271 39.462C1.516 46.663 7.005 52.404 14.073 54.018C17.088 50.618 17.516 45.489 14.811 41.594C11.643 37.032 5.383 35.892 0.816 39.043C7.738 34.260 17.231 35.981 22.035 42.894C24.220 46.043 25.054 49.721 24.669 53.252C26.399 52.577 27.999 51.650 29.427 50.512C28.940 48.127 27.974 45.802 26.499 43.681C20.857 35.561 9.872 33.355 1.568 38.521C12.380 31.535 26.339 32.932 35.553 41.298C36.000 39.726 36.243 38.067 36.243 36.354C36.243 34.389 35.920 32.503 35.339 30.730C32.009 18.408 18.119 0.018 18.119 0.018C18.119 0.018 4.230 18.408 0.900 30.730C0.325 32.503 0 34.389 0 36.354C0 37.405 0.096 38.439 0.266 39.443C0.437 39.313 0.606 39.187 0.783 39.064Z"/>
-    </svg>
-    <div class="prod-desc-inner">
-      <div class="prod-desc-eyebrow">— Placeholder —</div>
-      <h2>Section title to be defined</h2>
-      <p>This section is reserved for additional content about CytoFruit<sup>®</sup>. The client will provide the final copy — this could include application guidelines, formulation tips, sustainability notes, or any other relevant product information.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TECHNICAL -->
-<section class="prod-tech">
-  <div class="wrap">
-    <div class="prod-tech-inner">
-      <div class="prod-tech-block">
-        <h3>Technical characteristics</h3>
-        <div class="tech-accordion">
-          <div class="tech-acc-item">
-            <button class="tech-acc-trigger" aria-expanded="false">
-              No flash distillation or microwave processing
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="tech-acc-body">
-              <p>Placeholder — the client will provide a detailed explanation of this characteristic.</p>
-            </div>
-          </div>
-          <div class="tech-acc-item">
-            <button class="tech-acc-trigger" aria-expanded="false">
-              Exclusively natural processes from pure fruit juices
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="tech-acc-body">
-              <p>Placeholder — the client will provide a detailed explanation of this characteristic.</p>
-            </div>
-          </div>
-          <div class="tech-acc-item">
-            <button class="tech-acc-trigger" aria-expanded="false">
-              Microbiologically pure
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="tech-acc-body">
-              <p>Placeholder — the client will provide a detailed explanation of this characteristic.</p>
-            </div>
-          </div>
-          <div class="tech-acc-item">
-            <button class="tech-acc-trigger" aria-expanded="false">
-              Controlled release of oligoelements via biological filter
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="tech-acc-body">
-              <p>Placeholder — the client will provide a detailed explanation of this characteristic.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="prod-tech-block">
-        <h3>Formulative advantages</h3>
-        <div class="tech-accordion">
-          <div class="tech-acc-item">
-            <button class="tech-acc-trigger" aria-expanded="false">
-              Rich in oligoelements for enhanced skin activity
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="tech-acc-body">
-              <p>Placeholder — the client will provide a detailed explanation of this advantage.</p>
-            </div>
-          </div>
-          <div class="tech-acc-item">
-            <button class="tech-acc-trigger" aria-expanded="false">
-              Cellular protection properties
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="tech-acc-body">
-              <p>Placeholder — the client will provide a detailed explanation of this advantage.</p>
-            </div>
-          </div>
-          <div class="tech-acc-item">
-            <button class="tech-acc-trigger" aria-expanded="false">
-              Enables water-free formula development
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="tech-acc-body">
-              <p>Placeholder — the client will provide a detailed explanation of this advantage.</p>
-            </div>
-          </div>
-          <div class="tech-acc-item">
-            <button class="tech-acc-trigger" aria-expanded="false">
-              More biologically active than distilled water (confirmed in vitro)
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="tech-acc-body">
-              <p>Placeholder — the client will provide a detailed explanation of this advantage.</p>
-            </div>
-          </div>
+    <div class="sust-card r-up">
+      <img src="https://images.unsplash.com/photo-1763230302806-e26929b478b7?fm=jpg&q=75&w=1600&auto=format&fit=crop" alt="Forest — renewable resources" loading="lazy">
+      <div class="sust-inner">
+        <div class="sust-eyebrow">NIP<sup>®</sup> · Nature is People</div>
+        <h2>Nature is People</h2>
+        <div class="sust-actions">
+          <a class="sust-cta" href="#" data-todo="link">Download the Sustainability Report <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- CERTIFICATIONS -->
-<section class="prod-certs">
-  <div class="wrap">
-    <div class="prod-certs-inner">
-      <span class="prod-certs-label">Certifications</span>
-      <span class="cert-badge">
-        <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
-        COSMOS / ICEA
-      </span>
-      <span class="cert-badge">
-        <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
-        Palm oil free
-      </span>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="prod-cta" id="contact">
-  <div class="wrap">
-    <div class="prod-cta-card">
-      <h2>Interested in CytoFruit<sup>®</sup>?</h2>
-      <p>Contact our team to request the technical datasheet or learn how to integrate CytoFruit<sup>®</sup> into your formulation.</p>
-      <div class="prod-cta-btns">
-        <a href="#" class="btn-primary">Contact us</a>
-        <a href="#" class="btn-ghost">Formulation Area</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RELATED PRODUCTS -->
-<section class="prod-related">
-  <div class="wrap">
-    <div class="prod-related-head">
-      <h2>Related products</h2>
-    </div>
-    <div class="prod-related-grid">
-      <a class="ing-card" href="#" aria-label="SelectSIEVE® HopE">
-        <div class="ing-card-img">
-          <img src="images/SELECT SIEVE - HOPE.png" alt="SelectSIEVE® HopE">
-        </div>
-        <div class="ing-card-body">
-          <div class="ing-card-tags">
-            <span class="ing-card-tag market">Nutraceutical</span>
-            <span class="ing-card-tag tech">Nature</span>
-          </div>
-          <h3>SelectSIEVE<sup>®</sup> HopE</h3>
-          <div class="ing-card-function">GLP-1 natural support</div>
-          <p class="ing-card-desc">Hop cone bioactives via supercritical CO₂ extraction, stabilised in powder form — supporting weight management and natural GLP-1 release.</p>
-          <span class="ing-card-more">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-      <a class="ing-card" href="#" aria-label="TechnoHYAL® HyaPearl">
-        <div class="ing-card-img">
-          <img src="images/HYAPEARL.png" alt="TechnoHYAL® HyaPearl">
-        </div>
-        <div class="ing-card-body">
-          <div class="ing-card-tags">
-            <span class="ing-card-tag market">Personal Care</span>
-            <span class="ing-card-tag tech">Biotech</span>
-          </div>
-          <h3>TechnoHYAL<sup>®</sup> HyaPearl</h3>
-          <div class="ing-card-function">Active Make-Up</div>
-          <p class="ing-card-desc">Olive glycerides and hyaluronic acid combined in a patented matrix — delivering hydration and skin nourishment in anhydrous color cosmetic formulations.</p>
-          <span class="ing-card-more">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <footer class="site-footer">
@@ -507,6 +381,5 @@
   </div>
 </footer>
 <script src="js/main.js" defer></script>
-<script src="js/product.js" defer></script>
 </body>
 </html>
