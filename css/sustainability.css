@@ -32,7 +32,9 @@
 /* sui fondi scuri: Cerulean pieno, hover verso il nero */
 .sust-card .sust-cta,.nip-hero .sust-cta{background:var(--primary);color:var(--dark)}
 .sust-card .sust-cta:hover,.nip-hero .sust-cta:hover{background:var(--dark);color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary)}
-.sust-cta--ghost{background:transparent;border:1.5px solid rgba(255,255,255,.75);padding:12.5px 24.5px}
+/* secondario: Ricepaper con testo Hard Grey (15.89:1), hover Cerulean con testo Hard Grey (8.89:1) */
+.sust-cta--ghost,.sust-card .sust-cta--ghost{background:var(--accent1);color:var(--dark);border:0}
+.sust-cta--ghost:hover,.sust-card .sust-cta--ghost:hover{background:var(--primary);color:var(--dark);box-shadow:0 12px 30px rgba(0,0,0,.25)}
 @media(max-width:760px){
   .sust-card{flex-direction:column;min-height:0}
   .sust-card::after{background:linear-gradient(180deg,rgba(25,25,25,.30) 0%,rgba(25,25,25,.6) 45%,rgba(25,25,25,.85) 100%)}
