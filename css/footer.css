@@ -10,7 +10,7 @@
 .ft-logo svg path{fill:var(--dark)}
 .ft-tag{font-size:15px;line-height:1.6;max-width:34ch;color:var(--dark)}
 .ft-social{display:flex;gap:12px;margin-top:26px}
-.ft-social a{width:42px;height:42px;border-radius:50%;border:1px solid color-mix(in srgb,var(--dark) 45%,transparent);background:color-mix(in srgb,var(--dark) 6%,transparent);display:flex;align-items:center;justify-content:center;color:var(--dark);cursor:pointer;transition:border-color .25s,background .25s,color .25s}
+.ft-social a{width:42px;height:42px;border-radius:50%;border:1px solid color-mix(in srgb,var(--dark) 60%,transparent);background:color-mix(in srgb,var(--dark) 6%,transparent);display:flex;align-items:center;justify-content:center;color:var(--dark);cursor:pointer;transition:border-color .25s,background .25s,color .25s}
 .ft-social a:hover{border-color:var(--dark);background:color-mix(in srgb,var(--dark) 12%,transparent)}
 .ft-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
 .ft-h{font:600 12px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--dark);margin-bottom:20px}
