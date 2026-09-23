@@ -21,8 +21,7 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
   .r-up,.r-img{opacity:1;transform:none;transition:none}
   .about-card:hover,.about-finder:hover{transform:none}
   /* niente sequenza: il nome e' gia' composto */
-  .about-name-part,.about-name-src,.about-name-hpc,.about-name-dot{opacity:1;transform:none;transition:none}
-  .about-name-syl::after{transform:none;transition:none}
+  .about-name-part,.about-name-src,.about-name-hpc,.about-name-dot,.about-name-syl::after{animation:none}
 }
 
 /* Ritmo verticale comune */
@@ -71,31 +70,29 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-name-part:nth-child(3) .about-name-syl::after{background:var(--accent3)}
 .about-name-part:nth-child(5) .about-name-syl::after{background:var(--accent2)}
 
-/* ENTRATA IN SEQUENZA: il nome si compone: sillaba -> barretta -> nome di persona -> riga HPC.
-   La classe .in la aggiunge l'osservatore in main.js quando il blocco entra nello schermo. */
+/* ENTRATA IN SEQUENZA al caricamento della pagina: sillaba -> barretta -> nome di
+   persona -> riga HPC. Sono animazioni CSS, quindi partono da sole: non dipendono
+   dall'osservatore in main.js. */
+@keyframes aboutRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes aboutFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes aboutBar{from{transform:scaleX(0)}to{transform:none}}
 .about-name.r-up{opacity:1;transform:none;transition:none}
-.about-name-part,.about-name-src,.about-name-hpc{opacity:0}
-.about-name-part{transform:translateY(28px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
-.about-name-dot{opacity:0;transition:opacity .5s ease}
-.about-name-src{transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
-.about-name-hpc{transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
-.about-name.in .about-name-part{opacity:1;transform:none}
-.about-name.in .about-name-dot,.about-name.in .about-name-src,.about-name.in .about-name-hpc{opacity:1}
-.about-name.in .about-name-src,.about-name.in .about-name-hpc{transform:none}
-.about-name.in .about-name-syl::after{transform:none}
-/* ritardi: le tre sillabe a .05/.20/.35s, poi barrette, nomi e infine HPC */
-.about-name-part:nth-child(1){transition-delay:.05s}
-.about-name-part:nth-child(3){transition-delay:.2s}
-.about-name-part:nth-child(5){transition-delay:.35s}
-.about-name-dot:nth-child(2){transition-delay:.25s}
-.about-name-dot:nth-child(4){transition-delay:.4s}
-.about-name-part:nth-child(1) .about-name-syl::after{transition-delay:.3s}
-.about-name-part:nth-child(3) .about-name-syl::after{transition-delay:.45s}
-.about-name-part:nth-child(5) .about-name-syl::after{transition-delay:.6s}
-.about-name-part:nth-child(1) .about-name-src{transition-delay:.55s}
-.about-name-part:nth-child(3) .about-name-src{transition-delay:.7s}
-.about-name-part:nth-child(5) .about-name-src{transition-delay:.85s}
-.about-name-hpc{transition-delay:1s}
+.about-name-part{animation:aboutRise .6s cubic-bezier(.2,.7,.2,1) backwards}
+.about-name-dot{animation:aboutFade .5s ease backwards}
+.about-name-src{animation:aboutFade .5s ease backwards}
+.about-name-hpc{animation:aboutFade .6s ease 1s backwards}
+.about-name-syl::after{animation:aboutBar .55s cubic-bezier(.2,.7,.2,1) backwards}
+.about-name-part:nth-child(1){animation-delay:.05s}
+.about-name-part:nth-child(3){animation-delay:.2s}
+.about-name-part:nth-child(5){animation-delay:.35s}
+.about-name-dot:nth-child(2){animation-delay:.25s}
+.about-name-dot:nth-child(4){animation-delay:.4s}
+.about-name-part:nth-child(1) .about-name-syl::after{animation-delay:.3s}
+.about-name-part:nth-child(3) .about-name-syl::after{animation-delay:.45s}
+.about-name-part:nth-child(5) .about-name-syl::after{animation-delay:.6s}
+.about-name-part:nth-child(1) .about-name-src{animation-delay:.55s}
+.about-name-part:nth-child(3) .about-name-src{animation-delay:.7s}
+.about-name-part:nth-child(5) .about-name-src{animation-delay:.85s}
 /* passando il mouse su una persona, la sua barretta si ispessisce */
 .about-name-part:hover .about-name-syl::after{height:7px}
 .about-name-src{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink)}
