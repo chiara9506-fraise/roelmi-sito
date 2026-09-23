@@ -31,8 +31,8 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 }
 
 /* Ritmo verticale comune */
-.about-hero,.about-what,.about-approach,.about-timeline,.about-world,.about-partners{padding:clamp(48px,6vw,96px) 0}
-.about-what,.about-approach,.about-timeline,.about-world,.about-partners{padding-top:0}
+.about-hero,.about-what,.about-timeline,.about-world,.about-partners{padding:clamp(48px,6vw,96px) 0}
+.about-what,.about-timeline,.about-world,.about-partners{padding-top:0}
 
 /* Tipografia condivisa, allineata alla home */
 .about-h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.4vw,48px);letter-spacing:-.02em;line-height:1.1;color:var(--about-text)}
@@ -176,14 +176,26 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-nip-text sup,.about-tl-body sup{font-size:.6em;vertical-align:.5em}
 
 /* ── 3. Our approach ── */
-.about-approach-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
-.about-approach-fig{margin:0;border-radius:16px;overflow:hidden;aspect-ratio:4/5}
-.about-approach-fig img{width:100%;height:100%;object-fit:cover;display:block}
+/* Fascia a tutta larghezza: la foto del laboratorio passa da spalla decorativa a
+   fondo della sezione, sotto un velo scuro all'85-92%. Nel caso peggiore (foto
+   bianca sotto il velo) il testo bianco resta a 10.4:1. */
+.about-approach{position:relative;overflow:hidden;background:var(--dark);padding:clamp(56px,7vw,110px) 0;margin-top:clamp(40px,5vw,80px);
+  --about-text:var(--white);--about-muted:color-mix(in srgb,var(--white) 80%,transparent);--about-line:color-mix(in srgb,var(--white) 22%,transparent)}
+.about-approach-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.about-approach::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--dark) 85%,transparent) 0%,color-mix(in srgb,var(--dark) 92%,transparent) 100%)}
+.about-approach > .wrap{position:relative;z-index:2}
+.about-approach .about-h2{margin-bottom:clamp(20px,2.4vw,32px)}
+.about-approach-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:start}
+.about-approach-col .about-text{max-width:46ch}
+.about-approach-col .about-text + .about-text{margin-top:18px}
+/* eventuali link nel testo qui sono su fondo scuro */
+.about-approach .about-text a{color:var(--white);text-decoration-color:color-mix(in srgb,var(--white) 45%,transparent)}
 /* stessa forma dei tag di .prod-hero-tags, colori per fondo chiaro */
 /* Il percorso di validazione: le tre pillole diventano i tre passi che il testo
    accanto racconta. Stessa card e stesso hover di .about-card, filetto in alto nei
    tre colori della palette che si tira da sinistra, uno dopo l'altro, all'ingresso. */
-.about-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,22px);margin:clamp(32px,4vw,56px) 0 0}
+.about-steps{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(--line);list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,22px);margin:clamp(32px,4vw,56px) 0 0}
 .about-step{position:relative;background:var(--white);border:1px solid var(--about-line);border-radius:16px;padding:clamp(16px,1.8vw,22px);overflow:hidden;
   transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
 .about-step::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent2);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -259,10 +271,9 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 
 /* ── Responsive ── */
 @media(max-width:900px){
-  .about-what-grid,.about-approach-grid{grid-template-columns:1fr}
+  .about-what-grid,.about-approach-cols{grid-template-columns:1fr}
   .about-steps{grid-template-columns:1fr}
   .about-name{justify-self:start}
-  .about-approach-fig{order:-1;aspect-ratio:16/10}
   .about-world-grid{grid-template-columns:repeat(2,1fr)}
   .about-finder{flex-direction:column;align-items:flex-start;gap:14px}
   .about-finder-cta{align-self:stretch;justify-content:center}
