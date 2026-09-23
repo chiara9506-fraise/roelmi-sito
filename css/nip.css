@@ -86,7 +86,7 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-h1{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.9vw,28px);font-size:3.6cqw;letter-spacing:-.02em;line-height:1.2;color:var(--white)}
 .nip-h1-line{position:absolute;display:block;max-width:32%}
 .nip-h1-line b{font-weight:700}
-.nip-h1-line--nature{left:50%;bottom:86%;transform:translateX(-50%);text-align:center;max-width:56%}
+.nip-h1-line--nature{left:50%;bottom:90%;transform:translateX(-50%);text-align:center;max-width:56%}
 .nip-h1-line--innovation{left:0;top:86%;max-width:42%}
 .nip-h1-line--people{right:0;top:86%;max-width:42%;text-align:right}
 .nip-h1-line--nature b{color:var(--accent2)}
