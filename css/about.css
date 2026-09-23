@@ -90,7 +90,8 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-name-hpc{display:flex;flex-direction:column;align-items:center;gap:7px;margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(16px,2vw,22px);border-top:1px solid var(--about-line)}
 .about-name-hpc-code{font-family:var(--display);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-.01em;color:var(--about-text);line-height:1}
 .about-name-hpc-txt{font:400 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--about-muted);margin-right:-.22em}
-.about-name-hpc-txt b{font-weight:700;color:var(--about-text)}
+/* iniziali nel colore delle etichette (5.00:1 su bianco): le stesse di ROSELLA/ELEONORA/MICHELA */
+.about-name-hpc-txt b{font-weight:700;color:var(--primary-ink)}
 
 /* Coreografia, ~5s: comparsa -> lettura -> le code svaniscono -> i blocchi si stringono
    e il nome cresce -> barrette -> nomi di persona -> riga HPC */
