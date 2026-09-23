@@ -65,6 +65,8 @@
 }
 #ingPauseBtn:hover{border-color:var(--dark);background:var(--primary);color:var(--dark);transform:translateY(-2px)}
 #ingPauseBtn svg{width:18px;height:18px;fill:currentColor;stroke:none}
+/* stesso motivo: hidden non agisce sugli SVG */
+#ingPauseBtn svg[hidden]{display:none}
 .ing-parallax.is-paused .ing-float{animation-play-state:paused}
 .ing-counter{position:relative;z-index:3;font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.1em;color:var(--muted)}
 .ing-counter b{color:var(--secondary);font-weight:600}

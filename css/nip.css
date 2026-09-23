@@ -292,7 +292,9 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
   color:var(--nip-text);transition:border-color .25s,background .25s,color .25s,transform .2s}
 .nip-anim-btn:hover{border-color:var(--dark);background:var(--primary);color:var(--dark);transform:translateY(-2px)}
 .nip-anim-btn svg{width:18px;height:18px;fill:currentColor;stroke:none}
-.nip-anim-btn[hidden]{display:none}
+/* l'attributo hidden non agisce sugli SVG: il foglio del browser lo applica solo
+   agli elementi HTML, quindi senza questa riga si vedono entrambe le icone */
+.nip-anim-btn[hidden],.nip-anim-btn svg[hidden]{display:none}
 /* la freccia di "rigioca" e' disegnata a tratto, non a pieno */
 .nip-anim-btn--hero svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 /* nella hero sta sul fondo scuro, in basso a destra, fuori dal flusso: cosi' non
@@ -301,7 +303,8 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
   border-color:color-mix(in srgb,var(--white) 45%,transparent);
   background:color-mix(in srgb,var(--dark) 45%,transparent);color:var(--white)}
 .nip-anim-btn--hero:hover{background:var(--primary);color:var(--dark);border-color:var(--primary)}
-.nip-action-tools{display:flex;justify-content:flex-end;margin-bottom:clamp(12px,1.6vw,18px)}
+.nip-action-head{display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,2.4vw,32px);margin-bottom:clamp(18px,2.2vw,30px)}
+.nip-action-head .nip-action-intro{margin-bottom:0}
 /* stato fermo e riavvio */
 .nip-action.anim-paused .nip-card-img img{animation-play-state:paused}
 .nip-tri.anim-off .nip-mark,.nip-tri.anim-off .nip-tri-node,
