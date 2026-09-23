@@ -39,7 +39,7 @@
    #A1BBD8. L'acqua resta un tono vicino (#bbc9d9): due tinte diverse servono, altrimenti
    mare e continenti non si distinguono. Marker: colore pieno + contorno Hard Grey. */
 .leaflet-tile-pane{filter:sepia(1) saturate(4.5) hue-rotate(175deg) brightness(.76) contrast(1.35)}
-.leaflet-control-attribution{background:rgba(25,25,25,.85)!important;color:rgba(255,255,255,.6)!important;font-size:10px!important;border-radius:4px 0 0 0!important}
+.leaflet-control-attribution{background:rgba(25,25,25,.85)!important;color:rgba(255,255,255,.6)!important;font-size:11px!important;border-radius:4px 0 0 0!important}
 .leaflet-control-attribution a{color:rgba(255,255,255,.75)!important}
 
 /* Custom marker */
@@ -100,7 +100,7 @@
   padding:7px 12px;
 }
 .pm-tooltip b{display:block;font:600 13px var(--display);color:var(--secondary);line-height:1.25}
-.pm-tooltip span{font:600 9.5px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--primary-ink)}
+.pm-tooltip span{font:600 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--primary-ink)}
 .leaflet-tooltip-top.pm-tooltip::before{border-top-color:#fff}
 
 /* Hover incrociato legenda <-> mappa */

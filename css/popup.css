@@ -40,7 +40,7 @@
 .site-popup-close:hover{color:var(--secondary)}
 .site-popup-tag{
   display:inline-block;
-  font:600 10px var(--body);
+  font:600 11px var(--body);
   letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--dark);

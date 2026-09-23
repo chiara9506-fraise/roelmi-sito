@@ -56,7 +56,7 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(32px,3.6vw,52px);l
 /* A scrub fermo la hero e' alta 100vh e il fondo resta chiaro: serve il testo scuro */
 .hero.is-static .hero-motion{border-color:rgba(4,21,33,.35);background:rgba(255,255,255,.85);color:var(--dark)}
 @media(max-width:640px){
-  .hero-motion{right:clamp(20px,4vw,56px);bottom:16px;padding:8px 12px;font-size:10px}
+  .hero-motion{right:clamp(20px,4vw,56px);bottom:16px;padding:8px 12px;font-size:11px}
   .hero-motion-label{display:none}
 }
 
