@@ -115,6 +115,35 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-tri-arc--b{animation-delay:1.85s}
 .nip-tri-arc--c{animation-delay:2.2s}
 
+/* Hover: il pilastro puntato si accende e gli altri due arretrano. Stesso
+   comportamento della legenda della mappa nella home. Funziona sia passando sulla
+   frase sia sul nodo, e senza JS grazie a :has(). */
+.nip-tri-arc,.nip-tri-node,.nip-h1-line{transition:opacity .3s ease,stroke-width .3s ease,transform .3s cubic-bezier(.2,.7,.2,1)}
+@media(hover:hover){
+  .nip-tri:is(:has(.nip-h1-line--nature:hover),:has(.nip-tri-node--nature:hover)) .nip-tri-arc--a{stroke-width:5}
+  .nip-tri:is(:has(.nip-h1-line--nature:hover),:has(.nip-tri-node--nature:hover)) .nip-tri-node--nature{transform:scale(1.5)}
+  .nip-tri:is(:has(.nip-h1-line--nature:hover),:has(.nip-tri-node--nature:hover)) :is(.nip-tri-arc--b,.nip-tri-arc--c){opacity:.22}
+  .nip-tri:is(:has(.nip-h1-line--nature:hover),:has(.nip-tri-node--nature:hover)) :is(.nip-h1-line--innovation,.nip-h1-line--people){opacity:.4}
+  .nip-tri:is(:has(.nip-h1-line--nature:hover),:has(.nip-tri-node--nature:hover)) :is(.nip-tri-node--innovation,.nip-tri-node--people){opacity:.3}
+  .nip-tri:is(:has(.nip-h1-line--innovation:hover),:has(.nip-tri-node--innovation:hover)) .nip-tri-arc--b{stroke-width:5}
+  .nip-tri:is(:has(.nip-h1-line--innovation:hover),:has(.nip-tri-node--innovation:hover)) .nip-tri-node--innovation{transform:scale(1.5)}
+  .nip-tri:is(:has(.nip-h1-line--innovation:hover),:has(.nip-tri-node--innovation:hover)) :is(.nip-tri-arc--a,.nip-tri-arc--c){opacity:.22}
+  .nip-tri:is(:has(.nip-h1-line--innovation:hover),:has(.nip-tri-node--innovation:hover)) :is(.nip-h1-line--nature,.nip-h1-line--people){opacity:.4}
+  .nip-tri:is(:has(.nip-h1-line--innovation:hover),:has(.nip-tri-node--innovation:hover)) :is(.nip-tri-node--nature,.nip-tri-node--people){opacity:.3}
+  .nip-tri:is(:has(.nip-h1-line--people:hover),:has(.nip-tri-node--people:hover)) .nip-tri-arc--c{stroke-width:5}
+  .nip-tri:is(:has(.nip-h1-line--people:hover),:has(.nip-tri-node--people:hover)) .nip-tri-node--people{transform:scale(1.5)}
+  .nip-tri:is(:has(.nip-h1-line--people:hover),:has(.nip-tri-node--people:hover)) :is(.nip-tri-arc--a,.nip-tri-arc--b){opacity:.22}
+  .nip-tri:is(:has(.nip-h1-line--people:hover),:has(.nip-tri-node--people:hover)) :is(.nip-h1-line--nature,.nip-h1-line--innovation){opacity:.4}
+  .nip-tri:is(:has(.nip-h1-line--people:hover),:has(.nip-tri-node--people:hover)) :is(.nip-tri-node--nature,.nip-tri-node--innovation){opacity:.3}
+  .nip-h1-line{cursor:default}
+}
+@media(prefers-reduced-motion:reduce){
+  .nip-tri-node{transition:opacity .3s ease}
+  .nip-tri:is(:has(.nip-h1-line--nature:hover),:has(.nip-tri-node--nature:hover)) .nip-tri-node--nature{transform:none}
+  .nip-tri:is(:has(.nip-h1-line--innovation:hover),:has(.nip-tri-node--innovation:hover)) .nip-tri-node--innovation{transform:none}
+  .nip-tri:is(:has(.nip-h1-line--people:hover),:has(.nip-tri-node--people:hover)) .nip-tri-node--people{transform:none}
+}
+
 /* Sotto gli 860px la figura non regge: le tre frasi tornano in colonna, con il
    filetto del proprio colore, e gli archi spariscono */
 @media(max-width:859px){
