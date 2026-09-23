@@ -22,13 +22,13 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 /* Ritmo verticale: come about.css */
 .nip-intro,.nip-pillars{padding:clamp(34px,4.2vw,68px) 0}
 .nip-pillars{padding-top:0}
-.nip-action{padding:clamp(34px,4.2vw,68px) 0 clamp(40px,4.6vw,72px)}
+.nip-action{padding:0 0 clamp(34px,4.2vw,68px)}
 /* la hero e una foto a filo: lo spazio sopra lo deve dare la sezione che segue */
 .nip-intro{padding-top:clamp(40px,4.6vw,72px)}
 /* Chiusura: la stessa card scura della pagina prodotto. Prima qui c'era il blocco
    sostenibilita' della home, che ripeteva il titolo della pagina e il bottone del
    report senza aggiungere nulla. */
-.nip-close{padding:clamp(20px,2.6vw,36px) 0 clamp(34px,4.2vw,68px)}
+.nip-close{padding:0 0 clamp(34px,4.2vw,68px)}
 .nip-close-card{background:var(--dark);border-radius:16px;padding:clamp(40px,5vw,68px) clamp(28px,5vw,72px);text-align:center;max-width:860px;margin:0 auto}
 .nip-close-card h2{font-family:var(--display);font-weight:600;font-size:clamp(24px,3vw,40px);letter-spacing:-.02em;line-height:1.15;color:var(--white);margin-bottom:14px}
 .nip-close-card h2 sup{font-size:.45em;vertical-align:.65em;font-weight:400}
@@ -237,7 +237,7 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-pillar:hover .nip-pillar-title,.nip-pillar:hover p{color:var(--dark)}
 
 /* ── 4. Sustainability in action ── */
-.nip-action-intro{margin-bottom:clamp(20px,2.4vw,34px)}
+.nip-action-intro{margin-bottom:clamp(18px,2.2vw,30px)}
 .nip-action-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.4vw,28px)}
 .nip-card{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none;
   background:var(--white);border:1px solid var(--nip-line);border-radius:16px;overflow:hidden;
