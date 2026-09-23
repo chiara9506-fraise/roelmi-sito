@@ -10,7 +10,7 @@
 
 .ing-stage{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:stretch;min-height:min(48vh,430px);margin-top:clamp(18px,2.4vw,28px)}
 .ing-left{position:relative;display:flex;flex-direction:column}
-.ing-figure{grid-column:2;grid-row:1;position:relative;width:clamp(150px,17vw,240px);margin:clamp(-95px,-8vw,-65px) auto 0;align-self:start;z-index:1;perspective:1100px;pointer-events:none}
+.ing-figure{grid-column:2;grid-row:1;position:relative;width:clamp(200px,26vw,380px);margin:clamp(-70px,-5.5vw,-36px) auto 0;align-self:start;z-index:1;perspective:1100px;pointer-events:none}
 
 /* floating product */
 .ing-figure-OLD{display:none}
@@ -25,8 +25,7 @@
 .ing-float img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;
   opacity:0;transition:opacity .6s ease;transform-origin:center center}
 .ing-float img.active{opacity:1}
-.ing-float img[data-i="1"]{transform:scale(.99)}
-.ing-float img[data-i="2"]{transform:scale(1.46)}
+/* nessuna scala per immagine: i tre file hanno la goccia all'86% di un quadrato */
 
 
 /* caption bottom-left */
@@ -127,8 +126,7 @@
 
 @media(max-width:600px){
   .ing-figure{width:min(36vw,160px)}
-  .ing-float img[data-i="1"]{transform:scale(.99)}
-  .ing-float img[data-i="2"]{transform:scale(1.46)}
+
   .ing-name{font-size:clamp(22px,6vw,32px)}
   .ing-finder{flex-direction:row;flex-wrap:wrap;gap:12px 14px}
   .ing-finder .if-ic{width:40px;height:40px}
