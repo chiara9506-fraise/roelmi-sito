@@ -84,9 +84,13 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-name-part:nth-child(5) .about-name-syl::after{background:var(--accent2)}
 .about-name-src{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink)}
 .about-name-dot{font-family:var(--display);font-weight:700;font-size:clamp(40px,5vw,72px);line-height:1.1;color:var(--primary-ink)}
-.about-name-hpc{display:flex;align-items:baseline;justify-content:center;gap:16px;margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(16px,2vw,22px);border-top:1px solid var(--about-line);flex-wrap:wrap}
-.about-name-hpc-code{font-family:var(--display);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-.01em;color:var(--about-text)}
-.about-name-hpc-txt{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--about-muted)}
+/* HPC sopra, la frase da cui nasce subito sotto: le tre iniziali in nero pieno,
+   il resto in grigio, cosi' l'acronimo si ricompone con l'occhio (stessa logica
+   dell'acrostico della pagina NIP) */
+.about-name-hpc{display:flex;flex-direction:column;align-items:center;gap:7px;margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(16px,2vw,22px);border-top:1px solid var(--about-line)}
+.about-name-hpc-code{font-family:var(--display);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-.01em;color:var(--about-text);line-height:1}
+.about-name-hpc-txt{font:400 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--about-muted);margin-right:-.22em}
+.about-name-hpc-txt b{font-weight:700;color:var(--about-text)}
 
 /* Coreografia, ~5s: comparsa -> lettura -> le code svaniscono -> i blocchi si stringono
    e il nome cresce -> barrette -> nomi di persona -> riga HPC */
