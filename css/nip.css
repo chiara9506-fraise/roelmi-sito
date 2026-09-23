@@ -14,14 +14,15 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .delay1{transition-delay:.12s}.delay2{transition-delay:.24s}
 @media(prefers-reduced-motion:reduce){
   .r-up,.r-img{opacity:1;transform:none;transition:none}
-  .nip-pillar:hover,.nip-card:hover .nip-card-img{transform:none}
+  .nip-pillar:hover{transform:none}
+  .nip-card-img img{animation:none}
   .nip-pillar-arc{transition:none;stroke-dashoffset:0}
 }
 
 /* Ritmo verticale: come about.css */
 .nip-intro,.nip-pillars{padding:clamp(34px,4.2vw,68px) 0}
 .nip-pillars{padding-top:0}
-.nip-action{background:var(--accent1);padding:clamp(40px,4.6vw,72px) 0}
+.nip-action{padding:clamp(34px,4.2vw,68px) 0 clamp(40px,4.6vw,72px)}
 /* la hero e una foto a filo: lo spazio sopra lo deve dare la sezione che segue */
 .nip-intro{padding-top:clamp(40px,4.6vw,72px)}
 .nip-report{padding:clamp(34px,4.2vw,68px) 0}
@@ -224,11 +225,22 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-card{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none;
   background:var(--white);border:1px solid var(--nip-line);border-radius:16px;overflow:hidden;
   transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.nip-card{box-shadow:0 2px 10px color-mix(in srgb,var(--dark) 5%,transparent)}
 .nip-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--dark) 14%,transparent);border-color:color-mix(in srgb,var(--dark) 22%,transparent)}
 .nip-card:focus-visible{outline:2px solid var(--primary-ink);outline-offset:4px}
-.nip-card-img{display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;background:var(--accent1);overflow:hidden;padding:clamp(14px,1.6vw,22px)}
-.nip-card-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
-.nip-card:hover .nip-card-img img{transform:scale(1.04)}
+.nip-card-img{display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;background:var(--white);overflow:hidden;padding:clamp(20px,2.4vw,30px) clamp(14px,1.6vw,22px)}
+/* stesso movimento del carosello ingredienti della home, rallentato e con le quattro
+   immagini sfasate fra loro: i ritardi negativi le fanno partire gia' a meta' ciclo */
+.nip-card-img img{width:100%;height:100%;object-fit:contain;display:block;
+  filter:drop-shadow(0 18px 26px color-mix(in srgb,var(--dark) 24%,transparent));
+  animation:nipBob 7s ease-in-out infinite;transition:filter .35s ease}
+@keyframes nipBob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(-.8deg)}}
+.nip-action-grid li:nth-child(2) .nip-card-img img{animation-delay:-1.8s}
+.nip-action-grid li:nth-child(3) .nip-card-img img{animation-delay:-3.5s}
+.nip-action-grid li:nth-child(4) .nip-card-img img{animation-delay:-5.2s}
+/* in hover non tocco la trasformazione, che e' occupata dall'animazione: alzo l'ombra,
+   e il prodotto sembra salire */
+.nip-card:hover .nip-card-img img{filter:drop-shadow(0 30px 38px color-mix(in srgb,var(--dark) 30%,transparent))}
 .nip-card-body{padding:clamp(18px,2vw,26px)}
 .nip-card-name{font-family:var(--display);font-weight:600;font-size:clamp(19px,1.7vw,23px);letter-spacing:-.01em;line-height:1.25;color:var(--nip-text);margin:0;transition:color .2s}
 .nip-card:hover .nip-card-name{text-decoration:underline;text-underline-offset:4px}
