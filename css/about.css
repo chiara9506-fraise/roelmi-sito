@@ -66,7 +66,7 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 /* La barretta e' un elemento sovrapposto, non un bordo: cosi' puo' disegnarsi da sinistra */
 .about-name-syl{position:relative;padding-bottom:10px}
 .about-name-syl::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--primary);
-  transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.2,.7,.2,1),height .2s ease}
+  transform-origin:left;transition:height .2s ease}  /* stato finale: barretta intera; il disegno iniziale lo fa l animazione */
 .about-name-part:nth-child(3) .about-name-syl::after{background:var(--accent3)}
 .about-name-part:nth-child(5) .about-name-syl::after{background:var(--accent2)}
 
