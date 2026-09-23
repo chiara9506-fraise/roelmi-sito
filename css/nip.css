@@ -54,7 +54,7 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
    peggiore, foto bianca sotto il testo: bianco >= 8.6:1, bianco 80% >= 6.2, Cerulean
    (solo testo grande: segno NIP e iniziali) >= 4.4. Tutto sta in uno schermo. */
 .nip-hero{position:relative;overflow:hidden;background:var(--dark);min-height:100svh;display:flex;flex-direction:column;justify-content:center;
-  padding:calc(84px + clamp(20px,3vw,40px)) 0 clamp(28px,3.5vw,52px)}
+  padding:calc(84px + clamp(16px,2vw,28px)) 0 clamp(24px,3vw,40px)}
 .nip-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .nip-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,color-mix(in srgb,var(--dark) 68%,transparent) 0%,color-mix(in srgb,var(--dark) 82%,transparent) 100%)}
 .nip-hero .wrap{position:relative;z-index:2;width:100%}
@@ -68,7 +68,7 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
    (uno per pilastro, del suo colore) che si disegnano a chiudere il giro: "closely interconnected" preso alla lettera.
    Tutto in proporzioni del riquadro 600x420, cosi' testo e grafica restano
    agganciati a qualsiasi larghezza. ── */
-.nip-tri{position:relative;container-type:size;width:min(100%,calc((100svh - 250px) * 1.25),820px);margin:clamp(10px,1.6vw,24px) auto 0;aspect-ratio:600/480}
+.nip-tri{position:relative;container-type:size;width:min(100%,calc((100svh - 215px) * 1.5),1000px);margin:clamp(8px,1.2vw,16px) auto 0;aspect-ratio:720/480}
 .nip-tri-svg{display:block;width:100%;height:100%}
 .nip-tri-arc{fill:none;stroke-width:2.5;stroke-linecap:round}
 .nip-tri-arc--a{stroke:var(--accent2)}
@@ -79,16 +79,16 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-tri-node--people{fill:var(--accent3)}
 
 .nip-mark{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;text-align:center;margin:0}
-.nip-mark-word{font-family:var(--display);font-weight:700;font-size:clamp(56px,9vw,132px);font-size:20cqw;line-height:.85;letter-spacing:-.03em;color:var(--primary)}
+.nip-mark-word{font-family:var(--display);font-weight:700;font-size:clamp(56px,9vw,132px);font-size:18cqw;line-height:.85;letter-spacing:-.03em;color:var(--primary)}
 .nip-mark-word sup{font-size:.26em;vertical-align:2em;font-weight:500;margin-left:.04em}
-.nip-mark-sub{font:600 clamp(10px,.85vw,13px) var(--body);font-size:1.8cqw;letter-spacing:.28em;text-transform:uppercase;color:color-mix(in srgb,var(--white) 82%,transparent);margin-top:clamp(8px,1.6cqw,16px)}
+.nip-mark-sub{font:600 clamp(10px,.85vw,13px) var(--body);font-size:1.5cqw;letter-spacing:.28em;text-transform:uppercase;color:color-mix(in srgb,var(--white) 82%,transparent);margin-top:clamp(8px,1.6cqw,16px)}
 
-.nip-h1{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.9vw,28px);font-size:4cqw;letter-spacing:-.02em;line-height:1.2;color:var(--white)}
+.nip-h1{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.9vw,28px);font-size:3.6cqw;letter-spacing:-.02em;line-height:1.2;color:var(--white)}
 .nip-h1-line{position:absolute;display:block;max-width:32%}
 .nip-h1-line b{font-weight:700}
-.nip-h1-line--nature{left:50%;bottom:83%;transform:translateX(-50%);text-align:center;max-width:56%}
-.nip-h1-line--innovation{left:0;top:84%;max-width:44%}
-.nip-h1-line--people{right:0;top:84%;max-width:44%;text-align:right}
+.nip-h1-line--nature{left:50%;bottom:86%;transform:translateX(-50%);text-align:center;max-width:56%}
+.nip-h1-line--innovation{left:0;top:86%;max-width:42%}
+.nip-h1-line--people{right:0;top:86%;max-width:42%;text-align:right}
 .nip-h1-line--nature b{color:var(--accent2)}
 .nip-h1-line--innovation b{color:var(--primary)}
 .nip-h1-line--people b{color:var(--accent3)}
@@ -110,7 +110,7 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-h1-line--innovation{animation-delay:.95s}
 .nip-h1-line--people{animation-delay:1.2s}
 /* 560 e' abbondantemente sopra la lunghezza di ogni arco: si disegnano per intero */
-.nip-tri-arc{stroke-dasharray:315;stroke-dashoffset:315;animation:nipArc .75s cubic-bezier(.4,0,.2,1) forwards}
+.nip-tri-arc{stroke-dasharray:360;stroke-dashoffset:360;animation:nipArc .75s cubic-bezier(.4,0,.2,1) forwards}
 .nip-tri-arc--a{animation-delay:1.5s}
 .nip-tri-arc--b{animation-delay:1.85s}
 .nip-tri-arc--c{animation-delay:2.2s}
