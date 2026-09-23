@@ -15,6 +15,7 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 @media(prefers-reduced-motion:reduce){
   .r-up,.r-img{opacity:1;transform:none;transition:none}
   .nip-pillar:hover,.nip-card:hover .nip-card-img{transform:none}
+  .nip-pillar-arc{transition:none;stroke-dashoffset:0}
 }
 
 /* Ritmo verticale: come about.css */
@@ -190,15 +191,30 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-pillar--innovation:hover{background:var(--primary);border-color:var(--primary)}
 .nip-pillar--people:hover{background:var(--accent3);border-color:var(--accent3)}
 /* iniziale decorativa (aria-hidden) nei colori richiesti */
-.nip-pillar-initial{display:block;font-family:var(--display);font-weight:700;font-size:clamp(72px,7vw,112px);line-height:.9;letter-spacing:-.03em;margin-bottom:16px;transition:color .28s ease}
-.nip-pillar--nature .nip-pillar-initial{color:var(--accent2)}
-.nip-pillar--innovation .nip-pillar-initial{color:var(--primary)}
-.nip-pillar--people .nip-pillar-initial{color:var(--accent3)}
+/* Ogni card mostra il cerchio della hero per intero, in trasparenza, con acceso
+   soltanto il proprio terzo: si capisce che e' un pezzo di un tutto anche guardando
+   una card sola, e le tre in fila ricompongono il giro. */
+.nip-pillar-mark{position:relative;display:block;width:clamp(72px,6vw,92px);aspect-ratio:1;margin-bottom:clamp(14px,1.6vw,20px)}
+.nip-pillar-mark svg{display:block;width:100%;height:100%;overflow:visible}
+.nip-pillar-ring{fill:none;stroke:var(--nip-line);stroke-width:2}
+.nip-pillar-arc{fill:none;stroke-width:5;stroke-linecap:round;stroke-dasharray:88;stroke-dashoffset:88;transition:stroke-dashoffset .9s cubic-bezier(.4,0,.2,1) .15s,stroke .28s ease}
+.nip-pillar.in .nip-pillar-arc{stroke-dashoffset:0}
+.nip-pillar--nature .nip-pillar-arc{stroke:var(--accent2)}
+.nip-pillar--innovation .nip-pillar-arc{stroke:var(--primary)}
+.nip-pillar--people .nip-pillar-arc{stroke:var(--accent3)}
+.nip-pillar-mark b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;font-size:clamp(28px,2.6vw,36px);letter-spacing:-.02em;transition:color .28s ease}
+.nip-pillar--nature .nip-pillar-mark b{color:var(--accent2)}
+.nip-pillar--innovation .nip-pillar-mark b{color:var(--primary)}
+.nip-pillar--people .nip-pillar-mark b{color:var(--accent3)}
+/* sulla card riempita del proprio colore, anello e arco passano a Hard Grey */
+.nip-pillar:hover .nip-pillar-arc,.nip-pillar:hover .nip-pillar-mark b{stroke:var(--dark);color:var(--dark)}
+.nip-pillar:hover .nip-pillar-ring{stroke:color-mix(in srgb,var(--dark) 28%,transparent)}
 .nip-pillar-title{font-family:var(--display);font-weight:600;font-size:clamp(22px,2vw,26px);letter-spacing:-.01em;color:var(--nip-text);margin-bottom:12px;transition:color .28s ease}
 .nip-pillar p{font:400 16px/1.65 var(--body);color:var(--nip-text);transition:color .28s ease}
 .nip-pillar p + p{margin-top:12px}
 /* sul Cerulean pieno il testo va in Hard Grey (8.89:1) */
-.nip-pillar:hover .nip-pillar-initial,.nip-pillar:hover .nip-pillar-title,.nip-pillar:hover p{color:var(--dark)}
+.nip-pillar:hover .nip-pillar-title,.nip-pillar:hover p{color:var(--dark)}
 
 /* ── 4. Sustainability in action ── */
 .nip-action-intro{margin-bottom:clamp(20px,2.4vw,34px)}
