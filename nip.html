@@ -171,22 +171,21 @@
       <svg aria-hidden="true" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
       <span aria-current="page">Sustainability</span>
     </nav>
-    <div class="nip-hero-center">
-      <div class="nip-hero-text">
-        <!-- il segno sostituisce l'occhiello: letto come "NIP® Nature is People" -->
-        <p class="nip-mark r-up"><span class="nip-mark-word">NIP<sup>®</sup></span> <span class="nip-mark-sub">Nature is People</span></p>
-        <!-- l'iniziale grande di ogni riga e' ::first-letter: nessun elemento in piu',
-             lo screen reader legge le tre frasi normali -->
-        <h1 class="nip-h1 r-up">
-          <span class="nip-h1-line"><strong>Nature</strong> inspires us.</span>
-          <span class="nip-h1-line"><strong>Innovation</strong> drives us.</span>
-          <span class="nip-h1-line"><strong>People</strong> make it possible.</span>
-        </h1>
-        <p class="nip-lead r-up delay1">Discover how our <a href="#in-action">sustainability initiatives</a> are turning our commitments into concrete results.</p>
-        <div class="nip-hero-cta r-up delay2">
-          <a class="sust-cta" href="#" data-todo="link">Download the Sustainability Report <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
+    <div class="nip-tri r-up">
+      <svg class="nip-tri-svg" viewBox="0 0 600 420" aria-hidden="true" focusable="false">
+        <path class="nip-tri-arc nip-tri-arc--a" d="M300 90 Q 130 170 72 330"/>
+        <path class="nip-tri-arc nip-tri-arc--b" d="M72 330 Q 300 400 528 330"/>
+        <path class="nip-tri-arc nip-tri-arc--c" d="M528 330 Q 470 170 300 90"/>
+        <circle class="nip-tri-node nip-tri-node--nature" cx="300" cy="90" r="9"/>
+        <circle class="nip-tri-node nip-tri-node--innovation" cx="72" cy="330" r="9"/>
+        <circle class="nip-tri-node nip-tri-node--people" cx="528" cy="330" r="9"/>
+      </svg>
+      <p class="nip-mark"><span class="nip-mark-word">NIP<sup>®</sup></span> <span class="nip-mark-sub">Nature is People</span></p>
+      <h1 class="nip-h1">
+        <span class="nip-h1-line nip-h1-line--nature"><b>Nature</b> inspires us.</span>
+        <span class="nip-h1-line nip-h1-line--innovation"><b>Innovation</b> drives us.</span>
+        <span class="nip-h1-line nip-h1-line--people"><b>People</b> make it possible.</span>
+      </h1>
     </div>
   </div>
 </section>
@@ -198,6 +197,10 @@
     <div class="nip-intro-cols">
       <p class="nip-text r-up">Our aim, in fact, is to reduce our <strong class="hl hl--nature">environmental impact</strong> while developing <a href="ingredient-finder.html"><strong>high-performance ingredients</strong></a> for our customers.</p>
       <p class="nip-text r-up delay1">We apply the principles of the <strong>circular economy</strong> to agricultural resources: using <strong class="hl hl--science">cutting-edge technological processes</strong>, we regenerate supply chain waste to <strong>create premium raw materials for the cosmetics and nutraceuticals markets</strong>.</p>
+    </div>
+    <p class="nip-lead r-up">Discover how our <a href="#in-action">sustainability initiatives</a> are turning our commitments into concrete results.</p>
+    <div class="nip-intro-cta r-up delay1">
+      <a class="sust-cta" href="#" data-todo="link">Download the Sustainability Report <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>

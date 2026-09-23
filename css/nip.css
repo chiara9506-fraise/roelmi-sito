@@ -56,42 +56,84 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-hero{position:relative;overflow:hidden;background:var(--dark);min-height:100svh;display:flex;flex-direction:column;justify-content:center;
   padding:calc(84px + clamp(20px,3vw,40px)) 0 clamp(40px,5vw,72px)}
 .nip-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.nip-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,color-mix(in srgb,var(--dark) 80%,transparent) 0%,color-mix(in srgb,var(--dark) 86%,transparent) 100%)}
+.nip-hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,color-mix(in srgb,var(--dark) 68%,transparent) 0%,color-mix(in srgb,var(--dark) 82%,transparent) 100%)}
 .nip-hero .wrap{position:relative;z-index:2;width:100%}
 /* su fondo scuro: breadcrumb, testi e link in bianco, segno e iniziali in Cerulean */
 .nip-hero .nip-breadcrumb,.nip-hero .nip-breadcrumb a{color:color-mix(in srgb,var(--white) 80%,transparent)}
 .nip-hero .nip-breadcrumb a{text-decoration-color:color-mix(in srgb,var(--white) 40%,transparent)}
 .nip-hero .nip-breadcrumb a:hover{color:var(--white)}
-.nip-hero .nip-breadcrumb a:focus-visible,.nip-hero .nip-lead a:focus-visible{outline-color:var(--white)}
+.nip-hero .nip-breadcrumb a:focus-visible{outline-color:var(--white)}
 .nip-hero .nip-breadcrumb span[aria-current]{color:var(--white)}
-/* Composizione verticale e centrata: segno NIP® -> tre frasi -> paragrafo -> bottone */
-.nip-hero-center{text-align:center}
-.nip-mark{display:flex;flex-direction:column;align-items:center;margin-bottom:clamp(28px,3.5vw,48px)}
-.nip-mark-word{font-family:var(--display);font-weight:700;font-size:clamp(80px,11vw,160px);line-height:.85;letter-spacing:-.03em;color:var(--primary)}
+/* ── Composizione: i tre pilastri ai vertici, NIP al centro, e tre archi che si
+   disegnano a chiudere la figura: "closely interconnected" preso alla lettera.
+   Tutto in proporzioni del riquadro 600x420, cosi' testo e grafica restano
+   agganciati a qualsiasi larghezza. ── */
+.nip-tri{position:relative;width:min(100%,900px);margin:clamp(16px,2.5vw,36px) auto 0;aspect-ratio:600/420}
+.nip-tri-svg{display:block;width:100%;height:100%}
+.nip-tri-arc{fill:none;stroke:color-mix(in srgb,var(--white) 55%,transparent);stroke-width:2;stroke-linecap:round}
+.nip-tri-node--nature{fill:var(--accent2)}
+.nip-tri-node--innovation{fill:var(--primary)}
+.nip-tri-node--people{fill:var(--accent3)}
+
+.nip-mark{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;text-align:center;margin:0}
+.nip-mark-word{font-family:var(--display);font-weight:700;font-size:clamp(46px,7vw,104px);line-height:.85;letter-spacing:-.03em;color:var(--primary)}
 .nip-mark-word sup{font-size:.26em;vertical-align:2em;font-weight:500;margin-left:.04em}
-.nip-mark-sub{font:600 13px var(--body);letter-spacing:.28em;text-transform:uppercase;color:color-mix(in srgb,var(--white) 80%,transparent);margin-top:clamp(14px,1.6vw,22px)}
-/* le frasi: blocco centrato, righe allineate fra loro dentro il blocco */
-.nip-h1{display:inline-block;text-align:left;font-family:var(--display);font-weight:600;font-size:clamp(24px,3.2vw,44px);letter-spacing:-.02em;line-height:1.1;color:var(--white)}
-.nip-h1 strong{font-weight:700}
-.nip-h1-line{display:block}
-/* l'iniziale di ogni riga (N, I, P) e' ::first-letter: letta dentro la parola, niente
-   elementi separati per lo screen reader. Cerulean ink su bianco 5.01:1 */
-.nip-h1-line::first-letter{font-size:1.5em;line-height:1;color:var(--primary)}
-/* N, I e P hanno larghezze molto diverse (Montserrat 700: .81 / .33 / .73 em): le
-   iniziali si allineano a destra sulla N, cosi' le tre parole partono dallo stesso
-   punto e ogni iniziale resta attaccata alla sua parola */
-.nip-h1-line:nth-child(2)::first-letter{margin-left:.48em}
-.nip-h1-line:nth-child(3)::first-letter{margin-left:.076em}
-/* da tablet in su le tre frasi stanno su una riga ciascuna */
-@media(min-width:768px){.nip-h1-line{white-space:nowrap}}
-.nip-lead{font:400 clamp(17px,1.4vw,19px)/1.65 var(--body);color:color-mix(in srgb,var(--white) 85%,transparent);max-width:52ch;margin:clamp(22px,2.6vw,34px) auto 0}
-.nip-hero-cta{margin-top:clamp(24px,3vw,36px)}
-/* link del paragrafo: il Cerulean non regge 4.5 su foto chiara, quindi bianco sottolineato */
-.nip-hero .nip-lead a{color:var(--white);text-decoration-color:color-mix(in srgb,var(--white) 60%,transparent)}
-/* bottone su fondo scuro: hover verso il chiaro, come nella card sostenibilita' della home */
-.nip-hero .sust-cta:hover{background:var(--white);color:var(--dark)}
+.nip-mark-sub{font:600 clamp(10px,.85vw,13px) var(--body);letter-spacing:.28em;text-transform:uppercase;color:color-mix(in srgb,var(--white) 82%,transparent);margin-top:clamp(10px,1.2vw,18px)}
+
+.nip-h1{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.9vw,28px);letter-spacing:-.02em;line-height:1.2;color:var(--white)}
+.nip-h1-line{position:absolute;display:block;max-width:32%}
+.nip-h1-line b{font-weight:700}
+.nip-h1-line--nature{left:50%;top:0;transform:translateX(-50%);text-align:center;max-width:40%}
+.nip-h1-line--innovation{left:0;top:82%}
+.nip-h1-line--people{right:0;top:82%;text-align:right}
+.nip-h1-line--nature b{color:var(--accent2)}
+.nip-h1-line--innovation b{color:var(--primary)}
+.nip-h1-line--people b{color:var(--accent3)}
+
+/* Sequenza, ~3s: prima il marchio, poi i tre nodi con la loro frase, poi gli archi
+   che li collegano uno dopo l'altro. */
+@keyframes nipMarkIn{from{opacity:0;transform:translate(-50%,-50%) scale(.88)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes nipNodeIn{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+@keyframes nipLineIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes nipLineInC{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%)}}
+@keyframes nipArc{to{stroke-dashoffset:0}}
+.nip-tri .nip-mark{animation:nipMarkIn .8s cubic-bezier(.2,.7,.2,1) .1s backwards}
+.nip-tri-node{transform-box:fill-box;transform-origin:center;animation:nipNodeIn .5s cubic-bezier(.2,1.4,.5,1) backwards}
+.nip-tri-node--nature{animation-delay:.7s}
+.nip-tri-node--innovation{animation-delay:.95s}
+.nip-tri-node--people{animation-delay:1.2s}
+.nip-h1-line{animation:nipLineIn .6s cubic-bezier(.2,.7,.2,1) backwards}
+.nip-h1-line--nature{animation-name:nipLineInC;animation-delay:.7s}
+.nip-h1-line--innovation{animation-delay:.95s}
+.nip-h1-line--people{animation-delay:1.2s}
+/* 560 e' abbondantemente sopra la lunghezza di ogni arco: si disegnano per intero */
+.nip-tri-arc{stroke-dasharray:560;stroke-dashoffset:560;animation:nipArc .75s cubic-bezier(.4,0,.2,1) forwards}
+.nip-tri-arc--a{animation-delay:1.5s}
+.nip-tri-arc--b{animation-delay:1.85s}
+.nip-tri-arc--c{animation-delay:2.2s}
+
+/* Sotto gli 860px la figura non regge: le tre frasi tornano in colonna, con il
+   filetto del proprio colore, e gli archi spariscono */
+@media(max-width:859px){
+  .nip-tri{aspect-ratio:auto;width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(14px,3vw,22px)}
+  .nip-tri-svg{display:none}
+  .nip-mark{position:static;transform:none;align-items:flex-start;text-align:left;animation:nipLineIn .7s cubic-bezier(.2,.7,.2,1) .1s backwards}
+  .nip-h1{width:100%}
+  .nip-h1-line{position:static;max-width:none;text-align:left;border-left:3px solid var(--accent2);padding-left:14px;animation-name:nipLineIn}
+  .nip-h1-line + .nip-h1-line{margin-top:12px}
+  .nip-h1-line--nature{transform:none}
+  .nip-h1-line--innovation{border-left-color:var(--primary)}
+  .nip-h1-line--people{border-left-color:var(--accent3)}
+}
+@media(prefers-reduced-motion:reduce){
+  .nip-tri .nip-mark,.nip-tri-node,.nip-h1-line{animation:none}
+  .nip-tri-arc{animation:none;stroke-dashoffset:0}
+}
 
 /* ── 2. Introduzione ── */
+/* il paragrafo e il bottone sono scesi qui dalla hero: fondo chiaro */
+.nip-lead{font:400 clamp(17px,1.4vw,19px)/1.65 var(--body);color:var(--nip-text);max-width:52ch;margin:clamp(24px,3vw,36px) 0 0}
+.nip-intro-cta{margin-top:clamp(20px,2.4vw,30px)}
 .nip-statement{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.6vw,32px);line-height:1.3;letter-spacing:-.01em;color:var(--nip-text);max-width:40ch}
 .nip-statement strong{font-weight:700}
 .nip-intro-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);margin-top:clamp(24px,3vw,40px)}
