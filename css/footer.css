@@ -1,41 +1,44 @@
 /* ===== FOOTER ===== */
 /* Sfondo Cerulean ink: il bianco pieno fa 5.00:1, le opacita ridotte scendono sotto 4.5,
    quindi tutto il testo e bianco pieno */
-.site-footer{background:var(--primary-ink);color:#fff;padding:clamp(36px,5vw,64px) 0 0;border-radius:40px 40px 0 0}
-.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,4.5vw,56px);border-bottom:1px solid rgba(255,255,255,.12)}
+/* Footer Cerulean: TUTTO il testo in Hard Grey (8.89:1); il bianco qui farebbe 1.98 */
+.site-footer{background:var(--primary);color:var(--dark);padding:clamp(36px,5vw,64px) 0 0;border-radius:40px 40px 0 0}
+.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,4.5vw,56px);border-bottom:1px solid color-mix(in srgb,var(--dark) 15%,transparent)}
 .ft-logo{display:block;height:38px;margin-bottom:22px}
 .ft-logo svg{height:100%;width:auto;display:block}
-.ft-tag{font-size:15px;line-height:1.6;max-width:34ch;color:#fff}
+/* logo scuro: in bianco su Cerulean non si leggerebbe */
+.ft-logo svg path{fill:var(--dark)}
+.ft-tag{font-size:15px;line-height:1.6;max-width:34ch;color:var(--dark)}
 .ft-social{display:flex;gap:12px;margin-top:26px}
-.ft-social a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;transition:border-color .25s,background .25s,color .25s}
-.ft-social a:hover{border-color:#fff;background:rgba(255,255,255,.2)}
+.ft-social a{width:42px;height:42px;border-radius:50%;border:1px solid color-mix(in srgb,var(--dark) 45%,transparent);background:color-mix(in srgb,var(--dark) 6%,transparent);display:flex;align-items:center;justify-content:center;color:var(--dark);cursor:pointer;transition:border-color .25s,background .25s,color .25s}
+.ft-social a:hover{border-color:var(--dark);background:color-mix(in srgb,var(--dark) 12%,transparent)}
 .ft-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
-.ft-h{font:600 12px var(--body);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:20px}
+.ft-h{font:600 12px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--dark);margin-bottom:20px}
 .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:13px}
-.ft-col a{font:400 14.5px var(--body);color:#fff;transition:color .2s}
-.ft-col a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
-.ft-contact li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:#fff}
-.ft-contact svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:1.7;flex:0 0 auto;margin-top:2px}
-.ft-contact a{color:#fff;transition:color .2s}
-.ft-contact a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.ft-col a{font:400 14.5px var(--body);color:var(--dark);transition:color .2s}
+.ft-col a:hover{color:var(--dark);text-decoration:underline;text-underline-offset:3px}
+.ft-contact li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:var(--dark)}
+.ft-contact svg{width:17px;height:17px;fill:none;stroke:var(--dark);stroke-width:1.7;flex:0 0 auto;margin-top:2px}
+.ft-contact a{color:var(--dark);transition:color .2s}
+.ft-contact a:hover{color:var(--dark);text-decoration:underline;text-underline-offset:3px}
 .ft-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:24px 0}
 .ft-legal{display:flex;gap:22px;flex-wrap:wrap}
-.ft-copy,.ft-legal a{font:400 13px var(--body);color:#fff}
+.ft-copy,.ft-legal a{font:400 13px var(--body);color:var(--dark)}
 .ft-legal a{transition:color .2s}
-.ft-legal a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.ft-legal a:hover{color:var(--dark);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:920px){.ft-top{grid-template-columns:1fr 1fr}.ft-brand{grid-column:1 / -1}}
 @media(max-width:560px){
   .site-footer{border-radius:20px 20px 0 0}
   .ft-top{grid-template-columns:1fr;gap:0}
-  .ft-brand{grid-column:1;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .ft-brand{grid-column:1;padding-bottom:24px;border-bottom:1px solid color-mix(in srgb,var(--dark) 15%,transparent)}
   .ft-tag{max-width:none;font-size:14px}
   .ft-social{margin-top:18px}
-  .ft-col{border-bottom:1px solid rgba(255,255,255,.12)}
+  .ft-col{border-bottom:1px solid color-mix(in srgb,var(--dark) 15%,transparent)}
   /* su mobile il titolo contiene un bottone (creato da main.js) che apre la colonna */
   .ft-h{margin-bottom:0}
   .ft-toggle{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;min-height:44px;padding:12px 0;cursor:pointer}
-  .ft-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
-  .ft-toggle::after{content:"";width:8px;height:8px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(45deg) translateY(-3px);transition:transform .25s;flex:0 0 auto}
+  .ft-toggle:focus-visible{outline:2px solid var(--dark);outline-offset:2px}
+  .ft-toggle::after{content:"";width:8px;height:8px;border-right:1.5px solid var(--dark);border-bottom:1.5px solid var(--dark);transform:rotate(45deg) translateY(-3px);transition:transform .25s;flex:0 0 auto}
   .ft-col.is-open .ft-toggle::after{transform:rotate(225deg) translateY(2px)}
   /* chiusa = anche fuori dal Tab: visibility nasconde i link alla tastiera */
   .ft-col ul{max-height:0;overflow:hidden;opacity:0;visibility:hidden;transition:max-height .3s ease,opacity .25s ease,visibility 0s .3s}
