@@ -56,50 +56,67 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 /* ── 1. Apertura ── */
 /* header fixed e sempre compatto qui (.hero-light = .solid, 68px): la sezione parte sotto */
 .about-hero{padding-top:calc(68px + clamp(40px,6vw,88px))}
-.about-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);align-items:center}
 
-/* nome scomposto RO · EL · MI */
+/* ── Apertura centrata: occhiello, titolo, nome animato, paragrafo ── */
+.about-hero-center{text-align:center}
+.about-lead{margin-left:auto;margin-right:auto}
+
+/* ── Il nome che si compone: ROSELLA ELEONORA MICHELA -> ROELMI ──
+   I tre nomi per intero misurano ~1900px contro i 1168 disponibili, quindi durante la
+   fase estesa il blocco e' rimpicciolito e cresce mentre si contrae. Le code delle
+   parole (SELLA, EONORA, CHELA) hanno la loro larghezza misurata in --tw. */
 .about-name{justify-self:center}
 .about-name-parts{display:flex;align-items:flex-start;justify-content:center;gap:clamp(8px,1.4vw,18px)}
 .about-name-part{display:flex;flex-direction:column;align-items:center;gap:10px}
-.about-name-syl{font-family:var(--display);font-weight:700;font-size:clamp(56px,8vw,112px);line-height:.9;letter-spacing:-.02em;color:var(--about-text)}
-/* La barretta e' un elemento sovrapposto, non un bordo: cosi' puo' disegnarsi da sinistra */
-.about-name-syl{position:relative;padding-bottom:10px}
+.about-name-syl{font-family:var(--display);font-weight:700;font-size:clamp(56px,8vw,112px);line-height:.9;letter-spacing:-.02em;color:var(--about-text);
+  position:relative;padding-bottom:10px;white-space:nowrap}
+.about-name-tail{display:inline-block;overflow:hidden;vertical-align:top;max-inline-size:0;opacity:0;
+  transition:max-inline-size .5s cubic-bezier(.4,0,.2,1),opacity .35s ease}
 .about-name-syl::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--primary);
-  transform-origin:left;transition:height .2s ease}  /* stato finale: barretta intera; il disegno iniziale lo fa l animazione */
+  transform-origin:left;transition:height .2s ease}
 .about-name-part:nth-child(3) .about-name-syl::after{background:var(--accent3)}
 .about-name-part:nth-child(5) .about-name-syl::after{background:var(--accent2)}
-
-/* ENTRATA IN SEQUENZA al caricamento della pagina: sillaba -> barretta -> nome di
-   persona -> riga HPC. Sono animazioni CSS, quindi partono da sole: non dipendono
-   dall'osservatore in main.js. */
-@keyframes aboutRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-@keyframes aboutFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes aboutBar{from{transform:scaleX(0)}to{transform:none}}
-.about-name.r-up{opacity:1;transform:none;transition:none}
-.about-name-part{animation:aboutRise .6s cubic-bezier(.2,.7,.2,1) backwards}
-.about-name-dot{animation:aboutFade .5s ease backwards}
-.about-name-src{animation:aboutFade .5s ease backwards}
-.about-name-hpc{animation:aboutFade .6s ease 1s backwards}
-.about-name-syl::after{animation:aboutBar .55s cubic-bezier(.2,.7,.2,1) backwards}
-.about-name-part:nth-child(1){animation-delay:.05s}
-.about-name-part:nth-child(3){animation-delay:.2s}
-.about-name-part:nth-child(5){animation-delay:.35s}
-.about-name-dot:nth-child(2){animation-delay:.25s}
-.about-name-dot:nth-child(4){animation-delay:.4s}
-.about-name-part:nth-child(1) .about-name-syl::after{animation-delay:.3s}
-.about-name-part:nth-child(3) .about-name-syl::after{animation-delay:.45s}
-.about-name-part:nth-child(5) .about-name-syl::after{animation-delay:.6s}
-.about-name-part:nth-child(1) .about-name-src{animation-delay:.55s}
-.about-name-part:nth-child(3) .about-name-src{animation-delay:.7s}
-.about-name-part:nth-child(5) .about-name-src{animation-delay:.85s}
-/* passando il mouse su una persona, la sua barretta si ispessisce */
-.about-name-part:hover .about-name-syl::after{height:7px}
 .about-name-src{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink)}
 .about-name-dot{font-family:var(--display);font-weight:700;font-size:clamp(40px,5vw,72px);line-height:1.1;color:var(--primary-ink)}
 .about-name-hpc{display:flex;align-items:baseline;justify-content:center;gap:16px;margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(16px,2vw,22px);border-top:1px solid var(--about-line);flex-wrap:wrap}
 .about-name-hpc-code{font-family:var(--display);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-.01em;color:var(--about-text)}
 .about-name-hpc-txt{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--about-muted)}
+
+/* Coreografia, ~5s: comparsa -> lettura -> le code svaniscono -> i blocchi si stringono
+   e il nome cresce -> barrette -> nomi di persona -> riga HPC */
+@keyframes aboutNameIn{from{opacity:0}to{opacity:1}}
+@keyframes aboutTail{from{max-inline-size:var(--tw);opacity:1}to{max-inline-size:0;opacity:0}}
+@keyframes aboutGrow{from{transform:scale(.6)}to{transform:none}}
+@keyframes aboutBar{from{transform:scaleX(0)}to{transform:none}}
+@keyframes aboutFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(min-width:768px){
+  .about-name.r-up{opacity:1;transform:none;transition:none}
+  .about-name-parts{animation:aboutNameIn .7s cubic-bezier(.2,.7,.2,1) backwards,aboutGrow 1.5s cubic-bezier(.4,0,.2,1) 2.6s backwards}
+  .about-name-tail{animation:aboutTail .9s cubic-bezier(.4,0,.2,1) backwards}
+  .about-name-part:nth-child(1) .about-name-tail{animation-delay:2.4s}
+  .about-name-part:nth-child(3) .about-name-tail{animation-delay:2.6s}
+  .about-name-part:nth-child(5) .about-name-tail{animation-delay:2.8s}
+  .about-name-syl::after{animation:aboutBar .5s cubic-bezier(.2,.7,.2,1) backwards}
+  .about-name-part:nth-child(1) .about-name-syl::after{animation-delay:4.2s}
+  .about-name-part:nth-child(3) .about-name-syl::after{animation-delay:4.35s}
+  .about-name-part:nth-child(5) .about-name-syl::after{animation-delay:4.5s}
+  .about-name-src{animation:aboutFade .5s ease backwards}
+  .about-name-part:nth-child(1) .about-name-src{animation-delay:4.5s}
+  .about-name-part:nth-child(3) .about-name-src{animation-delay:4.65s}
+  .about-name-part:nth-child(5) .about-name-src{animation-delay:4.8s}
+  .about-name-hpc{animation:aboutFade .6s ease 5s backwards}
+  /* dopo l'animazione: passando il mouse, quel nome si riapre per intero */
+  .about-name-part:hover .about-name-tail{max-inline-size:var(--tw);opacity:1}
+  .about-name-part:hover .about-name-syl::after{height:7px}
+}
+/* Sotto i 768px i tre nomi per intero non ci stanno: il nome resta composto */
+@media(max-width:767px){
+  .about-name-tail{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .about-name-parts,.about-name-tail,.about-name-syl::after,.about-name-src,.about-name-hpc{animation:none}
+  .about-name-tail{max-inline-size:0;opacity:0}
+}
 
 .about-ph--family{aspect-ratio:21/9;margin-top:clamp(40px,5vw,72px)}
 .about-hq{margin-top:clamp(28px,3vw,40px)}
@@ -184,7 +201,7 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 
 /* ── Responsive ── */
 @media(max-width:900px){
-  .about-hero-grid,.about-what-grid,.about-approach-grid{grid-template-columns:1fr}
+  .about-what-grid,.about-approach-grid{grid-template-columns:1fr}
   .about-name{justify-self:start}
   .about-approach-fig{order:-1;aspect-ratio:16/10}
   .about-world-grid{grid-template-columns:repeat(2,1fr)}
