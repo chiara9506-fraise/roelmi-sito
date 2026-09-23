@@ -41,3 +41,7 @@ h1 sup, h2 sup, h3 sup{font-size:.45em;vertical-align:.65em;font-weight:400;lett
 .hl--nature{text-decoration-color:var(--accent2)}
 .hl--science{text-decoration-color:var(--primary)}
 .hl--people{text-decoration-color:var(--accent3)}
+
+/* Testo solo per i lettori di schermo: serve dove la gerarchia dei titoli ha bisogno
+   di un livello che graficamente non esiste. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
