@@ -17,11 +17,16 @@
 .ing-parallax{position:relative;width:100%;height:100%}
 .ing-float{position:relative;transition:transform .25s ease-out;will-change:transform;animation:ing-bob 7s ease-in-out infinite}
 @keyframes ing-bob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(-.8deg)}}
-.ing-float img{width:100%;height:auto;display:block;filter:drop-shadow(0 34px 56px rgba(25,25,25,.28));opacity:0;transition:opacity .6s ease}
+/* Tutte e tre nella stessa scatola quadrata, sovrapposte. Le gocce pero' occupano
+   frazioni diverse del proprio fotogramma (81%, 82% e 74.5% dell'altezza) e EMotion
+   e' 4:3 mentre le altre sono quadrate: senza correzione la sua goccia sarebbe un
+   terzo piu' piccola. Le scale qui sotto sono calcolate da quelle misure. */
+.ing-float{aspect-ratio:1}
+.ing-float img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;
+  opacity:0;transition:opacity .6s ease;transform-origin:center center}
 .ing-float img.active{opacity:1}
-.ing-float img:not(:first-child){position:absolute;inset:0}
-.ing-float img[data-i="1"]{transform:scale(1.35);transform-origin:center center}
-.ing-float img[data-i="2"]{top:50%;bottom:auto;transform:translateY(-50%) scale(1.7);transform-origin:center center}
+.ing-float img[data-i="1"]{transform:scale(.99)}
+.ing-float img[data-i="2"]{transform:scale(1.46)}
 
 
 /* caption bottom-left */
@@ -122,8 +127,8 @@
 
 @media(max-width:600px){
   .ing-figure{width:min(36vw,160px)}
-  .ing-float img[data-i="1"]{transform:scale(1.0)}
-  .ing-float img[data-i="2"]{transform:translateY(-50%) scale(1.1)}
+  .ing-float img[data-i="1"]{transform:scale(.99)}
+  .ing-float img[data-i="2"]{transform:scale(1.46)}
   .ing-name{font-size:clamp(22px,6vw,32px)}
   .ing-finder{flex-direction:row;flex-wrap:wrap;gap:12px 14px}
   .ing-finder .if-ic{width:40px;height:40px}

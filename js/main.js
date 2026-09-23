@@ -251,11 +251,13 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 
 (function(){
+  /* I tre prodotti scelti finche' il cliente non conferma il portfolio definitivo.
+     I testi di ColorGLAM e CytoFruit sono quelli gia' approvati; quello di EMotion
+     Glow e' da far validare. */
   var data=[
     {pill:"Biologically active waters",href:"cytofruit.html",name:"CytoFruit<b>\u00ae</b>",desc:"Fruit-derived active waters that replace demineralized water. Naturally processed, enriched in oligoelements, with protective and cell-vitality benefits for sustainable formulas.",tags:["Sustainable","Cellular protection","Water-free option"]},
-    {pill:"GLP-1 natural support",name:"SelectSIEVE<b>\u00ae</b> HopE",desc:"Hop cone bioactives via supercritical CO\u2082 extraction, stabilised in powder form \u2014 supporting weight management, insulin sensitivity and natural GLP-1 release.",tags:["Metabolic health","Weight management","GLP-1 support"]},
-    {pill:"Active Make-Up",name:"TechnoHYAL<b>\u00ae</b> HyaPearl",desc:"Olive glycerides and hyaluronic acid combined in a patented matrix \u2014 delivering hydration and skin nourishment in anhydrous color cosmetic formulations.",tags:["Active Make-Up","Hydration","Anhydrous"]},
-    {pill:"Color portfolio",name:"ColorGLAM<b>\u00ae</b>",desc:"Ester-coated pigments functionalized with Tripelargonin, an upcycled sustainable ester \u2014 for high color release, formulation stability and a weightless, refined skin feel.",tags:["High color release","Formulation stability","Upcycled ester"]}
+    {pill:"Color portfolio",name:"ColorGLAM<b>\u00ae</b>",desc:"Ester-coated pigments functionalized with Tripelargonin, an upcycled sustainable ester \u2014 for high color release, formulation stability and a weightless, refined skin feel.",tags:["High color release","Formulation stability","Upcycled ester"]},
+    {pill:"Upcycled olive actives",name:"EMotion<b>\u00ae</b> Glow",desc:"Produced through the valorization of olive byproducts from the food industry \u2014 upcycled actives that support skin radiance and comfort.",tags:["Upcycled","Olive byproducts","Radiance"]}
   ];
   var i=0,total=data.length;
   var imgs=document.querySelectorAll('#ingFloat img');
