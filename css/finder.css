@@ -19,8 +19,8 @@
 .finder-search:focus-within{border-color:var(--primary)}
 .finder-search input{flex:1;border:none;outline:none;padding:11px 14px;font:400 14px var(--body);color:var(--ink);background:#fff}
 .finder-search input::placeholder{color:var(--muted)}
-.finder-search button{background:var(--primary);border:none;color:var(--dark);padding:0 16px;cursor:pointer;font:600 12px var(--body);letter-spacing:.08em;transition:background .2s}
-.finder-search button:hover{background:var(--dark);color:var(--primary)}
+.finder-search button{background:var(--dark);border:none;color:var(--primary);padding:0 16px;cursor:pointer;font:600 12px var(--body);letter-spacing:.08em;transition:background .2s}
+.finder-search button:hover{background:var(--primary);color:var(--dark)}
 
 .filter-group{border-bottom:1px solid var(--line)}
 .filter-group:last-child{border-bottom:none}
@@ -196,14 +196,14 @@
   .mob-sidebar-apply{
     display:block;
     width:calc(100% - 40px);margin:8px 20px 24px;
-    background:var(--primary);color:var(--dark);border-radius:999px;
+    background:var(--dark);color:var(--primary);border-radius:999px;
     padding:14px;font:600 14px var(--body);cursor:pointer;
     letter-spacing:.04em;text-align:center;
     position:sticky;bottom:16px;
     box-shadow:0 4px 16px rgba(68,114,165,.3);
     transition:background .2s;
   }
-  .mob-sidebar-apply:hover{background:var(--dark);color:var(--primary)}
+  .mob-sidebar-apply:hover{background:var(--primary);color:var(--dark)}
 
   /* ── Griglia 1 colonna, card full-width ── */
   .finder-grid{grid-template-columns:1fr;gap:16px}
