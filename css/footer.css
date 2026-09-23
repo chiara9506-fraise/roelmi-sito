@@ -47,3 +47,5 @@
   .ft-legal{gap:14px;flex-wrap:wrap}
   .ft-copy,.ft-legal a{font-size:12px}
 }
+.nav-mark{font-size:.85em;opacity:.75;white-space:nowrap}
+.nav-mark sup{font-size:.6em;vertical-align:.5em}

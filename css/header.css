@@ -87,3 +87,7 @@
   .burger{display:flex}
   .search-wrap{display:none}
 }
+/* Il marchio del programma accanto alla voce di menu: stesso colore del testo ma
+   piu' piccolo, cosi' si legge come una precisazione e non come una seconda voce */
+.nav-mark{font-size:.85em;opacity:.7;white-space:nowrap}
+.nav-mark sup{font-size:.6em;vertical-align:.5em}
