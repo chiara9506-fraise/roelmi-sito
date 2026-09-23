@@ -46,7 +46,7 @@
 
 /* search expanding field */
 .search-wrap{display:flex;align-items:center}
-.search-field{width:0;opacity:0;border:0;border-bottom:1px solid transparent;background:transparent;font:inherit;color:inherit;padding:6px 0;transition:width .3s,opacity .3s,border-color .3s;outline:none}
+.search-field{width:0;opacity:0;border:0;border-bottom:1px solid transparent;background:transparent;font:inherit;color:inherit;padding:6px 0;transition:width .3s,opacity .3s,border-color .3s}
 .search-wrap.open .search-field{width:clamp(120px,16vw,220px);opacity:1;margin-right:10px;border-bottom-color:currentColor}
 .site-header:not(.solid) .search-field{color:#fff}
 .site-header:not(.solid) .search-field::placeholder{color:rgba(255,255,255,.6)}

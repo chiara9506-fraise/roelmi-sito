@@ -45,3 +45,18 @@ h1 sup, h2 sup, h3 sup{font-size:.45em;vertical-align:.65em;font-weight:400;lett
 /* Testo solo per i lettori di schermo: serve dove la gerarchia dei titoli ha bisogno
    di un livello che graficamente non esiste. */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* ===== FOCUS DA TASTIERA =====
+   Fino a ora solo alcuni elementi avevano un indicatore proprio: tutti gli altri
+   ricadevano su quello predefinito del browser, che cambia da browser a browser e
+   su fondo scuro quasi non si vede. Qui c'e' una regola sola per tutto il sito.
+   Il colore e' una variabile: sulle superfici scure diventa bianco, perche'
+   --accent-ink su Hard Grey farebbe 2.4:1 e il contorno non si distinguerebbe. */
+:root{--focus:var(--accent-ink)}
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{
+  outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
+/* superfici scure: contorno bianco (17.6:1 su Hard Grey) */
+.site-header:not(.solid),.nip-hero,.nip-close-card,.about-timeline,.about-nip,
+.prod-hero,.prod-cta-card,.sust-card,.nl-card,.hero{--focus:#fff}
+/* footer Cerulean: il nero e il contorno piu' leggibile (8.9:1) */
+.site-footer{--focus:var(--dark)}
