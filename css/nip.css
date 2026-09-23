@@ -249,11 +249,12 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-card-img{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:var(--white);overflow:hidden;padding:0}
 /* stesso movimento del carosello ingredienti della home, rallentato e con le quattro
    immagini sfasate fra loro: i ritardi negativi le fanno partire gia' a meta' ciclo */
-/* le gocce stanno su bianco puro (fondo riportato a 255 per canale), quindi la
-    fascia bianca le contiene senza bordi visibili e la goccia puo' fluttuare. Niente
-    drop-shadow: senza trasparenza ombreggerebbe il rettangolo, non la goccia. */
+/* le gocce sono ritagliate su trasparenza: l'ombra segue il contorno reale e il
+   prodotto sembra sollevato dalla card mentre fluttua */
 .nip-card-img img{width:100%;height:100%;object-fit:contain;display:block;
-  animation:nipBob 7s ease-in-out infinite}
+  filter:drop-shadow(0 16px 24px color-mix(in srgb,var(--dark) 22%,transparent));
+  animation:nipBob 7s ease-in-out infinite;transition:filter .35s ease}
+.nip-card:hover .nip-card-img img{filter:drop-shadow(0 26px 32px color-mix(in srgb,var(--dark) 28%,transparent))}
 @keyframes nipBob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(-.8deg)}}
 .nip-action-grid li:nth-child(2) .nip-card-img img{animation-delay:-1.8s}
 .nip-action-grid li:nth-child(3) .nip-card-img img{animation-delay:-3.5s}

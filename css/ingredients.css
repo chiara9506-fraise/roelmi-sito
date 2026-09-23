@@ -23,6 +23,7 @@
    terzo piu' piccola. Le scale qui sotto sono calcolate da quelle misure. */
 .ing-float{aspect-ratio:1}
 .ing-float img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;
+  filter:drop-shadow(0 30px 44px color-mix(in srgb,var(--dark) 26%,transparent));
   opacity:0;transition:opacity .6s ease;transform-origin:center center}
 .ing-float img.active{opacity:1}
 /* nessuna scala per immagine: i tre file hanno la goccia all'86% di un quadrato */
