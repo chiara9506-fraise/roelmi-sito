@@ -187,6 +187,9 @@
         <span class="nip-h1-line nip-h1-line--people"><b>People</b> make it possible.</span>
       </h1>
     </div>
+    <button class="nip-anim-btn nip-anim-btn--hero" id="nipHeroReplay" type="button" aria-label="Replay animation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+    </button>
   </div>
 </section>
 
@@ -256,6 +259,12 @@
   <div class="wrap">
     <h2 class="nip-h2 r-up">Sustainability in action</h2>
     <p class="nip-text nip-action-intro r-up delay1">Discover how our sustainability initiatives are turning our commitments into concrete results.</p>
+    <div class="nip-action-tools">
+      <button class="nip-anim-btn" id="nipFloatBtn" type="button" aria-pressed="false" aria-label="Pause animation">
+        <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>
+        <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M8 5l11 7-11 7z"/></svg>
+      </button>
+    </div>
     <ul class="nip-action-grid">
       <li class="r-up">
         <a class="nip-card" href="cytofruit.html">
@@ -424,5 +433,6 @@
   </div>
 </footer>
 <script src="js/main.js" defer></script>
+<script src="js/nip.js" defer></script>
 </body>
 </html>
