@@ -142,15 +142,16 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-nip{background:var(--dark);border-radius:16px;padding:clamp(28px,3.5vw,44px)}
 /* Acrostico: N i P si aprono in "Nature is People" quando la card entra in viewport,
    e tornano a NIP col mouse sopra. Al contrario dell'hero, dove i nomi si comprimono. */
-.about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(32px,3.6vw,52px);line-height:1.08;letter-spacing:-.02em;color:var(--white)}
+.about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(32px,3.6vw,52px);line-height:1.02;letter-spacing:-.02em;color:var(--white)}
 .anip-row{display:block;white-space:nowrap}
 .anip-ini{transition:color .3s ease}
 .anip-row:nth-child(1) .anip-ini{color:var(--accent2)}
-.anip-row:nth-child(2) .anip-ini{color:var(--primary)}
+.anip-row:nth-child(2) .anip-ini{color:var(--primary);margin-left:.03em}
 .anip-row:nth-child(3) .anip-ini{color:var(--accent3)}
 .anip-rest,.anip-reg{display:inline-block;overflow:hidden;vertical-align:top;transition:max-inline-size .5s cubic-bezier(.4,0,.2,1),opacity .3s ease}
+.anip-rest{padding-bottom:.28em;margin-bottom:-.28em}
 .anip-rest{max-inline-size:0;opacity:0}
-.anip-reg{font-size:.4em;vertical-align:1.1em;font-weight:500;color:var(--primary);max-inline-size:1.4em;opacity:1}
+.anip-reg{font-size:.4em;vertical-align:baseline;position:relative;top:-1.15em;line-height:0;font-weight:500;color:var(--primary);max-inline-size:1.4em;opacity:1}
 .about-nip.in .anip-rest{max-inline-size:var(--tw);opacity:1}
 .about-nip.in .anip-reg{max-inline-size:0;opacity:0}
 .about-nip.in .anip-row:nth-child(1) .anip-rest{transition-delay:.15s}
