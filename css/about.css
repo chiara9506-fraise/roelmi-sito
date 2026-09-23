@@ -58,6 +58,7 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 
 /* ── Apertura centrata: occhiello, titolo, nome animato, paragrafo ── */
 .about-hero-center{text-align:center}
+.about-lead strong,.about-text strong{font-weight:600}  /* Open Sans e caricato fino a 600 */
 .about-lead{margin-left:auto;margin-right:auto;margin-top:clamp(28px,4vw,56px)}
 
 /* ── Il nome che si compone: ROSELLA ELEONORA MICHELA -> ROELMI ──
