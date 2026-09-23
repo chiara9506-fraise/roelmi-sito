@@ -30,7 +30,8 @@ main{--nip-text:color-mix(in srgb,var(--dark) 85%,var(--white));--nip-muted:colo
 .nip-text{font:400 17px/1.65 var(--body);color:var(--nip-text);max-width:62ch}
 .nip-text strong,.nip-lead strong,.nip-pillar strong,.nip-pillars-intro strong{font-weight:600}
 /* link nel testo: Cerulean ink sottolineato, come in about.css */
-.nip-lead a,.nip-text a{color:var(--primary-ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:text-decoration-thickness .15s}
+/* link nel testo: Hard Grey sottolineato */
+.nip-lead a,.nip-text a{color:var(--dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:text-decoration-thickness .15s}
 .nip-lead a:hover,.nip-text a:hover{text-decoration-thickness:2px}
 .nip-lead a:focus-visible,.nip-text a:focus-visible{outline:2px solid var(--primary-ink);outline-offset:2px;border-radius:2px}
 
@@ -99,7 +100,7 @@ main{--nip-text:color-mix(in srgb,var(--dark) 85%,var(--white));--nip-muted:colo
 .nip-pillar{background:var(--white);border:1px solid var(--nip-line);border-top:4px solid var(--primary);border-radius:16px;padding:clamp(22px,2.4vw,32px);
   box-shadow:0 4px 20px color-mix(in srgb,var(--dark) 5%,transparent);cursor:default;
   transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
-.nip-pillar:hover{background:var(--primary-ink);border-color:var(--primary-ink);transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--primary-ink) 22%,transparent)}
+.nip-pillar:hover{background:var(--primary);border-color:var(--primary);transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--dark) 18%,transparent)}
 /* iniziale decorativa (aria-hidden) nei colori richiesti */
 .nip-pillar-initial{display:block;font-family:var(--display);font-weight:700;font-size:clamp(72px,7vw,112px);line-height:.9;letter-spacing:-.03em;margin-bottom:16px;transition:color .28s ease}
 .nip-pillar--nature .nip-pillar-initial{color:var(--accent2)}
@@ -108,8 +109,8 @@ main{--nip-text:color-mix(in srgb,var(--dark) 85%,var(--white));--nip-muted:colo
 .nip-pillar-title{font-family:var(--display);font-weight:600;font-size:clamp(22px,2vw,26px);letter-spacing:-.01em;color:var(--nip-text);margin-bottom:12px;transition:color .28s ease}
 .nip-pillar p{font:400 16px/1.65 var(--body);color:var(--nip-text);transition:color .28s ease}
 .nip-pillar p + p{margin-top:12px}
-/* sul Cerulean ink solo il bianco pieno passa (5.01:1) */
-.nip-pillar:hover .nip-pillar-initial,.nip-pillar:hover .nip-pillar-title,.nip-pillar:hover p{color:var(--white)}
+/* sul Cerulean pieno il testo va in Hard Grey (8.89:1) */
+.nip-pillar:hover .nip-pillar-initial,.nip-pillar:hover .nip-pillar-title,.nip-pillar:hover p{color:var(--dark)}
 
 /* ── 4. Sustainability in action ── */
 .nip-action-intro{margin-bottom:clamp(28px,3.5vw,48px)}

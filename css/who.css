@@ -20,8 +20,8 @@
 .who-pill .pill-ghost:hover{color:var(--primary-ink)}
 .who-pill .pill-ghost svg{transition:transform .25s}
 .who-pill .pill-ghost:hover svg{transform:translateX(4px)}
-.who-pill .pill-filled{display:inline-flex;align-items:center;gap:10px;background:var(--primary-ink);color:#fff;font:600 14px var(--body);padding:13px 24px;border-radius:999px;transition:background .25s,transform .2s;text-decoration:none;white-space:nowrap}
-.who-pill .pill-filled:hover{background:var(--dark);transform:translateY(-1px)}
+.who-pill .pill-filled{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:var(--dark);border:1px solid var(--dark);font:600 14px var(--body);padding:13px 24px;border-radius:999px;transition:background .25s,transform .2s;text-decoration:none;white-space:nowrap}
+.who-pill .pill-filled:hover{background:var(--dark);color:var(--primary);transform:translateY(-1px)}
 .who-pill .pill-filled svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;transition:transform .25s}
 .who-pill .pill-filled:hover svg{transform:translateX(4px)}
 

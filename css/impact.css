@@ -11,11 +11,9 @@
 /* Hover come le card "Key benefits" della pagina prodotto: la card vira
    sull'azzurro, numero ed etichetta passano al bianco. */
 .impact-num,.impact-lbl{transition:color .28s ease}
-.impact-card:hover{background:var(--primary-ink);border-color:var(--primary-ink);transform:translateY(-4px);box-shadow:0 16px 40px rgba(68,114,165,.22)}
-.impact-card:hover .impact-num{color:#fff}
-/* Bianco PIENO, non all'80% come nella pagina prodotto: a quell'opacita'
-   l'etichetta starebbe a 3.49:1 sull'azzurro, sotto il 4.5:1 richiesto. */
-.impact-card:hover .impact-lbl{color:#fff}
+.impact-card:hover{background:var(--primary);border-color:var(--primary);transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--dark) 18%,transparent)}
+.impact-card:hover .impact-num{color:var(--dark)}
+.impact-card:hover .impact-lbl{color:var(--dark)}
 
 .impact-certs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .impact-certs span{font:600 11.5px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--secondary);border:1px solid var(--line);border-radius:999px;padding:7px 18px}

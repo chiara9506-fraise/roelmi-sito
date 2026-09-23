@@ -1,18 +1,26 @@
-/* Palette cliente (settembre 2026) — CERULEAN, due varianti con ruoli opposti per contrasto:
-   --primary     #A1BBD8  Cerulean puro, SOLO su fondi SCURI (8.89 su Hard Grey) o decorazioni
-                 senza testo (icone/linee puramente decorative, aria-hidden, esenti da contrasto).
-                 Su bianco fa 1.98:1: NON usarlo mai per testo/icone/focus su fondo chiaro.
-   --primary-ink #4472a5  Cerulean scurito, stessa tinta, SOLO su fondi CHIARI: 5.01 su bianco,
-                 4.52 su Ricepaper/--accent1 (il fondo chiaro piu' scuro in uso, e' lui che detta
-                 il limite: su bianco puro basterebbe un valore piu' tenue). Testo, link, bottoni,
-                 focus ring. Su Hard Grey fa 3.51:1: non usarlo li'.
-   --dark        ora Hard Grey (era navy): controllare che dove --primary segue --dark nello
-                 stesso elemento la coppia resti quella giusta.
-   Non invertirli: ognuno fallisce il contrasto sul fondo dell'altro.
-   ACCENTI (Cerulean --primary, Olive --accent2, Caramel --accent3): pastelli, mai testo.
-   Pieni: solo decorazione, o fondo con testo --dark (8.9-10.2). Tinte --tint-*: fondo
-   con testo --secondary (~5.9); i link sopra vanno in --dark (--primary-ink fa ~4.1). */
-:root{--primary:#A1BBD8;--secondary:#565755;--ink:#3a3b39;--muted:#747673;--accent1:#F7F3EB;--accent2:#B4C09D;--white:#fff;--accent3:#DEC37F;--tint-cerulean:#dee7f1;--tint-olive:#e5e9dd;--tint-caramel:#f3ead2;--primary-ink:#4472a5;--surface:#f7f9fa;--dark:#191919;--line:rgba(86,87,85,.22);--display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
+/* PALETTE CLIENTE — Cerulean #A1BBD8 · Antique #D27460 · Olive #B4C09D ·
+   Ricepaper #F7F3EB · Hard Grey #191919. Nessun colore fuori da questi (e dalle loro
+   versioni scurite/chiarite), niente piu' blu inventati.
+
+   RUOLI
+   --primary      Cerulean pieno: fondo dei bottoni/CTA (con testo --dark, 8.89:1),
+                  superfici e decorazioni. Su bianco fa 1.98: mai come colore di testo.
+   --dark         Hard Grey: TUTTO il testo, i link (sottolineati) e le fasce scure.
+   --accent-ink   #a55b4b Antique scurito: etichette, occhielli, icone e focus su fondo
+                  chiaro (5.00 su bianco, 4.52 su Ricepaper); regge anche come fondo
+                  con testo bianco (5.00).
+   --accent3      Antique pieno: accenti e superfici; testo --dark sopra (5.36), su
+                  bianco 3.28 quindi solo testo grande, icone, bordi.
+   --accent2      Olive pieno e --accent1 Ricepaper: superfici; testo --dark sopra.
+   --tint-*       versioni chiare al 25-35%: fondi con testo --secondary/--dark.
+   GRIGI: tutti ricavati da Hard Grey (85% testo, 70% secondario, 15% linee), niente
+   piu' #565755/#747673 della versione precedente.
+   --primary-ink  resta come alias di --accent-ink per il codice esistente. */
+:root{--primary:#A1BBD8;--accent1:#F7F3EB;--accent2:#B4C09D;--accent3:#D27460;--dark:#191919;--white:#fff;
+  --accent-ink:#a55b4b;--primary-ink:var(--accent-ink);
+  --secondary:#3c3c3c;--ink:#3c3c3c;--muted:#5e5e5e;--line:rgba(25,25,25,.15);--surface:#f7f9fa;
+  --tint-cerulean:#dee7f1;--tint-olive:#e5e9dd;--tint-antique:#f4dcd7;--tint-caramel:#f4dcd7;
+  --display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,56px)}
 a{text-decoration:none;color:inherit}
