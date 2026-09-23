@@ -13,12 +13,12 @@
                   bianco 3.28 quindi solo testo grande, icone, bordi.
    --accent2      Olive pieno e --accent1 Ricepaper: superfici; testo --dark sopra.
    --tint-*       versioni chiare al 25-35%: fondi con testo --secondary/--dark.
-   GRIGI: tutti ricavati da Hard Grey (85% testo, 70% secondario, 15% linee), niente
-   piu' #565755/#747673 della versione precedente.
+   GRIGI: il testo e' Hard Grey ESATTO; il secondario e le linee sono lo stesso Hard Grey
+   a opacita' ridotta (70% e 15%), non un grigio diverso.
    --primary-ink  resta come alias di --accent-ink per il codice esistente. */
 :root{--primary:#A1BBD8;--accent1:#F7F3EB;--accent2:#B4C09D;--accent3:#D27460;--dark:#191919;--white:#fff;
   --accent-ink:#a55b4b;--primary-ink:var(--accent-ink);
-  --secondary:#3c3c3c;--ink:#3c3c3c;--muted:#5e5e5e;--line:rgba(25,25,25,.15);--surface:#f7f9fa;
+  --secondary:#191919;--ink:#191919;--muted:color-mix(in srgb,var(--dark) 70%,transparent);--line:color-mix(in srgb,var(--dark) 15%,transparent);--surface:#f7f9fa;
   --tint-cerulean:#dee7f1;--tint-olive:#e5e9dd;--tint-antique:#f4dcd7;--tint-caramel:#f4dcd7;
   --display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
 

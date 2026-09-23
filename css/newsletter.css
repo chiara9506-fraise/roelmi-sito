@@ -30,7 +30,7 @@
 .nl-check input{width:18px;height:18px;margin:2px 0 0;flex:0 0 auto;accent-color:var(--primary-ink);cursor:pointer}
 .nl-check input:focus-visible{outline:2px solid var(--primary-ink);outline-offset:2px}
 .nl-consent{font-size:14px}
-.nl-consent a{color:var(--primary-ink);text-decoration:underline;text-underline-offset:2px}
+.nl-consent a{color:var(--dark);text-decoration:underline;text-underline-offset:2px}
 
 /* Messaggi */
 .nl-error{font:600 13.5px var(--body);color:#b3261e;margin-top:6px}

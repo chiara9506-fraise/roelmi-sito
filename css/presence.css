@@ -85,7 +85,7 @@
 }
 
 /* Cluster */
-.pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--primary-ink);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:600 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.pm-cluster-icon{width:34px;height:34px;border-radius:50%;background:var(--dark);border:3px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px;color:#fff;font:600 12px var(--body);cursor:pointer;transition:transform .2s,box-shadow .2s}
 .pm-cluster-icon:hover,.pm-cluster-icon:focus-visible{transform:scale(1.1);box-shadow:0 0 0 6px rgba(161,187,216,.45)}
 .pm-cluster-icon:focus-visible{outline:2px solid #fff;outline-offset:2px}
 
@@ -111,7 +111,7 @@
 .pm-hl-lab .pm-mark--lab,
 .pm-hl-production .pm-mark--production{transform:scale(1.22)}
 .leg-item{transition:color .2s,background .2s}
-.leg-item:hover,.leg-item:focus-visible,.leg-item.is-hl{color:var(--primary-ink)}
+.leg-item:hover,.leg-item:focus-visible,.leg-item.is-hl{color:var(--dark)}
 .leg-item.is-hl{background:rgba(161,187,216,.15)}
 
 /* Leaflet popup styling */
@@ -124,8 +124,8 @@
 .pm-popup-sub{font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:6px}
 .pm-popup-name{font-family:var(--display);font-weight:600;font-size:19px;color:var(--secondary);margin:0 0 8px;line-height:1.2}
 .pm-popup-desc{font:400 13.5px var(--body);color:var(--muted);line-height:1.55;margin:0 0 14px}
-.pm-popup-link{display:inline-flex;align-items:center;gap:7px;font:600 13px var(--body);color:var(--primary-ink);text-decoration:none;transition:color .2s}
-.pm-popup-link:hover{color:var(--primary-ink)}
+.pm-popup-link{display:inline-flex;align-items:center;gap:7px;font:600 13px var(--body);color:var(--dark);text-decoration:none;transition:color .2s}
+.pm-popup-link:hover{color:var(--dark)}
 .pm-popup-link svg{stroke:currentColor;fill:none;transition:transform .22s}
 .pm-popup-link:hover svg{transform:translateX(3px)}
 

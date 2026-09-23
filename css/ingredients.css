@@ -32,10 +32,10 @@
 .ing-name b{color:var(--primary-ink);font-weight:600}
 /* Titolo cliccabile solo se il prodotto ha una pagina: sottolineato al passaggio */
 .ing-name a{color:inherit;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:6px;transition:color .2s,text-decoration-color .2s}
-.ing-name a:hover{color:var(--primary-ink);text-decoration-color:currentColor}
+.ing-name a:hover{color:var(--dark);text-decoration-color:currentColor}
 .ing-name a:focus-visible{outline:2px solid var(--primary-ink);outline-offset:4px;border-radius:4px}
 /* Link esplicito alla pagina prodotto, stesso stile dei "Read more" delle news */
-.ing-more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font:600 14px var(--body);color:var(--primary-ink)}
+.ing-more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font:600 14px var(--body);color:var(--dark)}
 .ing-more[hidden]{display:none}
 .ing-more sup{font-size:.6em;vertical-align:.5em}
 .ing-more svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}

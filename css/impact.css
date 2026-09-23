@@ -5,7 +5,8 @@
 
 .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,24px);margin-bottom:clamp(28px,3.5vw,44px)}
 .impact-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(24px,3vw,40px) clamp(16px,2vw,28px);box-shadow:0 4px 20px rgba(25,25,25,.05);cursor:default;transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
-.impact-num{font-family:var(--display);font-weight:700;font-size:clamp(38px,5vw,64px);color:var(--primary-ink);line-height:1;margin-bottom:12px}
+/* numero grande: Antique puro, 3.28 su bianco (testo grande, soglia 3) */
+.impact-num{font-family:var(--display);font-weight:700;font-size:clamp(38px,5vw,64px);color:var(--accent3);line-height:1;margin-bottom:12px}
 .impact-lbl{font:400 14px var(--body);color:var(--muted);letter-spacing:.01em}
 
 /* Hover come le card "Key benefits" della pagina prodotto: la card vira
