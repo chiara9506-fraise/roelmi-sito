@@ -176,26 +176,21 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-nip-text sup,.about-tl-body sup{font-size:.6em;vertical-align:.5em}
 
 /* ── 3. Our approach ── */
-/* Fascia a tutta larghezza: la foto del laboratorio passa da spalla decorativa a
-   fondo della sezione, sotto un velo scuro all'85-92%. Nel caso peggiore (foto
-   bianca sotto il velo) il testo bianco resta a 10.4:1. */
-.about-approach{position:relative;overflow:hidden;background:var(--dark);padding:clamp(56px,7vw,110px) 0;margin-top:clamp(40px,5vw,80px);
-  --about-text:var(--white);--about-muted:color-mix(in srgb,var(--white) 80%,transparent);--about-line:color-mix(in srgb,var(--white) 22%,transparent)}
-.about-approach-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.about-approach::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,color-mix(in srgb,var(--dark) 85%,transparent) 0%,color-mix(in srgb,var(--dark) 92%,transparent) 100%)}
-.about-approach > .wrap{position:relative;z-index:2}
+/* Sezione su Ricepaper, l'unico colore della palette che non era ancora una
+   superficie. Il testo non sta piu' sopra la foto, quindi niente velo: la foto
+   torna a piena luminosita' come striscia in fondo, che fa da passaggio verso la
+   timeline nera. La pagina alterna bianco -> Ricepaper -> foto -> nero. */
+.about-approach{position:relative;background:var(--accent1);padding:clamp(56px,7vw,110px) 0 0;margin-top:clamp(40px,5vw,80px)}
+.about-approach-strip{display:block;width:100%;height:clamp(200px,26vw,380px);object-fit:cover;margin-top:clamp(40px,5vw,72px)}
 .about-approach .about-h2{margin-bottom:clamp(20px,2.4vw,32px)}
 .about-approach-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:start}
 .about-approach-col .about-text{max-width:46ch}
 .about-approach-col .about-text + .about-text{margin-top:18px}
-/* eventuali link nel testo qui sono su fondo scuro */
-.about-approach .about-text a{color:var(--white);text-decoration-color:color-mix(in srgb,var(--white) 45%,transparent)}
 /* stessa forma dei tag di .prod-hero-tags, colori per fondo chiaro */
 /* Il percorso di validazione: le tre pillole diventano i tre passi che il testo
    accanto racconta. Stessa card e stesso hover di .about-card, filetto in alto nei
    tre colori della palette che si tira da sinistra, uno dopo l'altro, all'ingresso. */
-.about-steps{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(--line);list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,22px);margin:clamp(32px,4vw,56px) 0 0}
+.about-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,22px);margin:clamp(32px,4vw,56px) 0 0}
 .about-step{position:relative;background:var(--white);border:1px solid var(--about-line);border-radius:16px;padding:clamp(16px,1.8vw,22px);overflow:hidden;
   transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
 .about-step::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent2);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -205,6 +200,9 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-steps.in .about-step:nth-child(1)::before{transition-delay:.15s}
 .about-steps.in .about-step:nth-child(2)::before{transition-delay:.35s}
 .about-steps.in .about-step:nth-child(3)::before{transition-delay:.55s}
+/* su Ricepaper il bianco delle card stacca solo di 1.11: bordo piu deciso e
+   un ombra bassa, altrimenti non si leggono come card */
+.about-approach .about-step{border-color:color-mix(in srgb,var(--dark) 20%,transparent);box-shadow:0 2px 10px color-mix(in srgb,var(--dark) 6%,transparent)}
 .about-step-num{font:600 12px var(--body);letter-spacing:.2em;color:var(--about-muted);transition:color .28s ease}
 .about-step-title{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.5vw,21px);letter-spacing:-.01em;color:var(--about-text);margin:8px 0 8px;transition:color .28s ease}
 .about-step-txt{font:400 14px/1.6 var(--body);color:var(--about-muted);transition:color .28s ease}
@@ -216,6 +214,8 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 
 /* ── 4. Timeline: fascia Hard Grey a tutta larghezza, spezza la sequenza di sezioni chiare ── */
 .about-timeline{background:var(--dark);padding:clamp(56px,7vw,112px) 0;margin-bottom:clamp(48px,6vw,96px)}
+/* la striscia fotografica la introduce: nessun margine tra le due */
+.about-approach + .about-timeline{margin-top:0}
 .about-timeline .about-h2{color:var(--white)}
 .about-timeline{--about-line:color-mix(in srgb,var(--white) 22%,transparent)}
 .about-tl{list-style:none;padding:0;margin:0}
