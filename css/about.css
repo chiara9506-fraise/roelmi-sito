@@ -6,7 +6,9 @@
 /* Grigi solo dalla palette: Hard Grey (--dark) schiarito, niente piu' #565755/#747673
    (i grigi della versione precedente, con una punta di verde).
    85% = #3c3c3c 11.1:1 su bianco; 70% = #5e5e5e 6.5 su bianco, 5.3 sulla tinta Olive */
-main{--about-text:color-mix(in srgb,var(--dark) 85%,var(--white));--about-muted:color-mix(in srgb,var(--dark) 70%,var(--white));--about-line:color-mix(in srgb,var(--dark) 15%,transparent)}
+/* stessi grigi del resto del sito; i nomi locali restano perche' la fascia scura della
+   timeline sovrascrive --about-line */
+main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(--line)}
 
 /* Animazioni d'entrata: stesse regole di who.css (che qui non e' caricato);
    la classe .in la aggiunge main.js */

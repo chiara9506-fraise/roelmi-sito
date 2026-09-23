@@ -6,7 +6,7 @@
 .finder-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(25,25,25,.82) 0%,rgba(68,114,165,.55) 100%)}
 .finder-hero .wrap{position:relative;z-index:1}
 .finder-hero-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
-.finder-hero h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:#fff;line-height:1.1;margin-bottom:14px}
+.finder-hero h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:#fff;line-height:1.1;margin-bottom:14px}
 .finder-hero p{color:rgba(255,255,255,.65);font-size:clamp(15px,1.2vw,17px);max-width:52ch}
 
 /* Layout */
@@ -70,7 +70,7 @@
 
 .ing-card-body{padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;flex:1}
 .ing-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.ing-card-tag{font:600 10px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:999px;border:1px solid var(--line)}
+.ing-card-tag{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:999px;border:1px solid var(--line)}
 .ing-card-tag.market{color:var(--primary-ink);border-color:var(--primary-ink);background:rgba(68,114,165,.06)}
 .ing-card-tag.tech{color:#5d6a45;border-color:#5d6a45;background:rgba(93,106,69,.08)}
 
@@ -147,7 +147,7 @@
   .mob-filter-btn.has-active{border-color:var(--primary-ink);color:var(--primary-ink)}
   .mob-filter-count{
     background:var(--primary-ink);color:#fff;
-    font:700 10px var(--body);border-radius:999px;
+    font:600 11px var(--body);border-radius:999px;
     padding:1px 6px;min-width:16px;text-align:center;
     display:none;
   }

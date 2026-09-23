@@ -3,7 +3,8 @@
    Solo variabili di base.css; i grigi sono Hard Grey schiarito come in about.css:
    85% = 11.1:1 su bianco, 70% = 6.5 su bianco / 5.9 su --accent1.
    Il componente di chiusura (.sust-card) viene da sustainability.css. */
-main{--nip-text:color-mix(in srgb,var(--dark) 85%,var(--white));--nip-muted:color-mix(in srgb,var(--dark) 70%,var(--white));--nip-line:color-mix(in srgb,var(--dark) 15%,transparent)}
+/* stessi grigi del resto del sito */
+main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)}
 
 /* Animazioni d'entrata: stesse regole di who.css / about.css; .in la aggiunge main.js */
 .r-up{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
