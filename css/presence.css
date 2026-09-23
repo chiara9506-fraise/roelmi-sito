@@ -22,11 +22,12 @@
 @media(prefers-reduced-motion:reduce){.leg-item:hover .leg-mark{animation:none}}
 .leg-mark{width:14px;height:21px;display:inline-block;flex:0 0 auto;line-height:0}
 .leg-mark svg{width:100%;height:100%;display:block;overflow:visible}
-.leg-mark--branch{color:#191919}
+/* Colori esatti della palette; il lilla di Biotech resta, richiesto dal cliente */
+.leg-mark--branch{color:var(--accent3)}
 .leg-mark--biotech{color:#4d2e99}
-.leg-mark--lab{color:#7d6220}
-.leg-mark--production{color:#5d6a45}
-.leg-mark--site{color:#3e6896}
+.leg-mark--lab{color:var(--accent1)}
+.leg-mark--production{color:var(--accent2)}
+.leg-mark--site{color:var(--primary)}
 
 /* Map */
 .presence-map-wrap{position:relative;margin-top:clamp(28px,4vw,48px)}
@@ -36,8 +37,7 @@
 .leaflet-container{background:#d8e2eb!important;font-family:var(--body)}
 /* Tinta del Cerulean della palette (#A1BBD8, 212 gradi) su tile in scala di grigio:
    acqua #d8e2eb, terre #c8daeb. Valori tarati sui grigi reali delle tile (239/208),
-   non a occhio. Tutti e 5 i marker restano sopra 4:1 sulla mappa (Hard Grey 12.3,
-   lilla biotech 6.8, gli altri tre ~4.05). */
+   non a occhio. I marker usano i colori pieni della palette con contorno Hard Grey. */
 .leaflet-tile-pane{filter:sepia(1) saturate(2.75) hue-rotate(174deg) brightness(.9) contrast(1.05)}
 .leaflet-control-attribution{background:rgba(25,25,25,.85)!important;color:rgba(255,255,255,.6)!important;font-size:10px!important;border-radius:4px 0 0 0!important}
 .leaflet-control-attribution a{color:rgba(255,255,255,.75)!important}
@@ -63,11 +63,15 @@
   .pm-leaf-wrap:hover .pm-mark::after{animation:none}
 }
 .pm-mark svg{display:block;width:100%;height:100%}
-.pm-mark--site{color:#3e6896}
-.pm-mark--branch{color:#191919}
+/* Il contrasto lo garantisce il CONTORNO (Hard Grey, 12.29:1 sulla mappa): il riempimento
+   resta quindi il colore pieno della palette, anche Cerulean/Olive/Ricepaper che da soli
+   farebbero 1.1-2.0 sulla mappa chiara. */
+.pm-mark svg path,.leg-mark svg path{stroke:var(--dark);stroke-width:2;stroke-linejoin:round;paint-order:stroke fill}
+.pm-mark--site{color:var(--primary)}
+.pm-mark--branch{color:var(--accent3)}
 .pm-mark--biotech{color:#4d2e99}
-.pm-mark--lab{color:#7d6220}
-.pm-mark--production{color:#5d6a45}
+.pm-mark--lab{color:var(--accent1)}
+.pm-mark--production{color:var(--accent2)}
 .pm-leaf-wrap:hover .pm-mark{transform:scale(1.28)}
 
 /* Ingresso animato dei marker: cadono in sequenza quando la mappa entra in viewport */
