@@ -3,7 +3,7 @@
 .ingredients{
   position:relative;overflow:hidden;
   background:#fff;
-  padding:clamp(32px,4vw,56px) 0;
+  padding:0 0 clamp(34px,4.2vw,68px);
 }
 .ing-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:14px}
 .ing-h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,58px);letter-spacing:-.02em;color:var(--secondary);line-height:1.05}

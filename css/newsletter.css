@@ -2,7 +2,7 @@
 /* Fondo Ricepaper: stacca dal footer Cerulean ink subito sotto.
    Contrasti su Ricepaper: testo --secondary 6.57, occhiello --primary-ink 4.52,
    errori #b3261e 5.91. --muted qui NON va usato: fa 4.14. */
-.newsletter{padding:clamp(32px,4vw,56px) 0 clamp(48px,6vw,80px)}
+.newsletter{padding:0 0 clamp(40px,4.6vw,72px)}
 .nl-card{background:var(--accent1);border-radius:16px;padding:clamp(28px,4vw,56px);
   display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,4vw,64px);align-items:start}
 .nl-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:14px}
