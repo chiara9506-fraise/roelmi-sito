@@ -63,3 +63,12 @@ h1 sup, h2 sup, h3 sup{font-size:.45em;vertical-align:.65em;font-weight:400;lett
 .prod-hero,.prod-cta-card,.sust-card,.nl-card,.hero{--focus:#fff}
 /* footer Cerulean: il nero e il contorno piu' leggibile (8.9:1) */
 .site-footer{--focus:var(--dark)}
+
+/* ===== CIFRE =====
+   Montserrat e Open Sans hanno entrambi le cifre tabulari: stessa larghezza per
+   ogni cifra. Senza, i contatori "ballano" mentre salgono e i numeri incolonnati
+   non si allineano. E' il dettaglio che distingue una scheda tecnica da una
+   pagina di marketing, e non richiede di cambiare carattere. */
+.impact-num,.ing-counter,.ing-mob-counter,.about-tl-year,.about-step-num,
+.pm-cluster-icon,.leg-item,.nip-card-name,.stat .num,
+table,td,th,time{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
