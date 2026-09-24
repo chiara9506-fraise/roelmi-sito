@@ -3,7 +3,7 @@
 /* Page hero */
 .finder-hero{position:relative;padding:clamp(80px,10vw,130px) 0 clamp(60px,7vw,90px);overflow:hidden;background:var(--dark)}
 .finder-hero-bg{position:absolute;inset:0;background:url('../images/HEROINGREDIENTS.jpg') center/cover no-repeat;opacity:.45}
-.finder-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(25,25,25,.82) 0%,rgba(68,114,165,.55) 100%)}
+.finder-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,color-mix(in srgb,var(--dark) 82%,transparent) 0%,color-mix(in srgb,color-mix(in srgb,var(--primary) 28%,var(--dark)) 72%,transparent) 100%)}
 .finder-hero .wrap{position:relative;z-index:1}
 .finder-hero-eyebrow{font:600 12px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
 .finder-hero h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:#fff;line-height:1.1;margin-bottom:14px}
@@ -76,7 +76,7 @@
 
 .ing-card h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.5vw,21px);color:var(--dark);letter-spacing:-.01em;line-height:1.15;margin-bottom:6px}
 .ing-card-function{font:500 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.ing-card-desc{font:400 14px/1.6 var(--body);color:#6b6d6a;flex:1;margin-bottom:16px}
+.ing-card-desc{font:400 14px/1.6 var(--body);color:var(--muted);flex:1;margin-bottom:16px}
 
 .ing-card-more{display:inline-flex;align-items:center;gap:7px;font:600 13px var(--body);color:var(--dark);transition:gap .2s,color .2s;text-decoration:none;margin-top:auto}
 .ing-card-more svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}

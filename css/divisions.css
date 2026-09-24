@@ -25,9 +25,9 @@
 .div-img-hover{opacity:0;z-index:2}
 
 /* Gradiente di fallback se mancano le immagini */
-.division.pc{background:linear-gradient(150deg,var(--primary) 0%,var(--primary) 45%,var(--primary-ink) 100%);transition:background 0s 1.1s}
+.division.pc{background:linear-gradient(150deg,var(--primary) 0%,var(--primary) 45%,color-mix(in srgb,var(--primary) 45%,var(--dark)) 100%);transition:background 0s 1.1s}
 .division.pc:hover{background:var(--dark);transition:background 0s}
-.division.nf{background:linear-gradient(150deg,#9fd84a 0%,var(--accent2) 40%,#3f7d1f 100%);transition:background 0s 1.1s}
+.division.nf{background:linear-gradient(150deg,color-mix(in srgb,var(--accent2) 75%,var(--white)) 0%,var(--accent2) 40%,color-mix(in srgb,var(--accent2) 45%,var(--dark)) 100%);transition:background 0s 1.1s}
 .division.nf:hover{background:var(--dark);transition:background 0s}
 
 /* ── Puntini decorativi ── */

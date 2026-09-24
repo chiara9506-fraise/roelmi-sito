@@ -16,11 +16,11 @@
 .news-more svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
 .news-card:hover .news-more svg{transform:translateX(4px)}
 /* placeholder gradients per le 3 card (da sostituire con foto reali) */
-.news-thumb .ph.p1{background:linear-gradient(135deg,#a9c7e8 0%,#6f8fb0 100%)}
-.news-thumb .ph.p2{background:linear-gradient(135deg,var(--accent1) 0%,#cfeaf2 50%,#9fc9d6 100%)}
-.news-thumb .ph.p3{background:linear-gradient(135deg,#d7e7c4 0%,var(--accent2) 100%)}
+.news-thumb .ph.p1{background:linear-gradient(135deg,var(--tint-cerulean) 0%,var(--primary) 100%)}
+.news-thumb .ph.p2{background:linear-gradient(135deg,var(--accent1) 0%,var(--tint-antique) 50%,var(--accent3) 100%)}
+.news-thumb .ph.p3{background:linear-gradient(135deg,var(--tint-olive) 0%,var(--accent2) 100%)}
 .news-thumb .ph::after{content:"foto da inserire";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.85);font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase}
+  color:var(--dark);font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase}
 .news-nav{display:none}
 @media(max-width:900px){
   .news-nav{display:flex;gap:12px;justify-content:center;margin-top:18px}
