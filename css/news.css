@@ -17,8 +17,8 @@
 .news-card:hover .news-more svg{transform:translateX(4px)}
 /* placeholder gradients per le 3 card (da sostituire con foto reali) */
 .news-thumb .ph.p1{background:linear-gradient(135deg,var(--tint-cerulean) 0%,var(--primary) 100%)}
-.news-thumb .ph.p2{background:linear-gradient(135deg,var(--accent1) 0%,var(--tint-antique) 50%,var(--accent3) 100%)}
-.news-thumb .ph.p3{background:linear-gradient(135deg,var(--tint-olive) 0%,var(--accent2) 100%)}
+.news-thumb .ph.p2{background:linear-gradient(135deg,var(--white) 0%,var(--tint-cerulean) 55%,var(--primary) 100%)}
+.news-thumb .ph.p3{background:linear-gradient(135deg,var(--tint-cerulean) 0%,var(--accent-ink) 100%)}
 .news-thumb .ph::after{content:"foto da inserire";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   color:var(--dark);font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase}
 .news-nav{display:none}

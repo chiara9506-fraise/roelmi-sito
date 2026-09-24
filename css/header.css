@@ -34,14 +34,14 @@
 .nav-item.has-drop:focus-within .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(10px)}
 .nav-item.has-drop.dd-dismissed .dropdown{opacity:0!important;visibility:hidden!important;pointer-events:none}
 .dropdown a{display:block;padding:11px 14px;border-radius:8px;font:500 14px var(--body);color:var(--secondary);letter-spacing:.01em;transition:background .2s,color .2s}
-.dropdown a:hover{background:var(--accent1);color:var(--primary-ink)}
+.dropdown a:hover{background:var(--tint-cerulean);color:var(--primary-ink)}
 
 /* actions: search + account */
 .actions{display:flex;align-items:center;gap:14px}
 .icon-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .25s,background .25s,color .25s;color:#fff}
 .site-header.solid .icon-btn{border-color:var(--line);background:#fff;color:var(--secondary)}
 .icon-btn:hover{border-color:#fff;background:rgba(255,255,255,.2)}
-.site-header.solid .icon-btn:hover{border-color:var(--primary-ink);background:var(--accent1);color:var(--primary-ink)}
+.site-header.solid .icon-btn:hover{border-color:var(--primary-ink);background:var(--tint-cerulean);color:var(--primary-ink)}
 .icon-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
 
 /* search expanding field */

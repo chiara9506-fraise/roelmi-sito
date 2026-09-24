@@ -193,9 +193,9 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,22px);margin:clamp(24px,3vw,40px) 0 0}
 .about-step{position:relative;background:var(--white);border:1px solid var(--about-line);border-radius:16px;padding:clamp(16px,1.8vw,22px);overflow:hidden;
   transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
-.about-step::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent2);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-.about-step:nth-child(2)::before{background:var(--primary)}
-.about-step:nth-child(3)::before{background:var(--accent3)}
+.about-step::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.about-step:nth-child(2)::before{background:color-mix(in srgb,var(--primary) 70%,var(--dark))}
+.about-step:nth-child(3)::before{background:var(--accent-ink)}
 .about-steps.in .about-step::before{transform:none}
 .about-steps.in .about-step:nth-child(1)::before{transition-delay:.15s}
 .about-steps.in .about-step:nth-child(2)::before{transition-delay:.35s}
@@ -207,9 +207,11 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-step-title{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.5vw,21px);letter-spacing:-.01em;color:var(--about-text);margin:8px 0 8px;transition:color .28s ease}
 .about-step-txt{font:400 14px/1.6 var(--body);color:var(--about-muted);transition:color .28s ease}
 /* hover: la card si riempie del colore del proprio filetto, come le card dei paesi */
-.about-step:hover{transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--dark) 18%,transparent);background:var(--accent2);border-color:var(--accent2)}
+.about-step:hover{transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--dark) 18%,transparent);background:var(--tint-cerulean);border-color:var(--tint-cerulean)}
 .about-step:nth-child(2):hover{background:var(--primary);border-color:var(--primary)}
-.about-step:nth-child(3):hover{background:var(--accent3);border-color:var(--accent3)}
+.about-step:nth-child(3):hover{background:var(--accent-ink);border-color:var(--accent-ink)}
+/* sul passo piu scuro il nero farebbe 3.18: il testo passa al bianco (5.52) */
+.about-step:nth-child(3):hover .about-step-num,.about-step:nth-child(3):hover .about-step-title,.about-step:nth-child(3):hover .about-step-txt{color:var(--white)}
 .about-step:hover .about-step-num,.about-step:hover .about-step-title,.about-step:hover .about-step-txt{color:var(--dark)}
 
 /* ── 4. Timeline: fascia Hard Grey a tutta larghezza, spezza la sequenza di sezioni chiare ── */
@@ -226,8 +228,8 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-tl-item:last-child .about-tl-body{padding-bottom:0}
 /* pallini: richiamo dei tre accenti, decorativi; sul fondo scuro si vedono da soli */
 .about-tl-body::before{content:"";position:absolute;left:-7px;top:9px;width:13px;height:13px;border-radius:50%;background:var(--primary)}
-.about-tl-item:nth-child(3n+2) .about-tl-body::before{background:var(--accent3)}
-.about-tl-item:nth-child(3n) .about-tl-body::before{background:var(--accent2)}
+.about-tl-item:nth-child(3n+2) .about-tl-body::before{background:var(--accent-ink)}
+.about-tl-item:nth-child(3n) .about-tl-body::before{background:var(--primary)}
 .about-tl-body p{font:400 17px/1.65 var(--body);color:color-mix(in srgb,var(--white) 85%,transparent);max-width:62ch}
 .about-tl-body p + p{margin-top:12px}
 /* tanti link in poco spazio: sottolineatura tenue, piena in hover (resta il segnale non cromatico) */
