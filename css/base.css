@@ -6,7 +6,10 @@
    --primary      Cerulean pieno: fondo dei bottoni/CTA (con testo --dark, 8.89:1),
                   superfici e decorazioni. Su bianco fa 1.98: mai come colore di testo.
    --dark         Hard Grey: TUTTO il testo, i link (sottolineati) e le fasce scure.
-   --accent-ink   #a55b4b Antique scurito: etichette, occhielli, icone e focus su fondo
+   --accent-ink   Cerulean e Hard Grey mescolati meta' e meta' (#5d6a79): e' la
+                  mescolanza MINIMA che porta il Cerulean a passare i contrasti sul
+                  testo piccolo (5.53 su bianco, 4.99 su Ricepaper). Etichette,
+                  occhielli, icone e focus su fondo
                   chiaro (5.00 su bianco, 4.52 su Ricepaper); regge anche come fondo
                   con testo bianco (5.00).
    --accent3      Antique pieno: accenti e superfici; testo --dark sopra (5.36), su
@@ -17,7 +20,7 @@
    a opacita' ridotta (70% e 15%), non un grigio diverso.
    --primary-ink  resta come alias di --accent-ink per il codice esistente. */
 :root{--primary:#A1BBD8;--accent1:#F7F3EB;--accent2:#B4C09D;--accent3:#D27460;--dark:#191919;--white:#fff;
-  --accent-ink:#a55b4b;--primary-ink:var(--accent-ink);
+  --accent-ink:color-mix(in srgb,var(--primary) 50%,var(--dark));--primary-ink:var(--accent-ink);
   --secondary:#191919;--ink:#191919;--muted:color-mix(in srgb,var(--dark) 70%,transparent);--line:color-mix(in srgb,var(--dark) 15%,transparent);--surface:#f7f9fa;
   --tint-cerulean:#dee7f1;--tint-olive:#e5e9dd;--tint-antique:#f4dcd7;--tint-caramel:#f4dcd7;
   --display:"Montserrat",sans-serif;--body:"Open Sans",sans-serif;--max:1280px}
