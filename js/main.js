@@ -270,22 +270,27 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   var more=document.getElementById('ingMore'),moreTxt=document.getElementById('ingMoreTxt'),figLink=document.getElementById('ingFigLink');
   document.getElementById('ingTot').textContent=String(total).padStart(2,'0');
   var totMob=document.getElementById('ingTotMob');if(totMob)totMob.textContent=String(total).padStart(2,'0');
+  /* applica() scrive lo stato corrente; render() ci aggiunge lo scambio della
+     didascalia. Separarle serve a poterla chiamare anche all'avvio: prima lo stato
+     iniziale dipendeva dalla classe "active" scritta a mano nel markup, e bastava
+     riordinare i prodotti perche' la prima immagine non comparisse. */
+  function applica(){
+    var d=data[i];
+    pill.textContent=d.pill;desc.innerHTML=d.desc;
+    // link alla pagina prodotto solo se esiste (campo href): titolo, immagine e "Discover"
+    nm.innerHTML=d.href?'<a href="'+d.href+'">'+d.name+'</a>':d.name;
+    if(more){more.hidden=!d.href;if(d.href){more.href=d.href;moreTxt.innerHTML='Discover '+d.name;}}
+    if(figLink){figLink.hidden=!d.href;if(d.href)figLink.href=d.href;}
+    tags.innerHTML=d.tags.map(function(t){return '<span>'+t+'</span>'}).join('');
+    var n=String(i+1).padStart(2,'0');
+    num.textContent=n;if(numMob)numMob.textContent=n;
+    imgs.forEach(function(im){im.classList.toggle('active',+im.dataset.i===i)});
+  }
   function render(){
     cap.classList.add('swap');
-    setTimeout(function(){
-      var d=data[i];
-      pill.textContent=d.pill;desc.innerHTML=d.desc;
-      // link alla pagina prodotto solo se esiste (campo href): titolo, immagine e "Discover"
-      nm.innerHTML=d.href?'<a href="'+d.href+'">'+d.name+'</a>':d.name;
-      if(more){more.hidden=!d.href;if(d.href){more.href=d.href;moreTxt.innerHTML='Discover '+d.name;}}
-      if(figLink){figLink.hidden=!d.href;if(d.href)figLink.href=d.href;}
-      tags.innerHTML=d.tags.map(function(t){return '<span>'+t+'</span>'}).join('');
-      var n=String(i+1).padStart(2,'0');
-      num.textContent=n;if(numMob)numMob.textContent=n;
-      imgs.forEach(function(im){im.classList.toggle('active',+im.dataset.i===i)});
-      cap.classList.remove('swap');
-    },210);
+    setTimeout(function(){applica();cap.classList.remove('swap');},210);
   }
+  applica();   // stato iniziale deciso qui, non dal markup
   function step(d){i=(i+d+total)%total;render();}
   document.getElementById('ingNext').addEventListener('click',function(){step(1)});
   document.getElementById('ingPrev').addEventListener('click',function(){step(-1)});
