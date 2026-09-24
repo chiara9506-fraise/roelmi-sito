@@ -11,7 +11,7 @@
 
 .div-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,32px)}
 
-.division{position:relative;border-radius:16px;overflow:hidden;min-height:clamp(300px,36vw,420px);display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,3vw,40px);color:#fff;isolation:isolate;cursor:pointer}
+.division{position:relative;border-radius:4px;overflow:hidden;min-height:clamp(300px,36vw,420px);display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,3vw,40px);color:#fff;isolation:isolate;cursor:pointer}
 
 /* ── Immagini: base visibile, hover nascosta ── */
 .div-img{

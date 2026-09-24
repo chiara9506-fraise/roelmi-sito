@@ -48,7 +48,7 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 
 /* Segnaposto per materiale mancante. Etichetta in --muted su --accent1 fa 4.14:1:
    a 19px in grassetto conta come testo grande, soglia 3:1 */
-.about-ph{border-radius:16px;background:var(--accent1);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;list-style:none}
+.about-ph{border-radius:4px;background:var(--accent1);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;list-style:none}
 .about-ph span{font:600 19px/1.3 var(--body);color:var(--about-muted)}
 
 /* ── Breadcrumb: stessa struttura della pagina prodotto, colori per fondo chiaro ── */
@@ -140,7 +140,7 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 
 /* ── 2. What we do ── */
 .about-what-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:start}
-.about-nip{background:var(--dark);border-radius:16px;padding:clamp(28px,3.5vw,44px)}
+.about-nip{background:var(--dark);border-radius:4px;padding:clamp(28px,3.5vw,44px)}
 /* Acrostico: N i P si aprono in "Nature is People" quando la card entra in viewport,
    e tornano a NIP col mouse sopra. Al contrario dell'hero, dove i nomi si comprimono. */
 .about-nip-mark{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.6vw,52px);line-height:1.1;letter-spacing:-.02em;color:var(--white);white-space:nowrap}
@@ -191,7 +191,7 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
    accanto racconta. Stessa card e stesso hover di .about-card, filetto in alto nei
    tre colori della palette che si tira da sinistra, uno dopo l'altro, all'ingresso. */
 .about-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,22px);margin:clamp(24px,3vw,40px) 0 0}
-.about-step{position:relative;background:var(--white);border:1px solid var(--about-line);border-radius:16px;padding:clamp(16px,1.8vw,22px);overflow:hidden;
+.about-step{position:relative;background:var(--white);border:1px solid var(--about-line);border-radius:4px;padding:clamp(16px,1.8vw,22px);overflow:hidden;
   transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
 .about-step::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .about-step:nth-child(2)::before{background:color-mix(in srgb,var(--primary) 70%,var(--dark))}
@@ -202,12 +202,12 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 .about-steps.in .about-step:nth-child(3)::before{transition-delay:.55s}
 /* su Ricepaper il bianco delle card stacca solo di 1.11: bordo piu deciso e
    un ombra bassa, altrimenti non si leggono come card */
-.about-approach .about-step{border-color:color-mix(in srgb,var(--dark) 20%,transparent);box-shadow:0 2px 10px color-mix(in srgb,var(--dark) 6%,transparent)}
+.about-approach .about-step{border-color:color-mix(in srgb,var(--dark) 20%,transparent)}
 .about-step-num{font:600 12px var(--body);letter-spacing:.2em;color:var(--about-muted);transition:color .28s ease}
 .about-step-title{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.5vw,21px);letter-spacing:-.01em;color:var(--about-text);margin:8px 0 8px;transition:color .28s ease}
 .about-step-txt{font:400 14px/1.6 var(--body);color:var(--about-muted);transition:color .28s ease}
 /* hover: la card si riempie del colore del proprio filetto, come le card dei paesi */
-.about-step:hover{transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--dark) 18%,transparent);background:var(--tint-cerulean);border-color:var(--tint-cerulean)}
+.about-step:hover{transform:translateY(-4px);background:var(--tint-cerulean);border-color:var(--tint-cerulean)}
 .about-step:nth-child(2):hover{background:var(--primary);border-color:var(--primary)}
 .about-step:nth-child(3):hover{background:var(--accent-ink);border-color:var(--accent-ink)}
 /* sul passo piu scuro il nero farebbe 3.18: il testo passa al bianco (5.52) */
@@ -240,10 +240,9 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 /* ── 5. Presence ── */
 .about-world-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
 /* stesso gesto dei box dei numeri in home (.impact-card) */
-.about-card{background:var(--white);border:1px solid var(--about-line);border-top:4px solid var(--primary);border-radius:16px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;
-  box-shadow:0 4px 20px color-mix(in srgb,var(--dark) 5%,transparent);cursor:default;
+.about-card{background:var(--white);border:1px solid var(--about-line);border-top:4px solid var(--primary);border-radius:4px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;cursor:default;
   transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
-.about-card:hover{background:var(--primary);border-color:var(--primary);transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--dark) 18%,transparent)}
+.about-card:hover{background:var(--primary);border-color:var(--primary);transform:translateY(-4px)}
 /* sul Cerulean pieno il testo va in Hard Grey (8.89:1) */
 .about-card-country,.about-card-name,.about-card-role,.about-card-todo{transition:color .28s ease}
 .about-card:hover .about-card-country,.about-card:hover .about-card-name,.about-card:hover .about-card-role,.about-card:hover .about-card-todo{color:var(--dark)}
@@ -258,8 +257,8 @@ main{--about-text:var(--secondary);--about-muted:var(--muted);--about-line:var(-
 
 /* ── 7. Chiusura: box Ingredient Finder, stesso aspetto di .ing-finder in home ── */
 .about-close{padding:0 0 clamp(48px,6vw,96px)}
-.about-finder{display:flex;align-items:center;gap:18px;background:var(--white);border:1px solid var(--about-line);border-radius:16px;padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,30px);box-shadow:0 10px 30px color-mix(in srgb,var(--primary-ink) 8%,transparent);transition:border-color .25s,box-shadow .25s,transform .2s}
-.about-finder:hover{border-color:var(--primary-ink);box-shadow:0 16px 38px color-mix(in srgb,var(--primary-ink) 16%,transparent);transform:translateY(-2px)}
+.about-finder{display:flex;align-items:center;gap:18px;background:var(--white);border:1px solid var(--about-line);border-radius:4px;padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,30px);transition:border-color .25s,box-shadow .25s,transform .2s}
+.about-finder:hover{border-color:var(--primary-ink);transform:translateY(-2px)}
 .about-finder:focus-visible{outline:2px solid var(--primary-ink);outline-offset:3px}
 .about-finder-ic{color:var(--dark);width:50px;height:50px;border-radius:50%;background:var(--primary);transition:background .25s,color .25s;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
 .about-finder-ic svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:2}

@@ -30,7 +30,7 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
    sostenibilita' della home, che ripeteva il titolo della pagina e il bottone del
    report senza aggiungere nulla. */
 .nip-close{padding:0 0 clamp(34px,4.2vw,68px)}
-.nip-close-card{background:var(--dark);border-radius:16px;padding:clamp(40px,5vw,68px) clamp(28px,5vw,72px);text-align:center;max-width:860px;margin:0 auto}
+.nip-close-card{background:var(--dark);border-radius:4px;padding:clamp(40px,5vw,68px) clamp(28px,5vw,72px);text-align:center;max-width:860px;margin:0 auto}
 .nip-close-card h2{font-family:var(--display);font-weight:600;font-size:clamp(24px,3vw,40px);letter-spacing:-.02em;line-height:1.15;color:var(--white);margin-bottom:14px}
 .nip-close-card h2 sup{font-size:.45em;vertical-align:.65em;font-weight:400}
 .nip-close-card p{font:400 16px/1.65 var(--body);color:color-mix(in srgb,var(--white) 72%,transparent);max-width:56ch;margin:0 auto clamp(24px,3vw,34px)}
@@ -58,7 +58,7 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-lead a:focus-visible,.nip-text a:focus-visible{outline:2px solid var(--primary-ink);outline-offset:2px;border-radius:2px}
 
 /* Segnaposto per materiale mancante: stesso stile di .about-ph */
-.nip-ph{border-radius:16px;background:var(--accent1);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+.nip-ph{border-radius:4px;background:var(--accent1);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
 .nip-card-img.nip-ph{border-radius:0}
 .nip-ph span{font:600 19px/1.3 var(--body);color:var(--nip-muted)}
 .nip-ph sup{font-size:.6em;vertical-align:.5em}
@@ -201,13 +201,12 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 /* ── 3. I tre pilastri: stile e hover delle card di about.css ── */
 .nip-pillars-intro{font:400 clamp(18px,1.5vw,20px)/1.6 var(--body);color:var(--nip-text);max-width:60ch;margin-bottom:clamp(18px,2.2vw,30px)}
 .nip-pillars-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
-.nip-pillar{background:var(--white);border:1px solid var(--nip-line);border-top:4px solid var(--primary);border-radius:16px;padding:clamp(22px,2.4vw,32px);
-  box-shadow:0 4px 20px color-mix(in srgb,var(--dark) 5%,transparent);cursor:default;
+.nip-pillar{background:var(--white);border:1px solid var(--nip-line);border-top:4px solid var(--primary);border-radius:4px;padding:clamp(22px,2.4vw,32px);cursor:default;
   transition:background .28s ease,border-color .28s ease,transform .28s ease,box-shadow .28s ease}
 .nip-pillar--nature{border-top-color:var(--accent2)}
 .nip-pillar--innovation{border-top-color:var(--primary)}
 .nip-pillar--people{border-top-color:var(--accent3)}
-.nip-pillar:hover{transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--dark) 18%,transparent)}
+.nip-pillar:hover{transform:translateY(-4px)}
 .nip-pillar--nature:hover{background:var(--accent2);border-color:var(--accent2)}
 .nip-pillar--innovation:hover{background:var(--primary);border-color:var(--primary)}
 .nip-pillar--people:hover{background:var(--accent3);border-color:var(--accent3)}
@@ -241,10 +240,10 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 .nip-action-intro{margin-bottom:clamp(18px,2.2vw,30px)}
 .nip-action-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.4vw,28px)}
 .nip-card{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none;
-  background:var(--white);border:1px solid var(--nip-line);border-radius:16px;overflow:hidden;
+  background:var(--white);border:1px solid var(--nip-line);border-radius:4px;overflow:hidden;
   transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
-.nip-card{box-shadow:0 2px 10px color-mix(in srgb,var(--dark) 5%,transparent)}
-.nip-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px color-mix(in srgb,var(--dark) 14%,transparent);border-color:color-mix(in srgb,var(--dark) 22%,transparent)}
+.nip-card{}
+.nip-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--dark) 22%,transparent)}
 .nip-card:focus-visible{outline:2px solid var(--primary-ink);outline-offset:4px}
 .nip-card-img{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:var(--white);overflow:hidden;padding:0}
 /* stesso movimento del carosello ingredienti della home, rallentato e con le quattro
@@ -270,8 +269,8 @@ main{--nip-text:var(--secondary);--nip-muted:var(--muted);--nip-line:var(--line)
 
 /* Stesso blocco di chiusura dell'About e della home: qui chiude la lista delle
    iniziative, dove la domanda "e il mio target?" viene naturale. */
-.nip-finder{display:flex;align-items:center;gap:18px;margin-top:clamp(20px,2.6vw,32px);background:var(--white);border:1px solid var(--nip-line);border-radius:16px;padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,30px);box-shadow:0 10px 30px color-mix(in srgb,var(--dark) 6%,transparent);text-decoration:none;transition:border-color .25s,box-shadow .25s,transform .2s}
-.nip-finder:hover{border-color:var(--primary-ink);box-shadow:0 16px 38px color-mix(in srgb,var(--primary-ink) 16%,transparent);transform:translateY(-2px)}
+.nip-finder{display:flex;align-items:center;gap:18px;margin-top:clamp(20px,2.6vw,32px);background:var(--white);border:1px solid var(--nip-line);border-radius:4px;padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,30px);text-decoration:none;transition:border-color .25s,box-shadow .25s,transform .2s}
+.nip-finder:hover{border-color:var(--primary-ink);transform:translateY(-2px)}
 .nip-finder:focus-visible{outline:2px solid var(--primary-ink);outline-offset:3px}
 .nip-finder-ic{color:var(--dark);width:50px;height:50px;border-radius:50%;background:var(--primary);transition:background .25s,color .25s;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
 .nip-finder-ic svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:2}

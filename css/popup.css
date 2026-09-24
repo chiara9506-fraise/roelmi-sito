@@ -5,8 +5,7 @@
   width:300px;
   max-width:calc(100vw - 40px);
   background:#fff;
-  border-radius:16px;
-  box-shadow:0 8px 40px rgba(25,25,25,.16);
+  border-radius:4px;
   padding:22px 22px 20px;
   z-index:9000;
   opacity:0;
